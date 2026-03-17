@@ -1,24 +1,25 @@
 import streamlit as st
-import pandas as pd
+# import pandas as pd
 
-# since streamlit aggressively re-renders and the dataframe is large, i'm caching loaded data for efficiency
-@st.cache_data
-def loadData():
-    return pd.read_csv('./data/listings.csv', dtype={"id":str, "scrape_id": str, "host_id": str})
+from utils import loadData
 
-from tabs.summary import render
+import tabs.summary as summary
+import tabs.cleaning as cleaning
 
 st.set_page_config(layout="wide")
 
+
 st.title("Broward County Airbnb Listings Dashboard")
+df = loadData('./data/listings.csv')
 
-# Load Data
-df = loadData()
-
-summaryTab, visTab = st.tabs(["Data Summary", "Charts"])
+# create tabs
+summaryTab, cleaningTab = st.tabs(["Raw Data Summary", "Data Cleaning"])
 
 with summaryTab:
-    render(df)
+    summary.render(df)
+
+with cleaningTab:
+    cleaning.render(df)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types
