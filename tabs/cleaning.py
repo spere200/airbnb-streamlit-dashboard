@@ -20,13 +20,15 @@ def render(df: pd.DataFrame):
         colsToDrop = ["id", "listing_url", "scrape_id", "last_scraped", "source", "name", 
                     "description", "neighborhood_overview", "picture_url", "host_id",
                     "host_url", "host_name", "host_about", "host_thumbnail_url", 
-                    "host_picture_url", "neighbourhood", "calendar_last_scraped"]
+                    "host_picture_url", "host_neighbourhood", "neighbourhood", 
+                    "calendar_last_scraped"]
         
         st.write("##### Removing Irrelevant Features")
         with st.container(border=True, height=400):    
             st.caption("removing non-numerical, non-categorical, non-date/time features")
             st.write(colsToDrop)
 
+        # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = df.drop(columns=colsToDrop, axis=1)
 
 
@@ -43,6 +45,7 @@ def render(df: pd.DataFrame):
                 
             st.write(featuresToBeRemoved)
 
+        # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = cleanedDf.drop(columns=featuresToBeRemoved, axis=1)
 
     
@@ -59,6 +62,7 @@ def render(df: pd.DataFrame):
 
             st.write(featuresToDropNa)
 
+        # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = cleanedDf.dropna(subset=featuresToDropNa)
 
     st.write("#### Features Summary After Removal") 
@@ -66,13 +70,47 @@ def render(df: pd.DataFrame):
     summaryDf = getSummaryDf(cleanedDf)
     st.dataframe(summaryDf)
     
-    
+    st.write("#### Deciding What to Do About Remaining Missing Values")
+    st.write("""
+        Looking through the data after the initial cleaning step, the following can be performed in order of importance
+        to deal with the remaining missing values:  
+        1. **price** and **estimated_revenue_l365d** have the same number of missing values, so most likely entries that lack
+          one lack the other, and these two features are pretty important to any sort of analysis, so entries which don't
+          have them are irrelevant.
+        2. **bedrooms** has no missing values, but **beds** has a lot. There are 3 options to deal with this:
+            - Fill the missing values of **beds** with the corresponding value of **bedrooms**. Makes sense, but can lead to
+              incorrect assumptions, since the data would not accurately show how the bed to bedroom ratio impacts other values.
+            - Drop **beds** and keep only **bedrooms**. No entries are lost, but the bed to bedroom ratio is completely lost.
+            - Drop all entries with a missing **beds** value. Solves missing data, keeps bedroom to bed ratio, but at the cost 
+              of about 25 percent of the dataset.
+        3. All features related to reviews have a very similar number of missing values, either 2,532 or 2,533. I have a suspicion
+           that running dropna on price will fix this, but it's worth looking into afterwards regardless.
+        4. **host_location** can be removed, since there is a high amount of data missing, and the values themselves are 
+          inconsistent (sometimes country, sometimes state, sometimes city, etc.)
+        5. **bathrooms** has a lot of missing values, **bathrooms_text** contains the same and more info with no missing values.
+           **bathrooms** can be derived from **bathrooms_text** and bathrooms text can just keep the extra info (private, shared, etc.)
+             
+        I'll look into host response/acceptance after dealing with the above features, since the numbers are comparatively small.
+    """)
 
-    # st.write("#### Summary After Removal")
-    # dfCleaned = df.drop(featuresToBeRemoved, axis=1)
-    # dfCleaned = dfCleaned.dropna(subset=featuresToDropNa)
-    # dfCleaned.reset_index(0) 
-    # newSummaryDf = getSummaryDf(dfCleaned).sort_values("Missing Value Count", ascending=False)
-    # st.caption(f"{len(dfCleaned.columns)} features, {len(dfCleaned)} entries")
-    # st.dataframe(newSummaryDf, hide_index=True)
+    st.write("#### Running dropna() on 'price' and 'estimated_revenue_l365d':")
+    cleanedDf = cleanedDf.dropna(subset=["price", "estimated_revenue_l365d"])
+    summaryDf = getSummaryDf(cleanedDf)
+    st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
+    st.dataframe(summaryDf)
+    st.caption("It looks like the problem with beds and bedrooms was moslty resolved by the dropna price, so next, I'll be going after reviews instead")
 
+    st.write("#### Running dropna() on review_scores_rating:")
+    cleanedDf = cleanedDf.dropna(subset=["review_scores_rating"])
+    summaryDf = getSummaryDf(cleanedDf)
+    st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
+    st.dataframe(summaryDf)
+
+    st.write("#### Dropping 'host_location' and running dropna on 'host_response_time', 'host_response_rate', 'host_acceptance_rate':")
+    cleanedDf = cleanedDf.dropna(subset=['host_response_time', 'host_response_rate', 'host_acceptance_rate'])
+    cleanedDf = cleanedDf.drop(columns=['host_location'], axis=1)
+    summaryDf = getSummaryDf(cleanedDf)
+    st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
+    st.dataframe(summaryDf)
+
+    st.write("#### Running dropna on beds (1 entry), and converting bahtrooms_text to strictly categorical data")
