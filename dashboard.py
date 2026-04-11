@@ -4,7 +4,8 @@ import streamlit as st
 from utils import loadData
 
 import tabs.summary as summary
-import tabs.cleaning as cleaning
+import tabs.missingValues as missingValues
+import tabs.featureRemoval as featureRemoval
 
 st.set_page_config(layout="wide")
 
@@ -13,13 +14,18 @@ st.title("Broward County Airbnb Listings Dashboard")
 df = loadData('./data/listings.csv')
 
 # create tabs
-summaryTab, cleaningTab = st.tabs(["Raw Data Summary", "Data Cleaning"])
+summaryTab, missingValuesTab, featureRemovalTab = st.tabs(["Raw Data Summary", 
+                                                        "Handling Missing Values", 
+                                                        "Feature Removal"])
 
 with summaryTab:
     summary.render(df)
 
-with cleaningTab:
-    cleaning.render(df)
+with missingValuesTab:
+    dfNoMissingValues = missingValues.render(df)
+
+with featureRemovalTab:
+    featureRemoval.render(dfNoMissingValues)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types
