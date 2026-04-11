@@ -26,7 +26,7 @@ def render(df: pd.DataFrame):
     regularPrices = df[df['host_is_superhost'] == False]['price']
 
     st.markdown("<h3 style='background-color: #cc9a0e; padding: 8px;'>Two-Sample, One-Tailed Z-Test</h3>", unsafe_allow_html=True)
-    st.write("Since the sample size is large enough (~10,000 entries), I am performing a Z-test.")
+    st.write("Since the sample size is large enough (8,506 entries), I am performing a Z-test.")
     nSuperhost, meanSuperhost, stdSuperhost = len(superhostPrices), superhostPrices.mean(), superhostPrices.std()
     nRegular, meanRegular, stdRegular = len(regularPrices), regularPrices.mean(), regularPrices.std()
 

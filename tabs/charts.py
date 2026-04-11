@@ -7,7 +7,9 @@ def render(df: pd.DataFrame):
     numericColumns = numericDf.columns.tolist()
 
     st.subheader("Distributions")
-    distSelection = st.selectbox("Select a Feature to View its Distribution", options=numericColumns)
+    distSelection = st.selectbox("Select a Feature to View its Distribution", 
+                                 options=numericColumns, 
+                                 index=list(numericColumns).index('price'))
     nbins = min(df[distSelection].nunique(), 50)
     distPlot = px.histogram(df, x=distSelection, nbins=nbins)
     st.plotly_chart(distPlot)

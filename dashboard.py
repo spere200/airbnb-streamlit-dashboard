@@ -7,6 +7,7 @@ import tabs.summary as summary
 import tabs.missingValues as missingValues
 import tabs.featureRemoval as featureRemoval
 import tabs.nonNumeric as nonNumeric
+import tabs.outliers as outliers
 import tabs.charts as charts
 import tabs.hypothesisTesting as hypothesisTesting
 
@@ -21,11 +22,13 @@ df = loadData('./data/listings.csv')
  missingValuesTab, 
  featureRemovalTab, 
  nonNumericTab, 
+ outliersTab,
  chartsTab,
  hypothesisTestingTab) = st.tabs(["Raw Data Summary", 
                         "Handling Missing Values", 
                         "Feature Removal",
                         "Handling Non-Numeric Columns",
+                        "Removing Outliers",
                         "Charts",
                         "Hypothesis Testing"])
 
@@ -39,13 +42,16 @@ with featureRemovalTab:
     dfFinalFeatures = featureRemoval.render(dfNoMissingValues)
 
 with nonNumericTab:
-    finalDf = nonNumeric.render(dfFinalFeatures)
+    finalFeaturesDf = nonNumeric.render(dfFinalFeatures)
+
+with outliersTab:
+    cleanedDf = outliers.render(finalFeaturesDf)
 
 with chartsTab:
-    charts.render(finalDf)
+    charts.render(cleanedDf)
 
 with hypothesisTestingTab:
-    hypothesisTesting.render(finalDf)
+    hypothesisTesting.render(cleanedDf)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types
