@@ -101,10 +101,11 @@ def render(df: pd.DataFrame):
     
     finalDf = df.drop(columns=["amenities"])
 
-    st.subheader("Final Dataframe for Analysis")
+    st.subheader("Preview of Dataframe With Finalized Feature Set")
     st.caption(f"{len(finalDf.columns)} features, {len(finalDf)} entries")
     st.dataframe(finalDf.head())
 
-    print(finalDf.columns)
+    st.subheader("Descriptive Statistics")
+    st.dataframe(finalDf.describe())
 
     return finalDf
