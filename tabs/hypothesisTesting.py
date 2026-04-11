@@ -5,19 +5,6 @@ from scipy.stats import norm
 import numpy as np
 
 def render(df: pd.DataFrame):
-    # st.markdown("<h3 style='background-color: #cc9a0e; padding: 8px;'>Price Outliers</h3>", unsafe_allow_html=True)
-    # st.write("For hypothesis testing, since I am basing my hypothesis on price, I decided to remove outliers, since extreme outliers " \
-    # "in the price column were severely skewing the mean. However, I kept outliers for charts and plan to keep them for model training " \
-    # "as well, since I want my models to be able to learn what makes a listing extremely expensive, and some models are pretty robust " \
-    # "against outliers, so I want to be able to highlight that capability.")
-
-    # Q1 = df['price'].quantile(0.25)
-    # Q3 = df['price'].quantile(0.75)
-    # IQR = Q3 - Q1
-    # df = df[(df['price'] >= Q1 - 1.5 * IQR) & (df['price'] <= Q3 + 1.5 * IQR)]
-
-    # st.dataframe(hypothesisDf.describe())
-
     st.markdown("<h3 style='background-color: #cc9a0e; padding: 8px;'>Hypothesis</h3>", unsafe_allow_html=True)
     st.markdown("**H<sub>0</sub>**: There is no significant difference in mean price between superhost and non-superhost listings.", unsafe_allow_html=True)
     st.markdown("**H<sub>a</sub>**: Superhost listings have a higher average price than listings by non-superhosts.", unsafe_allow_html=True)
