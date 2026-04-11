@@ -6,6 +6,7 @@ from utils import loadData
 import tabs.summary as summary
 import tabs.missingValues as missingValues
 import tabs.featureRemoval as featureRemoval
+import tabs.nonNumeric as nonNumeric
 
 st.set_page_config(layout="wide")
 
@@ -14,9 +15,10 @@ st.title("Broward County Airbnb Listings Dashboard")
 df = loadData('./data/listings.csv')
 
 # create tabs
-summaryTab, missingValuesTab, featureRemovalTab = st.tabs(["Raw Data Summary", 
+summaryTab, missingValuesTab, featureRemovalTab, nonNumericTab = st.tabs(["Raw Data Summary", 
                                                         "Handling Missing Values", 
-                                                        "Feature Removal"])
+                                                        "Feature Removal",
+                                                        "Handling Non-Numeric Columns"])
 
 with summaryTab:
     summary.render(df)
@@ -25,7 +27,10 @@ with missingValuesTab:
     dfNoMissingValues = missingValues.render(df)
 
 with featureRemovalTab:
-    featureRemoval.render(dfNoMissingValues)
+    dfFinalFeatures = featureRemoval.render(dfNoMissingValues)
+
+with nonNumericTab:
+    nonNumeric.render(dfFinalFeatures)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types
