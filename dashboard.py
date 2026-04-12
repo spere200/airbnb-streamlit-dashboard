@@ -62,7 +62,11 @@ with unsupervisedLearningTab:
     unsupervisedLearning.render(cleanedDf)
 
 with supervisedLearningTab:
-    supervisedLearning.render(cleanedDf)
+    # Keeping outliers in all models and doing log transformation; models were, surprisingly,
+    # performing worse with outliers removed. My only guess is that without extreme outliers,
+    # modles had no way of lerning what made a property extremely espensive/extremely cheap,
+    # since most of the mistakes were at the low and high ends of price, the middle was mostly fine
+    supervisedLearning.render(finalFeaturesDf)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types

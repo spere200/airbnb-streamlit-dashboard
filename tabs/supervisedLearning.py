@@ -2,13 +2,18 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-import math
+import numpy as np
+
+# import math
 
 from sklearn.model_selection import train_test_split, cross_val_score
 
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR
+
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
 
 from sklearn.preprocessing import MinMaxScaler
 
@@ -26,6 +31,9 @@ def render(df: pd.DataFrame):
         'columns, and convert boolean columns to 0/1.') 
 
         encodedDf = df.copy()
+
+        # decided to keep outliers and log transform price, this significantly improved performance
+        encodedDf['price'] = np.log1p(encodedDf['price'])
 
         # Normalize numeric columns
         numericCols = encodedDf.select_dtypes(include='number').columns
@@ -57,24 +65,27 @@ def render(df: pd.DataFrame):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         y_test_scaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten()
 
-        linRegCol, knnCol = st.columns([1, 1])
-        
-        # with linRegCol:
         with st.container(border=True):
-            linRegModel = LinearRegression()
-            linRegModel.fit(X_train, y_train)
+            lrGraphCol, _, lrEvalCol= st.columns([10, 1, 10])
 
-            y_pred_linreg = linRegModel.predict(X_test)
-            y_pred_linreg = y_pred_linreg.clip(0, y_pred_linreg.max()) # clip predictions so negative dollar amounts aren't shown
-            y_pred_linreg_scaled = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()
-            
-            sortedLinRegResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                        'Predicted Values': y_pred_linreg_scaled}
-                                        ).sort_values('Actual Values').reset_index(drop=True)
-            linRegPlot = px.line(sortedLinRegResults, y=["Predicted Values", "Actual Values"], 
-                                    color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-            linRegPlot.update_layout(title="Linear Regression")
-            st.plotly_chart(linRegPlot)
+            with lrGraphCol:
+                linRegModel = LinearRegression()
+                linRegModel.fit(X_train, y_train)
+
+                y_pred_linreg = linRegModel.predict(X_test)
+                y_pred_linreg = y_pred_linreg.clip(0, y_pred_linreg.max()) # clip predictions so negative dollar amounts aren't shown
+                y_pred_linreg_scaled = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()
+                
+                sortedLinRegResults = pd.DataFrame({'Actual Values': y_test_scaled, 
+                                            'Predicted Values': y_pred_linreg_scaled}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                linRegPlot = px.line(sortedLinRegResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                linRegPlot.update_layout(title="Linear Regression")
+                st.plotly_chart(linRegPlot)
+
+            with lrEvalCol:
+                st.markdown("##### Model Evaluation")
 
             # featureImportance = pd.DataFrame({'Feature': X.columns, 
             #                                     'Coefficient': linRegModel.coef_}
@@ -88,37 +99,91 @@ def render(df: pd.DataFrame):
         #     print(f"k={k}: {scores.mean():.2f}")
 
         with st.container(border=True):
-            knnModel = KNeighborsRegressor(n_neighbors=4)
-            knnModel.fit(X_train, y_train)
+            knnGraphCol, _, knnEvalCol= st.columns([10, 1, 10])
 
-            y_pred_knn = knnModel.predict(X_test)
-            y_pred_knn.clip(0, y_pred_knn.max())
-            y_pred_knn_scaled = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()
+            with knnGraphCol:
+                knnModel = KNeighborsRegressor(n_neighbors=4)
+                knnModel.fit(X_train, y_train)
 
-            sortedKnnResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                        'Predicted Values': y_pred_knn_scaled}
-                                        ).sort_values('Actual Values').reset_index(drop=True)
-            
-            knnPlot = px.line(sortedKnnResults, y=["Predicted Values", "Actual Values"], 
-                                    color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-            knnPlot.update_layout(title="KNN Regrerssion")
-            st.plotly_chart(knnPlot)
+                y_pred_knn = knnModel.predict(X_test)
+                y_pred_knn.clip(0, y_pred_knn.max())
+                y_pred_knn_scaled = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()
+
+                sortedKnnResults = pd.DataFrame({'Actual Values': y_test_scaled, 
+                                            'Predicted Values': y_pred_knn_scaled}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                
+                knnPlot = px.line(sortedKnnResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                knnPlot.update_layout(title="KNN Regrerssion")
+                st.plotly_chart(knnPlot)
+
+            with knnEvalCol:
+                st.markdown("##### Model Evaluation")
 
         with st.container(border=True):
-            svrModel = SVR()
-            print("Training...")
-            svrModel.fit(X_train, y_train)
-            print("Done!")
+            svrGraphCol, _, svrEvalCol= st.columns([10, 1, 10])
 
-            y_pred_svr = svrModel.predict(X_test)
-            y_pred_svr.clip(0, y_pred_svr.max())
-            y_pred_svr_scaled = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()
+            with svrGraphCol:
+                svrModel = SVR()
+                svrModel.fit(X_train, y_train)
 
-            sortedSvrResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                        'Predicted Values': y_pred_svr_scaled}
-                                        ).sort_values('Actual Values').reset_index(drop=True)
-            
-            svrPlot = px.line(sortedSvrResults, y=["Predicted Values", "Actual Values"], 
-                                    color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-            svrPlot.update_layout(title="Support Vector Regrerssion")
-            st.plotly_chart(svrPlot)
+                y_pred_svr = svrModel.predict(X_test)
+                y_pred_svr.clip(0, y_pred_svr.max())
+                y_pred_svr_scaled = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()
+
+                sortedSvrResults = pd.DataFrame({'Actual Values': y_test_scaled, 
+                                            'Predicted Values': y_pred_svr_scaled}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                
+                svrPlot = px.line(sortedSvrResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                svrPlot.update_layout(title="Support Vector Regrerssion")
+                st.plotly_chart(svrPlot)
+
+            with svrEvalCol:
+                st.markdown("##### Model Evaluation")
+
+        with st.container(border=True):
+            dtGraphCol, _, dtEvalCol= st.columns([10, 1, 10])
+
+            with dtGraphCol:
+                treeModel = DecisionTreeRegressor(random_state=42)
+                treeModel.fit(X_train, y_train)
+                y_pred_tree = treeModel.predict(X_test)
+                y_pred_tree.clip(0, y_pred_tree.max())
+                y_pred_tree_scaled = priceScaler.inverse_transform(y_pred_tree.reshape(-1, 1)).flatten()
+
+                sortedTreeResults = pd.DataFrame({'Actual Values': y_test_scaled, 
+                                            'Predicted Values': y_pred_tree_scaled}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                
+                treePlot = px.line(sortedTreeResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                treePlot.update_layout(title="Decision Tree Regrerssion")
+                st.plotly_chart(treePlot)
+
+            with dtEvalCol:
+                st.markdown("##### Model Evaluation")
+
+        with st.container(border=True):
+            rfGraphCol, _, rfEvalCol= st.columns([10, 1, 10])
+
+            with rfGraphCol:
+                forestModel = RandomForestRegressor(n_estimators=100, random_state=42)
+                forestModel.fit(X_train, y_train)
+                y_pred_forest = forestModel.predict(X_test)
+                y_pred_forest.clip(0, y_pred_forest.max())
+                y_pred_forest_scaled = priceScaler.inverse_transform(y_pred_forest.reshape(-1, 1)).flatten()
+
+                sortedforestResults = pd.DataFrame({'Actual Values': y_test_scaled, 
+                                            'Predicted Values': y_pred_forest_scaled}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                
+                forestPlot = px.line(sortedforestResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                forestPlot.update_layout(title="Random Forest Regrerssion")
+                st.plotly_chart(forestPlot)
+
+            with rfEvalCol:
+                st.markdown("##### Model Evaluation")
