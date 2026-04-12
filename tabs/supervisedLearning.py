@@ -8,7 +8,8 @@ import pickle
 import os
 # import math
 
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split#, cross_val_score
+from sklearn.metrics import r2_score, mean_squared_error
 
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
@@ -55,6 +56,12 @@ def render(df: pd.DataFrame):
         encodedDf['price'] = np.log1p(encodedDf['price'])
 
         # Normalize numeric columns
+        # create a price scaler to report actual results instead of scaled results
+        # this scaler is trained on the log transformed price values
+        priceScaler = MinMaxScaler()
+        priceScaler.fit(encodedDf[['price']])
+
+        # create a minmax scaler for all numeric cols and scale them
         numericCols = encodedDf.select_dtypes(include='number').columns
         scaler = MinMaxScaler()
         encodedDf[numericCols] = scaler.fit_transform(encodedDf[numericCols])
@@ -73,16 +80,15 @@ def render(df: pd.DataFrame):
     with modelPredictionTab:
         st.subheader('Model Predictions and Performance Assessment')
 
-        # create a price scaler to report actual results instead of scaled results
-        priceScaler = MinMaxScaler()
-        priceScaler.fit(df[['price']])
-
         # creating the train test split
         X = encodedDf.drop(columns=['price'])
         y = encodedDf['price']
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        y_test_scaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten()
+
+        # getting the actual dollar amount of the test set for nore explainable metrics
+        y_test_unscaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten() # undo normalization
+        y_test_dollars = np.expm1(y_test_unscaled) # undo log transform
 
         with st.container(border=True):
             lrGraphCol, _, lrEvalCol= st.columns([10, 1, 10])
@@ -93,10 +99,9 @@ def render(df: pd.DataFrame):
 
                 y_pred_linreg = linRegModel.predict(X_test)
                 y_pred_linreg = y_pred_linreg.clip(0, y_pred_linreg.max()) # clip predictions so negative dollar amounts aren't shown
-                y_pred_linreg_scaled = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()
                 
-                sortedLinRegResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                            'Predicted Values': y_pred_linreg_scaled}
+                sortedLinRegResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_linreg}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 linRegPlot = px.line(sortedLinRegResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
@@ -104,7 +109,14 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(linRegPlot)
 
             with lrEvalCol:
+                lrPredDollars = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()# undo normalization
+                lrPredDollars = np.expm1(lrPredDollars) # undo log transform
+                lregR2 = r2_score(y_test, y_pred_linreg)
+                lregRMSE = np.sqrt(mean_squared_error(y_test_dollars, lrPredDollars))
+
                 st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {lregR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${lregRMSE:.2f}", unsafe_allow_html=True)
 
             # featureImportance = pd.DataFrame({'Feature': X.columns, 
             #                                     'Coefficient': linRegModel.coef_}
@@ -126,10 +138,9 @@ def render(df: pd.DataFrame):
 
                 y_pred_knn = knnModel.predict(X_test)
                 y_pred_knn.clip(0, y_pred_knn.max())
-                y_pred_knn_scaled = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()
 
-                sortedKnnResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                            'Predicted Values': y_pred_knn_scaled}
+                sortedKnnResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_knn}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 knnPlot = px.line(sortedKnnResults, y=["Predicted Values", "Actual Values"], 
@@ -138,7 +149,14 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(knnPlot)
 
             with knnEvalCol:
+                knnPredDollars = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()# undo normalization
+                knnPredDollars = np.expm1(knnPredDollars) # undo log transform
+                knnR2 = r2_score(y_test, y_pred_knn)
+                knnRMSE = np.sqrt(mean_squared_error(y_test_dollars, knnPredDollars))
+
                 st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {knnR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${knnRMSE:.2f}", unsafe_allow_html=True)
 
         with st.container(border=True):
             svrGraphCol, _, svrEvalCol= st.columns([10, 1, 10])
@@ -149,10 +167,9 @@ def render(df: pd.DataFrame):
 
                 y_pred_svr = svrModel.predict(X_test)
                 y_pred_svr.clip(0, y_pred_svr.max())
-                y_pred_svr_scaled = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()
 
-                sortedSvrResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                            'Predicted Values': y_pred_svr_scaled}
+                sortedSvrResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_svr}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 svrPlot = px.line(sortedSvrResults, y=["Predicted Values", "Actual Values"], 
@@ -161,7 +178,14 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(svrPlot)
 
             with svrEvalCol:
+                svrPredDollars = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()# undo normalization
+                svrPredDollars = np.expm1(svrPredDollars) # undo log transform
+                svrR2 = r2_score(y_test, y_pred_svr)
+                svrRMSE = np.sqrt(mean_squared_error(y_test_dollars, svrPredDollars))
+
                 st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {svrR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${svrRMSE:.2f}", unsafe_allow_html=True)
 
         with st.container(border=True):
             dtGraphCol, _, dtEvalCol= st.columns([10, 1, 10])
@@ -172,10 +196,9 @@ def render(df: pd.DataFrame):
                 
                 y_pred_tree = treeModel.predict(X_test)
                 y_pred_tree.clip(0, y_pred_tree.max())
-                y_pred_tree_scaled = priceScaler.inverse_transform(y_pred_tree.reshape(-1, 1)).flatten()
 
-                sortedTreeResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                            'Predicted Values': y_pred_tree_scaled}
+                sortedTreeResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_tree}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 treePlot = px.line(sortedTreeResults, y=["Predicted Values", "Actual Values"], 
@@ -184,7 +207,14 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(treePlot)
 
             with dtEvalCol:
+                treePredDollars = priceScaler.inverse_transform(y_pred_tree.reshape(-1, 1)).flatten()# undo normalization
+                treePredDollars = np.expm1(treePredDollars) # undo log transform
+                treeR2 = r2_score(y_test, y_pred_tree)
+                treeRMSE = np.sqrt(mean_squared_error(y_test_dollars, treePredDollars))
+
                 st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {treeR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${treeRMSE:.2f}", unsafe_allow_html=True)
 
         with st.container(border=True):
             rfGraphCol, _, rfEvalCol= st.columns([10, 1, 10])
@@ -195,10 +225,9 @@ def render(df: pd.DataFrame):
 
                 y_pred_forest = forestModel.predict(X_test)
                 y_pred_forest.clip(0, y_pred_forest.max())
-                y_pred_forest_scaled = priceScaler.inverse_transform(y_pred_forest.reshape(-1, 1)).flatten()
 
-                sortedforestResults = pd.DataFrame({'Actual Values': y_test_scaled, 
-                                            'Predicted Values': y_pred_forest_scaled}
+                sortedforestResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_forest}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 forestPlot = px.line(sortedforestResults, y=["Predicted Values", "Actual Values"], 
@@ -207,4 +236,11 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(forestPlot)
 
             with rfEvalCol:
+                forestPredDollars = priceScaler.inverse_transform(y_pred_forest.reshape(-1, 1)).flatten()# undo normalization
+                forestPredDollars = np.expm1(forestPredDollars) # undo log transform
+                forestR2 = r2_score(y_test, y_pred_forest)
+                forestRMSE = np.sqrt(mean_squared_error(y_test_dollars, forestPredDollars))
+
                 st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {forestR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${forestRMSE:.2f}", unsafe_allow_html=True)
