@@ -16,9 +16,9 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR
 
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 
 def getModel(name, model, X_train, y_train):
     path = os.path.join('models', f"{name}.pkl")
@@ -46,7 +46,7 @@ def render(df: pd.DataFrame):
         st.caption(f'{len(df.columns)} features, {len(df)} entries')
         st.write(df.head())
 
-        st.markdown('#### Creating an Encoded Dataframe for Linear Regression and KNN')
+        st.markdown('#### Creating a One-Hot Encoded Dataframe for Linear Regression, KNN, and SVR')
         st.markdown('**Steps**: Nomalize numeric columns, One-Hot Encode categorical ' \
         'columns, and convert boolean columns to 0/1.') 
 
@@ -54,6 +54,7 @@ def render(df: pd.DataFrame):
 
         # decided to keep outliers and log transform price, this significantly improved performance
         encodedDf['price'] = np.log1p(encodedDf['price'])
+        treeDf = encodedDf.copy() # dataframe for trees, copying after log transform but before normalization
 
         # Normalize numeric columns
         # create a price scaler to report actual results instead of scaled results
@@ -77,14 +78,24 @@ def render(df: pd.DataFrame):
         st.caption(f'{len(encodedDf.columns)} features, {len(encodedDf)} entries')
         st.dataframe(encodedDf.head())
 
+        st.markdown('#### Creating a Label Encoded Dataframe for Decision Tree, Random Forest, and XGBoost')
+
+        # Label Encode categorical variables
+        for col in treeDf.select_dtypes(include='object').columns:
+            treeDf[col] = LabelEncoder().fit_transform(treeDf[col].astype(str))
+
+        st.caption(f'{len(treeDf.columns)} features, {len(treeDf)} entries')
+        st.dataframe(treeDf.head())
+
     with modelPredictionTab:
         st.subheader('Model Predictions and Performance Assessment')
 
-        # creating the train test split
+        # creating the train test split for linear regression, knn, and svr
         X = encodedDf.drop(columns=['price'])
         y = encodedDf['price']
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
 
         # getting the actual dollar amount of the test set for nore explainable metrics
         y_test_unscaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten() # undo normalization
@@ -145,7 +156,7 @@ def render(df: pd.DataFrame):
                 
                 knnPlot = px.line(sortedKnnResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-                knnPlot.update_layout(title="KNN Regrerssion")
+                knnPlot.update_layout(title="KNN Regression")
                 st.plotly_chart(knnPlot)
 
             with knnEvalCol:
@@ -174,7 +185,7 @@ def render(df: pd.DataFrame):
                 
                 svrPlot = px.line(sortedSvrResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-                svrPlot.update_layout(title="Support Vector Regrerssion")
+                svrPlot.update_layout(title="Support Vector Regression")
                 st.plotly_chart(svrPlot)
 
             with svrEvalCol:
@@ -186,6 +197,12 @@ def render(df: pd.DataFrame):
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {svrR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${svrRMSE:.2f}", unsafe_allow_html=True)
+
+        # creating the train test split for decision tree, random forest, and xgboost
+        X = treeDf.drop(columns=['price']) 
+        y = treeDf['price'] 
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         with st.container(border=True):
             dtGraphCol, _, dtEvalCol= st.columns([10, 1, 10])
@@ -203,12 +220,11 @@ def render(df: pd.DataFrame):
                 
                 treePlot = px.line(sortedTreeResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-                treePlot.update_layout(title="Decision Tree Regrerssion")
+                treePlot.update_layout(title="Decision Tree Regression")
                 st.plotly_chart(treePlot)
 
             with dtEvalCol:
-                treePredDollars = priceScaler.inverse_transform(y_pred_tree.reshape(-1, 1)).flatten()# undo normalization
-                treePredDollars = np.expm1(treePredDollars) # undo log transform
+                treePredDollars = np.expm1(y_pred_tree) # undo log transform
                 treeR2 = r2_score(y_test, y_pred_tree)
                 treeRMSE = np.sqrt(mean_squared_error(y_test_dollars, treePredDollars))
 
@@ -232,15 +248,42 @@ def render(df: pd.DataFrame):
                 
                 forestPlot = px.line(sortedforestResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
-                forestPlot.update_layout(title="Random Forest Regrerssion")
+                forestPlot.update_layout(title="Random Forest Regression")
                 st.plotly_chart(forestPlot)
 
             with rfEvalCol:
-                forestPredDollars = priceScaler.inverse_transform(y_pred_forest.reshape(-1, 1)).flatten()# undo normalization
-                forestPredDollars = np.expm1(forestPredDollars) # undo log transform
+                forestPredDollars = np.expm1(y_pred_forest) # undo log transform
                 forestR2 = r2_score(y_test, y_pred_forest)
                 forestRMSE = np.sqrt(mean_squared_error(y_test_dollars, forestPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {forestR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${forestRMSE:.2f}", unsafe_allow_html=True)
+
+        with st.container(border=True):
+            xgbGraphCol, _, xgbEvalCol= st.columns([10, 1, 10])
+
+            with xgbGraphCol:
+                xgbModel = getModel('xgb_regression.pkl', GradientBoostingRegressor(n_estimators=100, random_state=42), 
+                                       X_train=X_train, y_train=y_train)
+
+                y_pred_xgb = xgbModel.predict(X_test)
+                y_pred_xgb.clip(0, y_pred_xgb.max())
+
+                sortedxgbResults = pd.DataFrame({'Actual Values': y_test, 
+                                            'Predicted Values': y_pred_xgb}
+                                            ).sort_values('Actual Values').reset_index(drop=True)
+                
+                xgbPlot = px.line(sortedxgbResults, y=["Predicted Values", "Actual Values"], 
+                                        color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
+                xgbPlot.update_layout(title="Gradient Boost Regression")
+                st.plotly_chart(xgbPlot)
+
+            with xgbEvalCol:
+                xgbPredDollars = np.expm1(y_pred_xgb) # undo log transform
+                xgbR2 = r2_score(y_test, y_pred_xgb)
+                xgbRMSE = np.sqrt(mean_squared_error(y_test_dollars, xgbPredDollars))
+
+                st.markdown("##### Model Evaluation")
+                st.markdown(f"**R<sup>2</sup>** = {xgbR2:.4f}", unsafe_allow_html=True)
+                st.markdown(f"**RMSE** = ${xgbRMSE:.2f}", unsafe_allow_html=True)
