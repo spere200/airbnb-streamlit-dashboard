@@ -10,6 +10,7 @@ import tabs.nonNumeric as nonNumeric
 import tabs.outliers as outliers
 import tabs.charts as charts
 import tabs.hypothesisTesting as hypothesisTesting
+import tabs.unsupervisedLearning as unsupervisedLearning
 
 st.set_page_config(layout="wide")
 
@@ -24,13 +25,15 @@ df = loadData('./data/listings.csv')
  nonNumericTab, 
  outliersTab,
  chartsTab,
- hypothesisTestingTab) = st.tabs(["Raw Data Summary", 
+ hypothesisTestingTab,
+ unsupervisedLearningTab) = st.tabs(["Raw Data Summary", 
                         "Handling Missing Values", 
                         "Feature Removal",
                         "Handling Non-Numeric Columns",
                         "Removing Outliers",
                         "Charts",
-                        "Hypothesis Testing"])
+                        "Hypothesis Testing",
+                        "Unsupervised Learning"])
 
 with summaryTab:
     summary.render(df)
@@ -52,6 +55,9 @@ with chartsTab:
 
 with hypothesisTestingTab:
     hypothesisTesting.render(cleanedDf)
+
+with unsupervisedLearningTab:
+    unsupervisedLearning.render(cleanedDf)
 
 
 # DONE Load & inspect — Get the data into memory, check shape, columns, data types
