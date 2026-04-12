@@ -12,7 +12,7 @@ def render(df: pd.DataFrame):
 
     # Cluster and plot
     with st.container(border=True):
-        nClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=5, value=3, key='ncluster-selector')
+        nClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=10, value=7, key='ncluster-selector')
         clusterColors = {str(i): px.colors.qualitative.Plotly[i] for i in range(nClusters)}
         kmeans = KMeans(n_clusters=nClusters, random_state=42)
         neighborhoodDf['cluster'] = kmeans.fit_predict(neighborhoodDf[['price']])
@@ -23,29 +23,57 @@ def render(df: pd.DataFrame):
         st.plotly_chart(clusterBarChart)
 
     st.subheader('Using Clusters to Find Best Neighborhoods for Each Price Range')
-    col1, col2 = st.columns([1, 1])
+    bestPriceCol, bestRatingCol = st.columns([1, 1])
 
-    with col1:
+    with bestPriceCol:
         with st.container(border=True):
             bestDealNeighborhoods = neighborhoodDf.groupby('cluster')['price'].idxmin()
             bestDeals = neighborhoodDf.loc[bestDealNeighborhoods].sort_values('price')
             bestDealsPlot = px.bar(bestDeals.reset_index(), x='neighbourhood_cleansed', y='price',
                 color=bestDeals['cluster'].astype('str').values,
                 color_discrete_map=clusterColors)
-            bestDealsPlot.update_layout(showlegend=False, title='Best Neighborhoods by Price',
+            bestDealsPlot.update_layout(showlegend=False, title='Best Priced Neighborhoods by Cluster',
                                         xaxis_title='Neighborhoods', yaxis_title='Price')
             bestDealsPlot.update_traces(texttemplate='$%{y:.0f}', textposition='outside')
             st.plotly_chart(bestDealsPlot)
 
-    with col2:
+    with bestRatingCol:
         with st.container(border=True):
             bestRatedNeighborhoods = neighborhoodDf.groupby('cluster')['review_scores_rating'].idxmax()
             bestRated = neighborhoodDf.loc[bestRatedNeighborhoods].sort_values('price')
             bestRatedPlot = px.bar(bestRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
                 color=bestDeals.reset_index()['cluster'].astype(str).values,
                 color_discrete_map=clusterColors)
-            bestRatedPlot.update_layout(showlegend=False, title='Best Rated Neighborhood by Cluster',
+            bestRatedPlot.update_layout(showlegend=False, title='Best Rated Neighborhoods by Cluster',
                                         xaxis_title='Neighborhoods', yaxis_title='Ratings')
             bestRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
+            bestRatedPlot.update_yaxes(range=[4, 5.2])
             st.plotly_chart(bestRatedPlot, key='best-ratings-plot')
+
+    worstPriceCol, worstRatingCol = st.columns([1, 1])
+
+    with worstPriceCol:
+        with st.container(border=True):
+            worstDealNeighborhoods = neighborhoodDf.groupby('cluster')['price'].idxmax()
+            worstDeals = neighborhoodDf.loc[worstDealNeighborhoods].sort_values('price')
+            worstDealsPlot = px.bar(worstDeals.reset_index(), x='neighbourhood_cleansed', y='price',
+                color=worstDeals['cluster'].astype('str').values,
+                color_discrete_map=clusterColors)
+            worstDealsPlot.update_layout(showlegend=False, title='Worst Priced Neighborhoods by Cluster',
+                                        xaxis_title='Neighborhoods', yaxis_title='Price')
+            worstDealsPlot.update_traces(texttemplate='$%{y:.0f}', textposition='outside')
+            st.plotly_chart(worstDealsPlot)
+
+    with worstRatingCol:
+        with st.container(border=True):
+            worstRatedNeighborhoods = neighborhoodDf.groupby('cluster')['review_scores_rating'].idxmin()
+            worstRated = neighborhoodDf.loc[worstRatedNeighborhoods].sort_values('price')
+            worstRatedPlot = px.bar(worstRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
+                color=worstDeals.reset_index()['cluster'].astype(str).values,
+                color_discrete_map=clusterColors)
+            worstRatedPlot.update_layout(showlegend=False, title='Worst Rated Neighborhoods by Cluster',
+                                        xaxis_title='Neighborhoods', yaxis_title='Ratings')
+            worstRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
+            worstRatedPlot.update_yaxes(range=[4, 5.2])
+            st.plotly_chart(worstRatedPlot, key='worst-ratings-plot')
 

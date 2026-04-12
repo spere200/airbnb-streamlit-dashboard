@@ -4,6 +4,8 @@ import plotly.express as px
 
 import numpy as np
 
+import pickle
+import os
 # import math
 
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -16,6 +18,23 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 
 from sklearn.preprocessing import MinMaxScaler
+
+def getModel(name, model, X_train, y_train):
+    path = os.path.join('models', f"{name}.pkl")
+
+    # if model exists, fetch it, otherwise train it and save it
+    if os.path.exists(path):
+        with open(path, 'rb') as f:
+            return pickle.load(f)
+    
+    model.fit(X_train, y_train)
+    os.makedirs('models', exist_ok=True)
+
+    with open(path, 'wb') as f:
+        pickle.dump(model, f)
+
+    return model
+
 
 def render(df: pd.DataFrame):
     dataPreprocessingTab, modelPredictionTab = st.tabs(['Data Preprocessing', 'Model Training and Predictions'])
@@ -69,8 +88,8 @@ def render(df: pd.DataFrame):
             lrGraphCol, _, lrEvalCol= st.columns([10, 1, 10])
 
             with lrGraphCol:
-                linRegModel = LinearRegression()
-                linRegModel.fit(X_train, y_train)
+                linRegModel = getModel('linear_regression.pkl', LinearRegression(), 
+                                       X_train=X_train, y_train=y_train)
 
                 y_pred_linreg = linRegModel.predict(X_test)
                 y_pred_linreg = y_pred_linreg.clip(0, y_pred_linreg.max()) # clip predictions so negative dollar amounts aren't shown
@@ -102,8 +121,8 @@ def render(df: pd.DataFrame):
             knnGraphCol, _, knnEvalCol= st.columns([10, 1, 10])
 
             with knnGraphCol:
-                knnModel = KNeighborsRegressor(n_neighbors=4)
-                knnModel.fit(X_train, y_train)
+                knnModel = getModel('knn_regression.pkl', KNeighborsRegressor(n_neighbors=4), 
+                                       X_train=X_train, y_train=y_train)
 
                 y_pred_knn = knnModel.predict(X_test)
                 y_pred_knn.clip(0, y_pred_knn.max())
@@ -125,8 +144,8 @@ def render(df: pd.DataFrame):
             svrGraphCol, _, svrEvalCol= st.columns([10, 1, 10])
 
             with svrGraphCol:
-                svrModel = SVR()
-                svrModel.fit(X_train, y_train)
+                svrModel = getModel('svr_regression.pkl', SVR(), 
+                                       X_train=X_train, y_train=y_train)
 
                 y_pred_svr = svrModel.predict(X_test)
                 y_pred_svr.clip(0, y_pred_svr.max())
@@ -148,8 +167,9 @@ def render(df: pd.DataFrame):
             dtGraphCol, _, dtEvalCol= st.columns([10, 1, 10])
 
             with dtGraphCol:
-                treeModel = DecisionTreeRegressor(random_state=42)
-                treeModel.fit(X_train, y_train)
+                treeModel = getModel('dt_regression.pkl', DecisionTreeRegressor(random_state=42), 
+                                       X_train=X_train, y_train=y_train)
+                
                 y_pred_tree = treeModel.predict(X_test)
                 y_pred_tree.clip(0, y_pred_tree.max())
                 y_pred_tree_scaled = priceScaler.inverse_transform(y_pred_tree.reshape(-1, 1)).flatten()
@@ -170,8 +190,9 @@ def render(df: pd.DataFrame):
             rfGraphCol, _, rfEvalCol= st.columns([10, 1, 10])
 
             with rfGraphCol:
-                forestModel = RandomForestRegressor(n_estimators=100, random_state=42)
-                forestModel.fit(X_train, y_train)
+                forestModel = getModel('rf_regression.pkl', RandomForestRegressor(n_estimators=100, random_state=42), 
+                                       X_train=X_train, y_train=y_train)
+
                 y_pred_forest = forestModel.predict(X_test)
                 y_pred_forest.clip(0, y_pred_forest.max())
                 y_pred_forest_scaled = priceScaler.inverse_transform(y_pred_forest.reshape(-1, 1)).flatten()

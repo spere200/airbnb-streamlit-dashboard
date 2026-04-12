@@ -29,6 +29,7 @@ def render(df: pd.DataFrame):
     with st.container(border=True):
         catSelection = st.selectbox("Select a Feature to View its Distribution", 
                                     options=nonNumericCols,
+                                    index=list(nonNumericCols).index('neighbourhood_cleansed'),
                                     key="cat-selectbox")
         catPlot = px.bar(df[catSelection].value_counts().reset_index(), x=catSelection, y='count')
         barWidth = min(0.8, 0.2 * df[catSelection].nunique()) # dynamically calculate a good bar width depending on selected col

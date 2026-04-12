@@ -59,7 +59,7 @@ with hypothesisTestingTab:
     hypothesisTesting.render(cleanedDf)
 
 with unsupervisedLearningTab:
-    unsupervisedLearning.render(cleanedDf)
+    unsupervisedLearning.render(finalFeaturesDf)
 
 with supervisedLearningTab:
     # Keeping outliers in all models and doing log transformation; models were, surprisingly,
