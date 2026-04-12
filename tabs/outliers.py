@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def render(df: pd.DataFrame):
-    st.subheader("Removing Outliers Using the IQR Method")
+    st.markdown("### Removing Outliers Using the IQR Method")
 
     st.markdown("After testing regression models, I found much better results by keeping outliers in and performing " \
     "a log transformation on numeric columns. As such, there was no need to remove outliers for the training set. " \
@@ -27,7 +27,7 @@ def render(df: pd.DataFrame):
             st.markdown(f"* **{col}**: {removed} outliers removed.")
             df = df[conditions]
 
-    st.subheader("Descriptive Statistics for Dataset With Outliers Removed")
+    st.markdown("### Descriptive Statistics for Dataset With Outliers Removed")
     st.caption(f"{len(df.columns)} features, {len(df)} entries")
     st.dataframe(df.describe())
 

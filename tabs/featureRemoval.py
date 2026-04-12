@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 
 def render(df: pd.DataFrame):
-    st.subheader("Preview of Dataframe After Handling Missing Values")
+    st.markdown("### Preview of Dataframe After Handling Missing Values")
     st.caption(f"{len(df.columns)} features, {len(df)} entries")
     st.dataframe(df.head())
 
-    st.subheader("Removing Unexplained/Irrelevant Features")
+    st.markdown("### Removing Unexplained/Irrelevant Features")
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -54,8 +54,8 @@ def render(df: pd.DataFrame):
             st.write(noVarianceCols)
 
         dfReducedFeatures = df.drop(columns=noVarianceCols, axis=1)
-    
-    st.subheader("Preview of Final Dataset With All Features of Interest")
+
+    st.markdown("### Preview of Final Dataset With All Features of Interest")
     st.caption(f"{len(dfReducedFeatures.columns)} features, {len(dfReducedFeatures)} entries")
     st.dataframe(dfReducedFeatures.head())
 

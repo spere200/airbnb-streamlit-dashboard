@@ -37,6 +37,32 @@ df = loadData('./data/listings.csv')
                         "Unsupervised Learning",
                         "Supervised Learning"])
 
+# Stylings for subheaders and tabs
+st.markdown("""
+<style>
+    .stTabs [data-baseweb="tab"] {
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 4px 4px 0 0;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #DCEDC8;
+        color: black;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+    [data-testid="stMarkdownContainer"] h3 {
+        background-color: #D0D0D0;
+        padding: 8px 4px;
+        margin-bottom: 16px;
+        border-radius: 2px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 with summaryTab:
     summary.render(df)
 

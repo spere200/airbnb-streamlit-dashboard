@@ -4,17 +4,17 @@ import pandas as pd
 from utils import getSummaryDf
 
 def render(df: pd.DataFrame):
-    st.subheader("Data Source")
+    st.markdown("### Data Source")
     st.markdown("Data sourced from [Inside Airbnb](https://insideairbnb.com/get-the-data/), " \
     "licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)")
 
-    st.subheader("Dataframe Preview")
+    st.markdown("### Dataframe Preview")
 
-    previewVisible = st.checkbox("Hide/Show", key=f"summaryPrevCheckbox", value=False)
-    if previewVisible:
-        st.dataframe(df.head())
+    # previewVisible = st.checkbox("Hide/Show", key=f"summaryPrevCheckbox", value=False)
+    # if previewVisible:
+    st.dataframe(df.head())
 
-    st.subheader("Details")
+    st.markdown("### Details")
 
     st.write("##### Feature Summary")
     st.caption(f"{len(df.columns)} features, {len(df)} entries")
@@ -23,5 +23,5 @@ def render(df: pd.DataFrame):
 
     st.dataframe(summaryDf)
 
-    st.write("##### Descriptive Statistics")
+    st.markdown("### Descriptive Statistics")
     st.dataframe(df.describe())

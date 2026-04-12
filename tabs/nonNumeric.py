@@ -3,11 +3,11 @@ import pandas as pd
 import plotly.express as px
 
 def render(df: pd.DataFrame):
-    st.subheader("List of Non-Numeric Features")
+    st.markdown("### List of Non-Numeric Features")
     nonNumericColumns = df.select_dtypes(exclude=["number"]).dtypes
     st.dataframe(nonNumericColumns)
 
-    st.subheader("Converting string Representation of Numbers to int/float")
+    st.markdown("### Converting string Representation of Numbers to int/float")
     st.markdown('**host_response_rate**, **host_acceptance_rate**, and **price** are currently represented ' \
     'as strings. Converting to int/float:')
 
@@ -17,7 +17,7 @@ def render(df: pd.DataFrame):
 
     st.dataframe(df.head())
 
-    st.subheader("Handling Categorical Columns")
+    st.markdown("### Handling Categorical Columns")
     st.markdown("#### Identifying Category Type")
     st.write("")
 
@@ -101,11 +101,11 @@ def render(df: pd.DataFrame):
     
     finalDf = df.drop(columns=["amenities"])
 
-    st.subheader("Preview of Dataframe With Finalized Feature Set")
+    st.markdown("### Preview of Dataframe With Finalized Feature Set")
     st.caption(f"{len(finalDf.columns)} features, {len(finalDf)} entries")
     st.dataframe(finalDf.head())
 
-    st.subheader("Descriptive Statistics")
+    st.markdown("### Descriptive Statistics")
     st.dataframe(finalDf.describe())
 
     return finalDf

@@ -4,15 +4,13 @@ import pandas as pd
 from tabs.summary import getSummaryDf
 
 def render(df: pd.DataFrame):
-    # st.subheader("Handling Missing Values")
-    
-    st.subheader("Features Sorted by Missing Values") 
+    st.markdown("### Features Sorted by Missing Values")
     st.caption(f"{len(df.columns)} features, {len(df)} entries")
     summaryDf = getSummaryDf(df)
     sortedDf = summaryDf.sort_values(by="Missing Value Count", ascending=False) 
     st.dataframe(sortedDf, hide_index=True)
 
-    st.subheader("Removing Features")
+    st.markdown("### Removing Features")
 
     col1, col2, col3 = st.columns(3)
 
@@ -62,12 +60,12 @@ def render(df: pd.DataFrame):
         # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = cleanedDf.dropna(subset=featuresToDropNa)
 
-    st.subheader("Features Summary After Removal") 
+    st.markdown("### Feature Summary After Removal")
     st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
     summaryDf = getSummaryDf(cleanedDf)
     st.dataframe(summaryDf)
-    
-    st.subheader("Deciding What to Do About Remaining Missing Values")
+
+    st.markdown("### Deciding What to Do About Remaining Missing Values")
     st.write("""
         Looking through the data after the initial cleaning step, the following can be performed in order of importance
         to deal with the remaining missing values:  
@@ -90,27 +88,27 @@ def render(df: pd.DataFrame):
         I'll look into host response/acceptance after dealing with the above features, since the numbers are comparatively small.
     """)
 
-    st.write("#### Running dropna() on 'price' and 'estimated_revenue_l365d':")
+    st.write("##### Running dropna() on 'price' and 'estimated_revenue_l365d':")
     cleanedDf = cleanedDf.dropna(subset=["price", "estimated_revenue_l365d"])
     summaryDf = getSummaryDf(cleanedDf)
     st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
     st.dataframe(summaryDf)
     st.caption("It looks like the problem with beds and bedrooms was moslty resolved by the dropna price, so next, I'll be going after reviews instead")
 
-    st.write("#### Running dropna() on review_scores_rating:")
+    st.write("##### Running dropna() on review_scores_rating:")
     cleanedDf = cleanedDf.dropna(subset=["review_scores_rating"])
     summaryDf = getSummaryDf(cleanedDf)
     st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
     st.dataframe(summaryDf)
 
-    st.write("#### Dropping 'host_location' and running dropna on 'host_response_time', 'host_response_rate', 'host_acceptance_rate':")
+    st.write("##### Dropping 'host_location' and running dropna on 'host_response_time', 'host_response_rate', 'host_acceptance_rate':")
     cleanedDf = cleanedDf.dropna(subset=['host_response_rate', 'host_acceptance_rate'])
     cleanedDf = cleanedDf.drop(columns=['host_location'], axis=1)
     summaryDf = getSummaryDf(cleanedDf)
     st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")
     st.dataframe(summaryDf)
 
-    st.write("#### After running dropna on 'beds (1 entry), the dataset now contains no missing values:")
+    st.write("##### After running dropna on 'beds (1 entry), the dataset now contains no missing values:")
     cleanedDf = cleanedDf.dropna(subset=["beds"])
     summaryDf = getSummaryDf(cleanedDf)
     st.caption(f"{len(cleanedDf.columns)} features, {len(cleanedDf)} entries")

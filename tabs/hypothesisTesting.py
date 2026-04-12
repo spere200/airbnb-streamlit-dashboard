@@ -5,14 +5,14 @@ from scipy.stats import norm
 import numpy as np
 
 def render(df: pd.DataFrame):
-    st.markdown("<h3 style='background-color: #cc9a0e; padding: 8px;'>Hypothesis</h3>", unsafe_allow_html=True)
+    st.markdown("### Hypothesis")
     st.markdown("**H<sub>0</sub>**: There is no significant difference in mean price between superhost and non-superhost listings.", unsafe_allow_html=True)
     st.markdown("**H<sub>a</sub>**: Superhost listings have a higher average price than listings by non-superhosts.", unsafe_allow_html=True)
     
     superhostPrices = df[df['host_is_superhost'] == True]['price']
     regularPrices = df[df['host_is_superhost'] == False]['price']
 
-    st.markdown("<h3 style='background-color: #cc9a0e; padding: 8px;'>Two-Sample, One-Tailed Z-Test</h3>", unsafe_allow_html=True)
+    st.markdown("### Two-Sample, One-Tailed Z-Test")
     st.write("Since the sample size is large enough (8,506 entries), I am performing a Z-test.")
     nSuperhost, meanSuperhost, stdSuperhost = len(superhostPrices), superhostPrices.mean(), superhostPrices.std()
     nRegular, meanRegular, stdRegular = len(regularPrices), regularPrices.mean(), regularPrices.std()
