@@ -6,8 +6,8 @@ import numpy as np
 
 def render(df: pd.DataFrame):
     st.markdown("### Hypothesis")
-    st.markdown("**H<sub>0</sub>**: There is no significant difference in mean price between superhost and non-superhost listings.", unsafe_allow_html=True)
-    st.markdown("**H<sub>a</sub>**: Superhost listings have a higher average price than listings by non-superhosts.", unsafe_allow_html=True)
+    st.markdown("**H<sub>0</sub>**: There is no significant difference in mean price between superhost and regular host listings.", unsafe_allow_html=True)
+    st.markdown("**H<sub>a</sub>**: Superhost listings have a higher average price than listings by regular hosts.", unsafe_allow_html=True)
     
     superhostPrices = df[df['host_is_superhost'] == True]['price']
     regularPrices = df[df['host_is_superhost'] == False]['price']
@@ -42,7 +42,7 @@ def render(df: pd.DataFrame):
         st.markdown(f"**P-Value** = {pValue:.4f}", unsafe_allow_html=True)
 
     st.markdown("<p style='text-align: center'>With a <b>p-value</b> of approximately 0, there is extremely " \
-    "strong evidence to reject the null hypothesis. We can safely conclude that superhost listings have a significantly " \
-    "higher average price than regular host listings</p>", unsafe_allow_html=True)
+    "strong evidence to reject the null hypothesis. We can safely conclude that superhost listings have a " \
+    "higher average price than regular host listings.</p>", unsafe_allow_html=True)
 
     

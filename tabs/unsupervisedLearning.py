@@ -44,7 +44,8 @@ def render(df: pd.DataFrame):
             bestRatedPlot = px.bar(bestRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
                 color=bestDeals.reset_index()['cluster'].astype(str).values,
                 color_discrete_map=clusterColors)
-            bestRatedPlot.update_layout(showlegend=False, title='Best Rated Neighborhoods by Cluster',
+            bestRatedPlot.update_layout(showlegend=False, 
+                                        title='Best Rated Neighborhoods by Cluster (Sorted From Cheapest to Most Expensive)',
                                         xaxis_title='Neighborhoods', yaxis_title='Ratings')
             bestRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
             bestRatedPlot.update_yaxes(range=[4, 5.2])
@@ -71,7 +72,8 @@ def render(df: pd.DataFrame):
             worstRatedPlot = px.bar(worstRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
                 color=worstDeals.reset_index()['cluster'].astype(str).values,
                 color_discrete_map=clusterColors)
-            worstRatedPlot.update_layout(showlegend=False, title='Worst Rated Neighborhoods by Cluster',
+            worstRatedPlot.update_layout(showlegend=False, 
+                                        title='Worst Rated Neighborhoods by Cluster (Sorted From Cheapest to Most Expensive)',
                                         xaxis_title='Neighborhoods', yaxis_title='Ratings')
             worstRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
             worstRatedPlot.update_yaxes(range=[4, 5.2])

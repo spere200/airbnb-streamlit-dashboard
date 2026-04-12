@@ -38,7 +38,11 @@ def getModel(name, model, X_train, y_train):
 
 
 def render(df: pd.DataFrame):
-    dataPreprocessingTab, modelPredictionTab = st.tabs(['Data Preprocessing', 'Model Training and Predictions'])
+    (dataPreprocessingTab, 
+     modelPredictionTab, 
+     significantFeaturesTab) = st.tabs(['Data Preprocessing', 
+                                        'Model Training and Predictions',
+                                        'Most Significant Features'])
 
     with dataPreprocessingTab:
         st.subheader('Data Preprocessing')
@@ -46,7 +50,8 @@ def render(df: pd.DataFrame):
         st.caption(f'{len(df.columns)} features, {len(df)} entries')
         st.write(df.head())
 
-        st.markdown('#### Creating a One-Hot Encoded Dataframe for Linear Regression, KNN, and SVR')
+        st.markdown('#### Creating a One-Hot Encoded, Log Transformed, and Normalized Dataframe for Linear ' \
+        'Regression, KNN, and SVR')
         st.markdown('**Steps**: Nomalize numeric columns, One-Hot Encode categorical ' \
         'columns, and convert boolean columns to 0/1.') 
 
@@ -78,7 +83,9 @@ def render(df: pd.DataFrame):
         st.caption(f'{len(encodedDf.columns)} features, {len(encodedDf)} entries')
         st.dataframe(encodedDf.head())
 
-        st.markdown('#### Creating a Label Encoded Dataframe for Decision Tree, Random Forest, and XGBoost')
+        st.markdown('#### Creating a Label Encoded Dataframe with Log Transformed Price for Random Forest and XGBoost') 
+        # treeDf  = pd.get_dummies(treeDf, columns=categoricalCols)
+        # st.dataframe(treeDf.head())
 
         # Label Encode categorical variables
         for col in treeDf.select_dtypes(include='object').columns:
@@ -88,7 +95,7 @@ def render(df: pd.DataFrame):
         st.dataframe(treeDf.head())
 
     with modelPredictionTab:
-        st.subheader('Model Predictions and Performance Assessment')
+        st.subheader('Model Predictions and Performance Assessment') 
 
         # creating the train test split for linear regression, knn, and svr
         X = encodedDf.drop(columns=['price'])
@@ -129,10 +136,11 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {lregR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${lregRMSE:.2f}", unsafe_allow_html=True)
 
-            # featureImportance = pd.DataFrame({'Feature': X.columns, 
-            #                                     'Coefficient': linRegModel.coef_}
-            #                                     ).sort_values('Coefficient', ascending=False)
-            # st.dataframe(featureImportance)
+                st.markdown("###### While the R<sup>2</sup> of this model is decently high, its RMSE " \
+                "is the worst of the bunch. On average, guesses are off by more than the mean value of price (\\$202). " \
+                "This shows that while the model captured the general trend of the data, its average guesses are " \
+                "very far from the mean, and it performs extremely poorrly for both very cheap and very expensive properties.", 
+                unsafe_allow_html=True)
 
         # # Cross validation to check best value for n, result was any value from 4 to 7, choosing 4
         # for n in range(1, 101):
@@ -169,6 +177,12 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {knnR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${knnRMSE:.2f}", unsafe_allow_html=True)
 
+                st.markdown("###### This model has the opposite problem of the previous one; low R<sup>2</sup>, but " \
+                "an RMSE much closer to the mean. As can be seen in the graph, guesses tend to be closer to the actual " \
+                "value towards both extremes of the data, but the predicted values don't seem to follow the line of the actual " \
+                "values as well.", 
+                unsafe_allow_html=True)
+
         with st.container(border=True):
             svrGraphCol, _, svrEvalCol= st.columns([10, 1, 10])
 
@@ -197,6 +211,11 @@ def render(df: pd.DataFrame):
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {svrR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${svrRMSE:.2f}", unsafe_allow_html=True)
+
+                st.markdown("###### Similar performance to the KNN model, with a marginally better R<sup>2</sup>. " \
+                "While predictions on the low end look worse, it captures the trend on the upper half of the " \
+                "data much better.", 
+                unsafe_allow_html=True)
 
         # creating the train test split for decision tree, random forest, and xgboost
         X = treeDf.drop(columns=['price']) 
@@ -232,6 +251,11 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {treeR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${treeRMSE:.2f}", unsafe_allow_html=True)
 
+                st.markdown("###### This single-tree based model shows the highest R<sup>2</sup> yet, " \
+                "but with an RMSE that is only slightly better than the linear regression model. It seems that " \
+                "some predictions in the middle were extremely far off.", 
+                unsafe_allow_html=True)
+
         with st.container(border=True):
             rfGraphCol, _, rfEvalCol= st.columns([10, 1, 10])
 
@@ -260,6 +284,12 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {forestR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${forestRMSE:.2f}", unsafe_allow_html=True)
 
+                st.markdown("###### The first ensemble model, showing a near perfect R<sup>2</sup> with the best RMSE " \
+                "found so far. This model does a great job at capturing the general trend of the data, and guesses are only " \
+                "off by \\$89.78 on average, which is excellent for a dataset where the standard deviation (\\$1,109) is 5 greater " \
+                "than the mean (\\$202).", 
+                unsafe_allow_html=True)
+
         with st.container(border=True):
             xgbGraphCol, _, xgbEvalCol= st.columns([10, 1, 10])
 
@@ -287,3 +317,30 @@ def render(df: pd.DataFrame):
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {xgbR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${xgbRMSE:.2f}", unsafe_allow_html=True)
+
+                st.markdown("###### The second ensemble model. The best RMSE so far with an R<sup>2</sup> that's very close to " \
+                "the random forest model.", 
+                unsafe_allow_html=True)
+
+    with significantFeaturesTab:
+        st.subheader("Extracting Most Significant Features From RandomForest and XGBoost")
+
+        impCol1, impCol2 = st.columns([1, 1])
+
+        with impCol1:
+            st.markdown("##### Random Forest")
+            forestImportance = pd.DataFrame({
+                'Feature': X_train.columns,
+                'Importance': forestModel.feature_importances_
+            }).sort_values('Importance', ascending=False)
+
+            st.dataframe(forestImportance)
+
+        with impCol2:
+            st.markdown("##### XGBoost")
+            xgbImportance = pd.DataFrame({
+                'Feature': X_train.columns,
+                'Importance': xgbModel.feature_importances_
+            }).sort_values('Importance', ascending=False)
+
+            st.dataframe(xgbImportance)
