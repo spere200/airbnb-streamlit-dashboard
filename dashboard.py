@@ -93,15 +93,3 @@ with supervisedLearningTab:
     # modles had no way of lerning what made a property extremely espensive/extremely cheap,
     # since most of the mistakes were at the low and high ends of price, the middle was mostly fine
     supervisedLearning.render(finalFeaturesDf)
-
-
-# DONE Load & inspect — Get the data into memory, check shape, columns, data types
-# Check for missing values — Identify gaps, decide how to handle them
-# Examine distributions — Histograms, box plots for numerical features; value counts for categorical
-# DONE Summarize statistics — Mean, median, std dev, quartiles, etc.
-# Look for outliers — Identify unusual values that might skew analysis
-# Explore relationships — Correlations between variables, scatter plots, cross-tabulations
-# Check data quality — Duplicates, inconsistencies, typos, unexpected values
-# Segment & group — Break data into subsets to spot patterns
-# Visualize patterns — Create charts to reveal trends, clusters, anomalies
-# Generate hypotheses — Note interesting findings to test later
