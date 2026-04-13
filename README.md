@@ -8,4 +8,4 @@ streamlit run dashboard.py
 
 First time running might take a bit, the dataset is very large and it comes with some pre-trained models as well that need to be loaded.
 
-Hosted on Streamlit's Community Cloud at [sl-airbnb-dashboard.streamlit.app](sl-airbnb-dashboard.streamlit.app)
+Hosted on Streamlit's Community Cloud at [sl-airbnb-dashboard.streamlit.app](https://sl-airbnb-dashboard.streamlit.app/)
