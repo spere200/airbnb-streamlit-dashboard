@@ -105,21 +105,23 @@ def render(df: pd.DataFrame):
 
 
         # getting the actual dollar amount of the test set for nore explainable metrics
-        y_test_unscaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten() # undo normalization
-        y_test_dollars = np.expm1(y_test_unscaled) # undo log transform
+        yTestUnscaled = priceScaler.inverse_transform(y_test.values.reshape(-1, 1)).flatten() # undo normalization
+        yTestDollars = np.expm1(yTestUnscaled) # undo log transform
 
         with st.container(border=True):
-            lrGraphCol, _, lrEvalCol= st.columns([10, 1, 10])
+            lrGraphCol, _, lrEvalCol= st.columns([10, 1, 6])
 
             with lrGraphCol:
                 linRegModel = getModel('linear_regression.pkl', LinearRegression(), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_linreg = linRegModel.predict(X_test)
-                y_pred_linreg = y_pred_linreg.clip(0, y_pred_linreg.max()) # clip predictions so negative dollar amounts aren't shown
+                y_pred_linreg = y_pred_linreg
+                lrPredDollars = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()# undo normalization
+                lrPredDollars = np.expm1(lrPredDollars) # undo log transform
                 
-                sortedLinRegResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_linreg}
+                sortedLinRegResults = pd.DataFrame({'Actual Values': yTestDollars,
+                                            'Predicted Values': lrPredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 linRegPlot = px.line(sortedLinRegResults, y=["Predicted Values", "Actual Values"], 
                                         color_discrete_map={'Actual Values': 'green', 'Predicted Values': 'lightblue'})
@@ -127,19 +129,17 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(linRegPlot)
 
             with lrEvalCol:
-                lrPredDollars = priceScaler.inverse_transform(y_pred_linreg.reshape(-1, 1)).flatten()# undo normalization
-                lrPredDollars = np.expm1(lrPredDollars) # undo log transform
                 lregR2 = r2_score(y_test, y_pred_linreg)
-                lregRMSE = np.sqrt(mean_squared_error(y_test_dollars, lrPredDollars))
+                lregRMSE = np.sqrt(mean_squared_error(yTestDollars, lrPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {lregR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${lregRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### While the R<sup>2</sup> of this model is decently high, its RMSE " \
-                "is the worst of the bunch. On average, guesses are off by more than the mean value of price (\\$202). " \
-                "This shows that while the model captured the general trend of the data, its average guesses are " \
-                "very far from the mean, and it performs extremely poorrly for both very cheap and very expensive properties.", 
+                st.markdown("###### While the R<sup>2</sup> of this model is decent, its RMSE " \
+                "is far too high. This shows that while the model captured the general trend of the " \
+                "data, its average guesses are far from the mean, and it performs extremely poorly for the "
+                "more expensive properties as can be observed in the graph.", 
                 unsafe_allow_html=True)
 
         # # Cross validation to check best value for n, result was any value from 4 to 7, choosing 4
@@ -149,7 +149,7 @@ def render(df: pd.DataFrame):
         #     print(f"k={k}: {scores.mean():.2f}")
 
         with st.container(border=True):
-            knnGraphCol, _, knnEvalCol= st.columns([10, 1, 10])
+            knnGraphCol, _, knnEvalCol= st.columns([10, 1, 6])
 
             with knnGraphCol:
                 knnModel = getModel('knn_regression.pkl', KNeighborsRegressor(n_neighbors=4), 
@@ -157,9 +157,11 @@ def render(df: pd.DataFrame):
 
                 y_pred_knn = knnModel.predict(X_test)
                 y_pred_knn.clip(0, y_pred_knn.max())
+                knnPredDollars = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()# undo normalization
+                knnPredDollars = np.expm1(knnPredDollars) # undo log transform
 
-                sortedKnnResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_knn}
+                sortedKnnResults = pd.DataFrame({'Actual Values': yTestDollars, 
+                                            'Predicted Values': knnPredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 knnPlot = px.line(sortedKnnResults, y=["Predicted Values", "Actual Values"], 
@@ -168,23 +170,19 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(knnPlot)
 
             with knnEvalCol:
-                knnPredDollars = priceScaler.inverse_transform(y_pred_knn.reshape(-1, 1)).flatten()# undo normalization
-                knnPredDollars = np.expm1(knnPredDollars) # undo log transform
                 knnR2 = r2_score(y_test, y_pred_knn)
-                knnRMSE = np.sqrt(mean_squared_error(y_test_dollars, knnPredDollars))
+                knnRMSE = np.sqrt(mean_squared_error(yTestDollars, knnPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {knnR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${knnRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### This model has the opposite problem of the previous one; low R<sup>2</sup>, but " \
-                "an RMSE much closer to the mean. As can be seen in the graph, guesses tend to be closer to the actual " \
-                "value towards both extremes of the data, but the predicted values don't seem to follow the line of the actual " \
-                "values as well.", 
+                st.markdown("###### Worst performance in both metrics. It seems like the current dataset does not" \
+                "work very well for this model.", 
                 unsafe_allow_html=True)
 
         with st.container(border=True):
-            svrGraphCol, _, svrEvalCol= st.columns([10, 1, 10])
+            svrGraphCol, _, svrEvalCol = st.columns([10, 1, 6])
 
             with svrGraphCol:
                 svrModel = getModel('svr_regression.pkl', SVR(), 
@@ -192,9 +190,11 @@ def render(df: pd.DataFrame):
 
                 y_pred_svr = svrModel.predict(X_test)
                 y_pred_svr.clip(0, y_pred_svr.max())
+                svrPredDollars = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()# undo normalization
+                svrPredDollars = np.expm1(svrPredDollars) # undo log transform
 
-                sortedSvrResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_svr}
+                sortedSvrResults = pd.DataFrame({'Actual Values': yTestDollars, 
+                                            'Predicted Values': svrPredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 svrPlot = px.line(sortedSvrResults, y=["Predicted Values", "Actual Values"], 
@@ -203,18 +203,15 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(svrPlot)
 
             with svrEvalCol:
-                svrPredDollars = priceScaler.inverse_transform(y_pred_svr.reshape(-1, 1)).flatten()# undo normalization
-                svrPredDollars = np.expm1(svrPredDollars) # undo log transform
                 svrR2 = r2_score(y_test, y_pred_svr)
-                svrRMSE = np.sqrt(mean_squared_error(y_test_dollars, svrPredDollars))
+                svrRMSE = np.sqrt(mean_squared_error(yTestDollars, svrPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {svrR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${svrRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### Similar performance to the KNN model, with a marginally better R<sup>2</sup>. " \
-                "While predictions on the low end look worse, it captures the trend on the upper half of the " \
-                "data much better.", 
+                st.markdown("###### Best performance of all the non-tree based models. Its predictions graph looks " \
+                "similar to the linear regression graph, but it does a better job at handling expensive properties.", 
                 unsafe_allow_html=True)
 
         # creating the train test split for decision tree, random forest, and xgboost
@@ -224,7 +221,7 @@ def render(df: pd.DataFrame):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         with st.container(border=True):
-            dtGraphCol, _, dtEvalCol= st.columns([10, 1, 10])
+            dtGraphCol, _, dtEvalCol= st.columns([10, 1, 6])
 
             with dtGraphCol:
                 treeModel = getModel('dt_regression.pkl', DecisionTreeRegressor(random_state=42), 
@@ -232,9 +229,10 @@ def render(df: pd.DataFrame):
                 
                 y_pred_tree = treeModel.predict(X_test)
                 y_pred_tree.clip(0, y_pred_tree.max())
+                treePredDollars = np.expm1(y_pred_tree) # undo log transform
 
-                sortedTreeResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_tree}
+                sortedTreeResults = pd.DataFrame({'Actual Values': yTestDollars, 
+                                            'Predicted Values': treePredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 treePlot = px.line(sortedTreeResults, y=["Predicted Values", "Actual Values"], 
@@ -243,21 +241,19 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(treePlot)
 
             with dtEvalCol:
-                treePredDollars = np.expm1(y_pred_tree) # undo log transform
                 treeR2 = r2_score(y_test, y_pred_tree)
-                treeRMSE = np.sqrt(mean_squared_error(y_test_dollars, treePredDollars))
+                treeRMSE = np.sqrt(mean_squared_error(yTestDollars, treePredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {treeR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${treeRMSE:.2f}", unsafe_allow_html=True)
 
                 st.markdown("###### This single-tree based model shows the highest R<sup>2</sup> yet, " \
-                "but with an RMSE that is only slightly better than the linear regression model. It seems that " \
-                "some predictions in the middle were extremely far off.", 
+                "with the best RMSE so far. However, the graph does seem to have a lot of noise.",
                 unsafe_allow_html=True)
 
         with st.container(border=True):
-            rfGraphCol, _, rfEvalCol= st.columns([10, 1, 10])
+            rfGraphCol, _, rfEvalCol= st.columns([10, 1, 6])
 
             with rfGraphCol:
                 forestModel = getModel('rf_regression.pkl', RandomForestRegressor(n_estimators=100, random_state=42), 
@@ -265,9 +261,10 @@ def render(df: pd.DataFrame):
 
                 y_pred_forest = forestModel.predict(X_test)
                 y_pred_forest.clip(0, y_pred_forest.max())
+                forestPredDollars = np.expm1(y_pred_forest) # undo log transform
 
-                sortedforestResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_forest}
+                sortedforestResults = pd.DataFrame({'Actual Values': yTestDollars, 
+                                            'Predicted Values': forestPredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 forestPlot = px.line(sortedforestResults, y=["Predicted Values", "Actual Values"], 
@@ -276,9 +273,8 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(forestPlot)
 
             with rfEvalCol:
-                forestPredDollars = np.expm1(y_pred_forest) # undo log transform
                 forestR2 = r2_score(y_test, y_pred_forest)
-                forestRMSE = np.sqrt(mean_squared_error(y_test_dollars, forestPredDollars))
+                forestRMSE = np.sqrt(mean_squared_error(yTestDollars, forestPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {forestR2:.4f}", unsafe_allow_html=True)
@@ -286,12 +282,12 @@ def render(df: pd.DataFrame):
 
                 st.markdown("###### The first ensemble model, showing a near perfect R<sup>2</sup> with the best RMSE " \
                 "found so far. This model does a great job at capturing the general trend of the data, and guesses are only " \
-                "off by \\$89.78 on average, which is excellent for a dataset where the standard deviation (\\$1,109) is 5 greater " \
-                "than the mean (\\$202).", 
+                "off by \\$22.91 on average, which is excellent for this dataset. It seems like having multiple trees guessing " \
+                "eliminated a lot of the noise in the previous model, and expensive properties are being undervalued.", 
                 unsafe_allow_html=True)
 
         with st.container(border=True):
-            xgbGraphCol, _, xgbEvalCol= st.columns([10, 1, 10])
+            xgbGraphCol, _, xgbEvalCol= st.columns([10, 1, 6])
 
             with xgbGraphCol:
                 xgbModel = getModel('xgb_regression.pkl', GradientBoostingRegressor(n_estimators=100, random_state=42), 
@@ -299,9 +295,10 @@ def render(df: pd.DataFrame):
 
                 y_pred_xgb = xgbModel.predict(X_test)
                 y_pred_xgb.clip(0, y_pred_xgb.max())
+                xgbPredDollars = np.expm1(y_pred_xgb) # undo log transform
 
-                sortedxgbResults = pd.DataFrame({'Actual Values': y_test, 
-                                            'Predicted Values': y_pred_xgb}
+                sortedxgbResults = pd.DataFrame({'Actual Values': yTestDollars, 
+                                            'Predicted Values': xgbPredDollars}
                                             ).sort_values('Actual Values').reset_index(drop=True)
                 
                 xgbPlot = px.line(sortedxgbResults, y=["Predicted Values", "Actual Values"], 
@@ -310,16 +307,15 @@ def render(df: pd.DataFrame):
                 st.plotly_chart(xgbPlot)
 
             with xgbEvalCol:
-                xgbPredDollars = np.expm1(y_pred_xgb) # undo log transform
                 xgbR2 = r2_score(y_test, y_pred_xgb)
-                xgbRMSE = np.sqrt(mean_squared_error(y_test_dollars, xgbPredDollars))
+                xgbRMSE = np.sqrt(mean_squared_error(yTestDollars, xgbPredDollars))
 
                 st.markdown("##### Model Evaluation")
                 st.markdown(f"**R<sup>2</sup>** = {xgbR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${xgbRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### The second ensemble model. The best RMSE so far with an R<sup>2</sup> that's very close to " \
-                "the random forest model.", 
+                st.markdown("###### The second ensemble model. Similar performance to the random forest model, but with "
+                "slightly worse performance in both metrics.",
                 unsafe_allow_html=True)
 
     with significantFeaturesTab:
@@ -344,3 +340,7 @@ def render(df: pd.DataFrame):
             }).sort_values('Importance', ascending=False)
 
             st.dataframe(xgbImportance)
+
+        st.markdown("For both of the best performing models, the most important features were **bedrooms**, "
+        "**estimated_revenue_l365d**, **estimated_occupancy_l365d**, **bathrooms**, and **accomodates**. " \
+        "The fact that **estimated_occupancy_l365d** served as a good predictor for price further supports my hypothesis.")

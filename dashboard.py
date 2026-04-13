@@ -26,16 +26,16 @@ df = loadData('./data/listings.csv')
  outliersTab,
  chartsTab,
  hypothesisTestingTab,
- unsupervisedLearningTab,
- supervisedLearningTab) = st.tabs(["Raw Data Summary", 
+  supervisedLearningTab,
+ unsupervisedLearningTab) = st.tabs(["Raw Data Summary", 
                         "Handling Missing Values", 
                         "Feature Removal",
                         "Handling Non-Numeric Columns",
-                        "Removing Outliers",
+                        "Handling Outliers",
                         "Charts",
                         "Hypothesis Testing",
-                        "Unsupervised Learning",
-                        "Supervised Learning"])
+                        "Supervised Learning",
+                        "Unsupervised Learning"])
 
 # Stylings for subheaders and tabs
 st.markdown("""
@@ -84,12 +84,9 @@ with chartsTab:
 with hypothesisTestingTab:
     hypothesisTesting.render(cleanedDf)
 
-with unsupervisedLearningTab:
-    unsupervisedLearning.render(finalFeaturesDf)
-
 with supervisedLearningTab:
-    # Keeping outliers in all models and doing log transformation; models were, surprisingly,
-    # performing worse with outliers removed. My only guess is that without extreme outliers,
-    # modles had no way of lerning what made a property extremely espensive/extremely cheap,
-    # since most of the mistakes were at the low and high ends of price, the middle was mostly fine
-    supervisedLearning.render(finalFeaturesDf)
+    supervisedLearning.render(cleanedDf)
+
+with unsupervisedLearningTab:
+    unsupervisedLearning.render(cleanedDf)
+
