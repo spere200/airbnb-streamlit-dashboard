@@ -283,7 +283,7 @@ def render(df: pd.DataFrame):
                 st.markdown("###### The first ensemble model, showing a near perfect R<sup>2</sup> with the best RMSE " \
                 "found so far. This model does a great job at capturing the general trend of the data, and guesses are only " \
                 "off by \\$22.91 on average, which is excellent for this dataset. It seems like having multiple trees guessing " \
-                "eliminated a lot of the noise in the previous model, and expensive properties are being undervalued.", 
+                "eliminated a lot of the noise in the previous model. However, expensive properties are being undervalued.", 
                 unsafe_allow_html=True)
 
         with st.container(border=True):
