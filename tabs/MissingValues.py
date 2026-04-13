@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from tabs.summary import getSummaryDf
+from utils import getSummaryDf
 
 def render(df: pd.DataFrame):
     st.markdown("### Features Sorted by Missing Values")

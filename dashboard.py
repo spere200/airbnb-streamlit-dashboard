@@ -2,15 +2,8 @@ import streamlit as st
 
 from utils import loadData
 
-import tabs.summary as summary
-import tabs.missingValues as missingValues
-import tabs.featureRemoval as featureRemoval
-import tabs.nonNumeric as nonNumeric
-import tabs.outliers as outliers
-import tabs.charts as charts
-import tabs.hypothesisTesting as hypothesisTesting
-import tabs.unsupervisedLearning as unsupervisedLearning
-import tabs.supervisedLearning as supervisedLearning
+# import pages
+from sections import DataCleaningSection
 
 st.set_page_config(layout="wide")
 
@@ -18,52 +11,28 @@ st.set_page_config(layout="wide")
 with open("styles.css", "r") as f: cssString = f.read()
 st.markdown(f"<style>{cssString}</style>", unsafe_allow_html=True)
 
-st.title("Broward County Airbnb Listings Dashboard")
-df = loadData('./data/listings.csv')
+df = loadData('./data/listings.csv') # initial dataframe
 
-# create tabs
-(summaryTab, 
- missingValuesTab, 
- featureRemovalTab, 
- nonNumericTab, 
- outliersTab,
- chartsTab,
- hypothesisTestingTab,
-  supervisedLearningTab,
- unsupervisedLearningTab) = st.tabs(["Raw Data Summary", 
-                        "Handling Missing Values", 
-                        "Feature Removal",
-                        "Handling Non-Numeric Columns",
-                        "Handling Outliers",
-                        "Charts",
-                        "Hypothesis Testing",
-                        "Supervised Learning",
-                        "Unsupervised Learning"])
+with st.sidebar:
+    st.markdown("""
+    <div style='padding:1rem 0 0.8rem 0;'>
+    <div style='font-family:"Playfair Display",serif; font-size:1.25rem;
+    color:#f0c040; font-weight:700; line-height:1.4;'>
+    Intro to NLP<br>
+    </div>
+    <div class='tag'><br>FIU - Data Science <br> Prof. Gregory Murad Reis</div>
+    </div>
+    <hr>
 
-with summaryTab:
-    summary.render(df)
+    """, unsafe_allow_html=True)
 
-with missingValuesTab:
-    dfNoMissingValues = missingValues.render(df)
+    page = st.radio("", [
+    "Data Cleaning",
+    "EDA",
+    "Hypothesis Test",
+    "Supervised Learning",
+    "Unsupervised Learning",
+    ], label_visibility="collapsed")
 
-with featureRemovalTab:
-    dfFinalFeatures = featureRemoval.render(dfNoMissingValues)
-
-with nonNumericTab:
-    finalFeaturesDf = nonNumeric.render(dfFinalFeatures)
-
-with outliersTab:
-    cleanedDf = outliers.render(finalFeaturesDf)
-
-with chartsTab:
-    charts.render(cleanedDf)
-
-with hypothesisTestingTab:
-    hypothesisTesting.render(cleanedDf)
-
-with supervisedLearningTab:
-    supervisedLearning.render(cleanedDf)
-
-with unsupervisedLearningTab:
-    unsupervisedLearning.render(cleanedDf)
-
+if page == "Data Cleaning":
+    DataCleaningSection.render(df)

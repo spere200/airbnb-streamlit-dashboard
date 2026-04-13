@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 def render(df: pd.DataFrame):
     st.markdown("### Preview of Dataframe After Handling Missing Values")
@@ -10,19 +11,17 @@ def render(df: pd.DataFrame):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        irrelevantCols = ['latitude', 'longitude', 'host_verifications', 'number_of_reviews_ltm', 'number_of_reviews_l30d',
-                          'number_of_reviews_ly', 'availability_30', 'availability_60', 'availability_90', 'availability_eoy', 
-                          'host_listings_count', 'host_has_profile_pic']
+        irrelevantCols = ['host_verifications', 'number_of_reviews_ltm', 'number_of_reviews_l30d', 'number_of_reviews_ly',
+                          'reviews_per_month', 'availability_30', 'availability_60', 'availability_90', 'availability_eoy', 
+                          'host_listings_count', 'host_has_profile_pic', 'number_of_reviews_ly']
         
         st.write("##### Removing Irrelevant Features")
         with st.container(border=True, height=400):    
-            st.markdown('* **latitude** and **longitude** can be removed, since similar but much more useful information '
-            'is encoded in **neighborhood_cleansed**.')
             st.markdown('* **host_verifications** contains no empty rows since verification appears to be mandatory, and ' \
             '**host_identity_verified** contains much more important information than just verification method.')
             st.markdown("* Since this analysis focuses on general information about the properties, granular data such as" \
             " **number_of_reviews_l30d** can be removed when more general information such as **number_of_reviews** exists.")
-            st.markdown("* Some columns (such as **host_has_profile_pic**) are of no interest to me.")
+            st.markdown("* Some columns (such as **host_has_profile_pic**) are of no interest.")
 
             st.write("Affected columns:")
             st.write(irrelevantCols)
@@ -54,6 +53,20 @@ def render(df: pd.DataFrame):
             st.write(noVarianceCols)
 
         dfReducedFeatures = df.drop(columns=noVarianceCols, axis=1)
+
+    st.markdown("### Correlation Analysis to Find Redundant Features")
+    reducedDfNumeric = dfReducedFeatures.select_dtypes(include='number')
+    reducedFeaturesCorr = reducedDfNumeric.corr()
+    reducedFeaturesCorrPlot = px.imshow(reducedFeaturesCorr, 
+                                        text_auto=".2f", 
+                                        color_continuous_scale="RdBu_r", 
+                                        aspect="auto")
+    reducedFeaturesCorrPlot.update_layout(height=800)
+    st.plotly_chart(reducedFeaturesCorrPlot)
+
+    st.markdown("Upon closer examination, it seems like review types are highly correlated with each other, and features indicative of " \
+    "property size such as **bedrooms**, **accomodates**, etc. are as well. This is not surprising, however I am opting to keep all " \
+    "these features since their correlation coefficients are not extremely high and they might have differing effects on price prediction.")
 
     st.markdown("### Preview of Final Dataset With All Features of Interest")
     st.caption(f"{len(dfReducedFeatures.columns)} features, {len(dfReducedFeatures)} entries")
