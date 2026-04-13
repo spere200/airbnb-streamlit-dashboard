@@ -45,8 +45,8 @@ def render(df: pd.DataFrame):
         st.markdown(f'**P-Value** = {pValue:.10f}', unsafe_allow_html=True)
 
     if pValue < 0.05:
-        conclusion = (f'With a **p-value** of {pValue:.10f}, there is strong evidence to reject the null hypothesis. '
-                      f'We can conclude that listings with higher estimated occupancy have a lower average price '
+        conclusion = (f'With a <b>p-value</b> of {pValue:.10f}, there is strong evidence to reject the null hypothesis. '
+                      'We can conclude that listings with higher estimated occupancy have a lower average price '
                       f'(${meanHigh:.2f}) compared to listings with lower occupancy (${meanLow:.2f}).')
     else:
         conclusion = (f'With a <b>p-value</b> of {pValue:.10f}, there is insufficient evidence to reject the null hypothesis. '
