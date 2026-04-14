@@ -3,6 +3,6 @@ import streamlit as st
 from tabs import UnsupervisedLearning
 
 def render():
-    cleanDf = st.session_state.cleanDf
-    cleanDf = cleanDf.drop(columns=['latitude', 'longitude'])
-    UnsupervisedLearning.render(cleanDf)
+    finalDf = st.session_state.finalDf
+    finalDf = finalDf.drop(columns=['latitude', 'longitude'])
+    UnsupervisedLearning.render(finalDf)

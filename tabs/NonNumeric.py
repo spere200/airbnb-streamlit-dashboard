@@ -96,7 +96,10 @@ def render(df: pd.DataFrame):
     corrMatrix = df[correlationColumns].corr().iloc[[0]]
 
     corrHeatMap = px.imshow(corrMatrix, text_auto=".2f")
-    st.plotly_chart(corrHeatMap)
+    st.plotly_chart(corrHeatMap, 
+                    text_auto=".2f",
+                    color_continuous_scale="RdBu_r",
+                    aspect="auto")
     st.write("It looks like the number of amenities is not correlated with any relevant value. As such, it should be safe to drop amenities.")
     
     finalDf = df.drop(columns=["amenities"])

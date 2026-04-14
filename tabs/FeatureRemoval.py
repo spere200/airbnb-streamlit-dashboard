@@ -13,10 +13,10 @@ def render(df: pd.DataFrame):
     with col1:
         irrelevantCols = ['host_verifications', 'number_of_reviews_ltm', 'number_of_reviews_l30d', 'number_of_reviews_ly',
                           'reviews_per_month', 'availability_30', 'availability_60', 'availability_90', 'availability_eoy', 
-                          'host_listings_count', 'host_has_profile_pic', 'number_of_reviews_ly']
+                          'host_listings_count', 'host_has_profile_pic', 'number_of_reviews_ly', 'maximum_nights']
         
-        st.write("##### Removing Irrelevant Features")
-        with st.container(border=True, height=400):    
+        st.write("##### Removing Irrelevant Features") 
+        with st.container(border=True, height=520):
             st.markdown('* **host_verifications** contains no empty rows since verification appears to be mandatory, and ' \
             '**host_identity_verified** contains much more important information than just verification method.')
             st.markdown("* Since this analysis focuses on general information about the properties, granular data such as" \
@@ -24,7 +24,7 @@ def render(df: pd.DataFrame):
             st.markdown("* Some columns (such as **host_has_profile_pic**) are of no interest.")
 
             st.write("Affected columns:")
-            st.write(irrelevantCols)
+            st.markdown(", ".join([f"**{col}**" for col in irrelevantCols])) 
 
         df = df.drop(columns=irrelevantCols, axis=1)
 
@@ -34,23 +34,21 @@ def render(df: pd.DataFrame):
                            "calculated_host_listings_count_private_rooms", "calculated_host_listings_count_shared_rooms", 
                            "calculated_host_listings_count"]
 
-        st.write("##### Removing Unexplained Features")
-        with st.container(border=True, height=400):    
+        st.write("##### Removing Unexplained Features")  
+        with st.container(border=True, height=520):
             st.write("The following features are not explained anywhere in the dataset source, and their meaning cannot " \
-            "be extrapolated from their name. As such, I am opting for their removal:")
-            st.write(unexplainedCols)
+            "be extrapolated from their name. As such, I am opting for their removal.")
+            st.write("Affected columns:")
+            st.markdown(", ".join([f"**{col}**" for col in unexplainedCols]))
 
         df = df.drop(columns=unexplainedCols, axis=1)
 
     with col3:
-        noVarianceCols = [col for col in df.columns if df[col].nunique() == 1]
-
-        st.write()
-
-        st.write("##### Removing Columns With No Variance")
-        with st.container(border=True, height=400):    
+        st.write("##### Removing Columns With No Variance")   
+        with st.container(border=True, height=520):
+            noVarianceCols = [col for col in df.columns if df[col].nunique() == 1]
             st.write("The following columns only have a single value across all rows:")
-            st.write(noVarianceCols)
+            st.markdown(", ".join([f"**{col}**" for col in noVarianceCols]))
 
         dfReducedFeatures = df.drop(columns=noVarianceCols, axis=1)
 
