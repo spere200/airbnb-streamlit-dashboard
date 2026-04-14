@@ -22,14 +22,14 @@ def render(df: pd.DataFrame):
     
     st.markdown("### Clipping Price")
     st.markdown("##### Finding a Good Percentile to Clip")
-    percentiles = [0.95, 0.96, 0.97, 0.98, 0.99, 1]
+    percentiles = [round(0.99 + i * 0.001, 4) for i in range(11)]
     percentileDf = pd.DataFrame({
-        'Percentile': [f"{p:.0%}" for p in percentiles],
-        'Price': [f"${df['price'].quantile(p):.2f}" for p in percentiles]
+        'Percentile': [f"{p:.2%}" for p in percentiles],
+        'Price': [f"${df['price'].quantile(min(p, 1.0)):.2f}" for p in percentiles]
     })
 
     st.dataframe(percentileDf)
-    st.markdown("Conclusion: The top 1\\% of property prices can be clipped")
+    st.markdown("The first big jump happens after 99.80%, using that to clip.")
 
     st.markdown("### Descriptive Statistics After Outlier Removal")
     st.caption(f"{len(df) - len(st.session_state.finalDf)} entries removed.")

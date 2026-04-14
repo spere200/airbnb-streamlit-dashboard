@@ -138,8 +138,9 @@ def render(df: pd.DataFrame):
 
                 st.markdown("###### While the R<sup>2</sup> of this model is decent, its RMSE " \
                 "is far too high. This shows that while the model captured the general trend of the " \
-                "data, its average guesses are far from the actual value. It performs extremely poorly for the "
-                "more expensive properties as can be observed in the graph.", 
+                "data, its average guesses are far from the actual value. It seems to be extremely sensitive " \
+                "to outlierrs, since it performs extremely poorly for expensive properties, which is where " \
+                "the vast majority of outliers lie.", 
                 unsafe_allow_html=True)
 
         # # Cross validation to check best value for n, result was any value from 4 to 7, choosing 4
@@ -319,28 +320,40 @@ def render(df: pd.DataFrame):
                 unsafe_allow_html=True)
 
     with significantFeaturesTab:
-        st.subheader("Extracting Most Significant Features From RandomForest and XGBoost")
-
-        impCol1, impCol2 = st.columns([1, 1])
-
-        with impCol1:
-            st.markdown("##### Random Forest")
+        with st.container(border=True):
             forestImportance = pd.DataFrame({
                 'Feature': X_train.columns,
                 'Importance': forestModel.feature_importances_
             }).sort_values('Importance', ascending=False)
 
-            st.dataframe(forestImportance)
-
-        with impCol2:
-            st.markdown("##### XGBoost")
             xgbImportance = pd.DataFrame({
                 'Feature': X_train.columns,
                 'Importance': xgbModel.feature_importances_
             }).sort_values('Importance', ascending=False)
 
-            st.dataframe(xgbImportance)
+            forestImportance['Model'] = 'Random Forest'
+            xgbImportance['Model'] = 'XGBoost'
 
-        st.markdown("For both of the best performing models, the most important features were **bedrooms**, "
-        "**estimated_revenue_l365d**, **estimated_occupancy_l365d**, **bathrooms**, and **accomodates**. " \
-        "The fact that **estimated_occupancy_l365d** served as a good predictor for price further supports my hypothesis.")
+            combined = pd.concat([
+                forestImportance.head(8),
+                xgbImportance.head(8)
+            ]).sort_values('Importance', ascending=False)
+
+            combinedPlot = px.bar(
+                combined,
+                x='Feature',
+                y='Importance',
+                color='Model',
+                color_discrete_map={
+                    'Random Forest': '#2166ac',
+                    'XGBoost': '#d6604d'
+                },
+                barmode='group',
+                title='Most Important Features by Model'
+            )
+            st.plotly_chart(combinedPlot, use_container_width=True)
+
+            st.markdown('---')
+            st.markdown("For both of the best performing models, the most important features were **bathrooms**, "
+            "**estimated_revenue_l365d**, **bedrooms**, **estimated_occupancy_l365d**, and **accomodates**. " \
+            "The fact that **estimated_occupancy_l365d** served as a good predictor for price further supports my hypothesis.")
