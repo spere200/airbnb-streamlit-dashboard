@@ -94,12 +94,11 @@ def render(df: pd.DataFrame):
     correlationColumns = ['amenities', 'price', 'estimated_occupancy_l365d', 'review_scores_rating', 
                           'review_scores_accuracy', 'review_scores_value']
     corrMatrix = df[correlationColumns].corr().iloc[[0]]
-
-    corrHeatMap = px.imshow(corrMatrix, text_auto=".2f")
-    st.plotly_chart(corrHeatMap, 
+    corrHeatMap = px.imshow(corrMatrix, 
                     text_auto=".2f",
-                    color_continuous_scale="RdBu_r",
-                    aspect="auto")
+                    color_continuous_scale="RdBu_r")
+    st.plotly_chart(corrHeatMap)
+    
     st.write("It looks like the number of amenities is not correlated with any relevant value. As such, it should be safe to drop amenities.")
     
     finalDf = df.drop(columns=["amenities"])

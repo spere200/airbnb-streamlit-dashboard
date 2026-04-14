@@ -1,6 +1,6 @@
 import streamlit as st
 
-from tabs import OutlierCharts, Outliers, Charts, Map
+from tabs import Maps, OutlierCharts, Outliers, Charts
 
 def render():
     # create tabs of the EDA page
@@ -25,5 +25,5 @@ def render():
         Charts.render(finalDf)
 
     with mapTab:
-        Map.render(finalDf)
+        Maps.render(finalDf)
     

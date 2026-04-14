@@ -12,13 +12,13 @@ def render(df: pd.DataFrame):
     "I decided to use separate methods to remove outliers from some features.")
 
     st.markdown("* Bounded features such as **review_scores_rating** and **host_response_rate** will be ignored")
-    st.markdown("""* Features indicative of property size or value, such as **accomodates** were also ignored;
+    st.markdown("""* Features indicative of property size or value, such as **accomodates** will also be ignored;
     removing extreme **price** outliers should take care of most unreasonably-sized properties anyways.""")
     st.markdown("""* **price** will have its outliers removed using percentile clipping, since a very small number of properties
     are single handedly driving the mean up into the thousands; the 75th percentile has a value of \\$204, and the mean is \\$202, 
     with a max of \\$57,066.""")
     st.markdown("""* **minimum_nights** will have any value above 31 (a month) removed as an outlier; this removes most extreme 
-                outliers, and having a minimum stay above 30 days seems unusual.""")
+                outliers, and having a minimum stay above 31 days seems unusual.""")
     
     st.markdown("### Clipping Price")
     st.markdown("##### Finding a Good Percentile to Clip")

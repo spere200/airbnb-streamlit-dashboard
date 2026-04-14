@@ -16,7 +16,7 @@ def render(df: pd.DataFrame):
 
     colsToPlot = [col for col in numericCols if col not in excludeCols]
 
-    st.subheader("Distributions of Data With Outliers")
+    st.subheader("Distributions With Outliers")
     with st.container(border=True):
         distSelection = st.selectbox("Select a Feature to View its Distribution", 
                                     options=colsToPlot, 
