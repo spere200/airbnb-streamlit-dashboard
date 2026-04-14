@@ -4,5 +4,5 @@ from tabs import SupervisedLearning
 
 def render():
     finalDf = st.session_state.finalDf
-    finalDfDf = finalDf.drop(columns=['latitude', 'longitude'])
+    finalDf = finalDf.drop(columns=['latitude', 'longitude'])
     SupervisedLearning.render(finalDf)

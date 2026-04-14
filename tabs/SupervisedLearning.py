@@ -138,7 +138,7 @@ def render(df: pd.DataFrame):
 
                 st.markdown("###### While the R<sup>2</sup> of this model is decent, its RMSE " \
                 "is far too high. This shows that while the model captured the general trend of the " \
-                "data, its average guesses are far from the actual value, and it performs extremely poorly for the "
+                "data, its average guesses are far from the actual value. It performs extremely poorly for the "
                 "more expensive properties as can be observed in the graph.", 
                 unsafe_allow_html=True)
 

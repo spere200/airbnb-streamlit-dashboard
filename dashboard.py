@@ -1,4 +1,6 @@
+import os
 import streamlit as st
+import pandas as pd
 
 from utils import loadData
 
@@ -18,7 +20,18 @@ pio.templates.default = "plotly_dark"
 with open("styles.css", "r") as f: cssString = f.read()
 st.markdown(f"<style>{cssString}</style>", unsafe_allow_html=True)
 
+# load initial dataframe
 df = loadData('./data/listings.csv') # initial dataframe
+
+# attempt to load cleaned dataframe
+if 'cleanDf' not in st.session_state and os.path.exists('data/cleanedDf.csv'):
+    st.session_state.cleanDf = pd.read_csv('data/cleanedDf.csv')
+    print("loaded cleaned successfully")
+
+# attempt to load dataframe with no outliers
+if 'finalDf' not in st.session_state and os.path.exists('data/finalDf.csv'):
+    st.session_state.finalDf = pd.read_csv('data/finalDf.csv')
+    print("loaded final successfully")
 
 with st.sidebar:
     st.markdown("""

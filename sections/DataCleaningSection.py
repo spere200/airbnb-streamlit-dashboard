@@ -24,5 +24,11 @@ def render(df: pd.DataFrame):
 
     # store the finalized DF in session state so other pages have access to it
     with nonNumericTab:
-        st.session_state.cleanDf = NonNumeric.render(dfFinalFeatures)
-        st.session_state.finalDf = _remove_outliers.removeOutliers(st.session_state.cleanDf)
+        cleanDf = NonNumeric.render(dfFinalFeatures)
+        if 'cleanDf' not in st.session_state:
+            st.session_state.cleanDf = cleanDf
+            cleanDf.to_csv('data/cleanedDf.csv', index=False)
+
+        if 'finalDf' not in st.session_state:
+            st.session_state.finalDf = _remove_outliers.removeOutliers(st.session_state.cleanDf)
+            st.session_state.finalDf.to_csv('data/finalDf.csv', index=False)
