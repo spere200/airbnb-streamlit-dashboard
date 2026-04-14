@@ -1,14 +1,16 @@
 import streamlit as st
 
-from tabs import OutlierCharts, Outliers, Charts
+from tabs import OutlierCharts, Outliers, Charts, Map
 
 def render():
     # create tabs of the EDA page
     (outlierChartsTab,
     outlierHandlingTab,
-    chartsTab) = st.tabs(["Cleaned Data Charts",
+    chartsTab,
+    mapTab) = st.tabs(["Outlier Charts",
                           "Outlier Removal",
-                          "Finalized Data Charts"])
+                          "Finalized Data Charts",
+                          "Maps"])
     
     cleanDf = st.session_state.cleanDf
     finalDf = st.session_state.finalDf
@@ -21,4 +23,7 @@ def render():
 
     with chartsTab:
         Charts.render(finalDf)
+
+    with mapTab:
+        Map.render(finalDf)
     

@@ -32,6 +32,8 @@ def render(df: pd.DataFrame):
     st.markdown("Conclusion: The top 1\\% of property prices can be clipped")
 
     st.markdown("### Descriptive Statistics After Outlier Removal")
+    st.caption(f"{len(df) - len(st.session_state.finalDf)} entries removed.")
+    st.caption(f"{len(st.session_state.finalDf.columns)} features, {len(st.session_state.finalDf)} entries")
     st.dataframe(st.session_state.finalDf.describe())
     
     

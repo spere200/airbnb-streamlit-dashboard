@@ -138,7 +138,7 @@ def render(df: pd.DataFrame):
 
                 st.markdown("###### While the R<sup>2</sup> of this model is decent, its RMSE " \
                 "is far too high. This shows that while the model captured the general trend of the " \
-                "data, its average guesses are far from the mean, and it performs extremely poorly for the "
+                "data, its average guesses are far from the actual value, and it performs extremely poorly for the "
                 "more expensive properties as can be observed in the graph.", 
                 unsafe_allow_html=True)
 
@@ -177,7 +177,7 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {knnR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${knnRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### Worst performance in both metrics. It seems like the current dataset does not" \
+                st.markdown("###### Bad performance in both metrics. It seems like the current dataset does not " \
                 "work very well for this model.", 
                 unsafe_allow_html=True)
 
@@ -249,7 +249,7 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**RMSE** = ${treeRMSE:.2f}", unsafe_allow_html=True)
 
                 st.markdown("###### This single-tree based model shows the highest R<sup>2</sup> yet, " \
-                "with the best RMSE so far. However, the graph does seem to have a lot of noise.",
+                "However, the graph does seem to have a lot of noise, which is reflected by its slightly higher RMSE.",
                 unsafe_allow_html=True)
 
         with st.container(border=True):
@@ -282,8 +282,8 @@ def render(df: pd.DataFrame):
 
                 st.markdown("###### The first ensemble model, showing a near perfect R<sup>2</sup> with the best RMSE " \
                 "found so far. This model does a great job at capturing the general trend of the data, and guesses are only " \
-                "off by \\$19.97 on average, which is excellent for this dataset. It seems like having multiple trees guessing " \
-                "eliminated a lot of the noise in the previous model. However, expensive properties are being undervalued.", 
+                f"off by \\${forestRMSE:.2f} on average, which is excellent for this dataset. It seems like having multiple trees guessing " \
+                "eliminated a lot of the noise in the previous model. However, it seems to undervalue some of the more expensive properties.", 
                 unsafe_allow_html=True)
 
         with st.container(border=True):
@@ -314,8 +314,8 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**R<sup>2</sup>** = {xgbR2:.4f}", unsafe_allow_html=True)
                 st.markdown(f"**RMSE** = ${xgbRMSE:.2f}", unsafe_allow_html=True)
 
-                st.markdown("###### The second ensemble model. Similar performance to the random forest model, but with "
-                "slightly worse performance in both metrics.",
+                st.markdown("###### The second ensemble model. Similar performance to the random forest model; it's only "
+                "slightly worse in both metrics.",
                 unsafe_allow_html=True)
 
     with significantFeaturesTab:

@@ -21,25 +21,24 @@ def render(df: pd.DataFrame):
     nHigh, meanHigh, stdHigh = len(highOccupancy), highOccupancy.mean(), highOccupancy.std()
     nLow, meanLow, stdLow = len(lowOccupancy), lowOccupancy.mean(), lowOccupancy.std()
 
-    _, col1, col2, col3, _ = st.columns([2, 1, 1, 1, 2])
+    _, col1, col2, col3, _ = st.columns([1, 1, 1, 1, 1])
     with col1:
-        st.markdown('##### High Occupancy Stats')
+        st.markdown('#### High Occupancy Stats')
         st.markdown(f'**n<sub>1</sub>** = {nHigh}', unsafe_allow_html=True)
         st.markdown(f'**x̄<sub>1</sub>** = ${meanHigh:.2f}', unsafe_allow_html=True)
         st.markdown(f'**s<sub>1</sub>** = ${stdHigh:.2f}', unsafe_allow_html=True)
     with col2:
-        st.markdown('##### Low Occupancy Stats')
+        st.markdown('#### Low Occupancy Stats')
         st.markdown(f'**n<sub>2</sub>** = {nLow}', unsafe_allow_html=True)
         st.markdown(f'**x̄<sub>2</sub>** = ${meanLow:.2f}', unsafe_allow_html=True)
         st.markdown(f'**s<sub>2</sub>** = ${stdLow:.2f}', unsafe_allow_html=True)
 
     standardError = np.sqrt(stdHigh**2/nHigh + stdLow**2/nLow)
-    # One-tailed: testing if high occupancy mean is LOWER than low occupancy mean
     zScore = (meanHigh - meanLow) / standardError
     pValue = norm.cdf(zScore)
 
     with col3:
-        st.markdown('##### Test Results')
+        st.markdown('#### Test Results')
         st.markdown(f'**Standard Error** = {standardError:.4f}', unsafe_allow_html=True)
         st.markdown(f'**Z-Score** = {zScore:.4f}', unsafe_allow_html=True)
         st.markdown(f'**P-Value** = {pValue:.10f}', unsafe_allow_html=True)
