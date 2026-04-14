@@ -2,80 +2,65 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
 def render(df: pd.DataFrame):
     st.subheader('Using K-Means Clustering to Group Neighborhoods by Average Price')
 
+    nhoodClusterTab, dealsTab = st.tabs(["Neighborhood Price Clusters",
+                                         "Finding Best and Worst Neighborhoods"])
+
+
     # Aggregate by neighbourhood and find average price for each neighborhood
     neighborhoodDf = df.groupby('neighbourhood_cleansed')[['price', 'review_scores_rating']].mean()
 
     # Cluster and plot
-    with st.container(border=True):
-        nClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=10, value=3, key='ncluster-selector')
-        clusterColors = {str(i): px.colors.qualitative.Plotly[i] for i in range(nClusters)}
-        kmeans = KMeans(n_clusters=nClusters, random_state=42)
-        neighborhoodDf['cluster'] = kmeans.fit_predict(neighborhoodDf[['price']])
-        clusterBarChart = px.bar(neighborhoodDf.reset_index(), x='neighbourhood_cleansed', y='price',
-            color=neighborhoodDf['cluster'].astype(str).values,
-            color_discrete_map=clusterColors)
-        clusterBarChart.update_layout(showlegend=False, xaxis_title='Neighborhoods', yaxis_title='Price')
-        st.plotly_chart(clusterBarChart)
-
-    st.subheader('Using Clusters to Find Best Neighborhoods for Each Price Range')
-    bestPriceCol, bestRatingCol = st.columns([1, 1])
-
-    with bestPriceCol:
+    with nhoodClusterTab:
         with st.container(border=True):
-            bestDealNeighborhoods = neighborhoodDf.groupby('cluster')['price'].idxmin()
-            bestDeals = neighborhoodDf.loc[bestDealNeighborhoods].sort_values('price')
-            bestDealsPlot = px.bar(bestDeals.reset_index(), x='neighbourhood_cleansed', y='price',
-                color=bestDeals['cluster'].astype('str').values,
-                color_discrete_map=clusterColors)
-            bestDealsPlot.update_layout(showlegend=False, title='Best Priced Neighborhoods by Cluster',
-                                        xaxis_title='Neighborhoods', yaxis_title='Price')
-            bestDealsPlot.update_traces(texttemplate='$%{y:.0f}', textposition='outside')
-            st.plotly_chart(bestDealsPlot)
+            nhoodClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=10, value=3, key='nhood-cluster-selector')
+            clusterColors = {str(i): px.colors.qualitative.Plotly[i] for i in range(nhoodClusters)}
+            kmeans = KMeans(n_clusters=nhoodClusters, random_state=42)
+            neighborhoodDf['cluster'] = kmeans.fit_predict(neighborhoodDf[['price']])
+            clusterBarChart = px.bar(neighborhoodDf.reset_index(), 
+                                     title="Neighborhood Price Clusters",
+                                     x='neighbourhood_cleansed', 
+                                     y='price',
+                                     color=neighborhoodDf['cluster'].astype(str).values,
+                                     color_discrete_map=clusterColors)
+            clusterBarChart.update_layout(showlegend=False, xaxis_title='Neighborhoods', yaxis_title='Price')
+            st.plotly_chart(clusterBarChart)
 
-    with bestRatingCol:
+    with dealsTab:
+        priceRatingScatterDf = df.groupby('neighbourhood_cleansed').agg(
+                price=('price', 'mean'),
+                review_scores_rating=('review_scores_rating', 'mean')).reset_index()
+
+
         with st.container(border=True):
-            bestRatedNeighborhoods = neighborhoodDf.groupby('cluster')['review_scores_rating'].idxmax()
-            bestRated = neighborhoodDf.loc[bestRatedNeighborhoods].sort_values('price')
-            bestRatedPlot = px.bar(bestRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
-                color=bestDeals.reset_index()['cluster'].astype(str).values,
-                color_discrete_map=clusterColors)
-            bestRatedPlot.update_layout(showlegend=False, 
-                                        title='Best Rated Neighborhoods by Cluster (Sorted From Cheapest to Most Expensive)',
-                                        xaxis_title='Neighborhoods', yaxis_title='Ratings')
-            bestRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
-            bestRatedPlot.update_yaxes(range=[4, 5.2])
-            st.plotly_chart(bestRatedPlot, key='best-ratings-plot')
+            priceRatingNClusters = st.number_input('Select the Number of Clusters', 
+                                                   min_value=2, max_value=10, 
+                                                   value=6, key='price-rating-cluster-selector')
+            priceRatingScatterDf = df.groupby('neighbourhood_cleansed').agg(
+                price=('price', 'mean'),
+                review_scores_rating=('review_scores_rating', 'mean')
+            ).reset_index()
 
-    worstPriceCol, worstRatingCol = st.columns([1, 1])
+            scaler = StandardScaler()
+            scaledData = scaler.fit_transform(priceRatingScatterDf[['price', 'review_scores_rating']])
 
-    with worstPriceCol:
-        with st.container(border=True):
-            worstDealNeighborhoods = neighborhoodDf.groupby('cluster')['price'].idxmax()
-            worstDeals = neighborhoodDf.loc[worstDealNeighborhoods].sort_values('price')
-            worstDealsPlot = px.bar(worstDeals.reset_index(), x='neighbourhood_cleansed', y='price',
-                color=worstDeals['cluster'].astype('str').values,
-                color_discrete_map=clusterColors)
-            worstDealsPlot.update_layout(showlegend=False, title='Worst Priced Neighborhoods by Cluster',
-                                        xaxis_title='Neighborhoods', yaxis_title='Price')
-            worstDealsPlot.update_traces(texttemplate='$%{y:.0f}', textposition='outside')
-            st.plotly_chart(worstDealsPlot)
+            kmeans = KMeans(n_clusters=priceRatingNClusters, random_state=42)
+            priceRatingScatterDf['cluster'] = kmeans.fit_predict(scaledData).astype(str)
 
-    with worstRatingCol:
-        with st.container(border=True):
-            worstRatedNeighborhoods = neighborhoodDf.groupby('cluster')['review_scores_rating'].idxmin()
-            worstRated = neighborhoodDf.loc[worstRatedNeighborhoods].sort_values('price')
-            worstRatedPlot = px.bar(worstRated.reset_index(), x='neighbourhood_cleansed', y='review_scores_rating',
-                color=worstDeals.reset_index()['cluster'].astype(str).values,
-                color_discrete_map=clusterColors)
-            worstRatedPlot.update_layout(showlegend=False, 
-                                        title='Worst Rated Neighborhoods by Cluster (Sorted From Cheapest to Most Expensive)',
-                                        xaxis_title='Neighborhoods', yaxis_title='Ratings')
-            worstRatedPlot.update_traces(texttemplate='%{y:.2f}', textposition='outside')
-            worstRatedPlot.update_yaxes(range=[4, 5.2])
-            st.plotly_chart(worstRatedPlot, key='worst-ratings-plot')
-
+            scaledScatterPlot = px.scatter(
+                priceRatingScatterDf,
+                x='review_scores_rating',
+                y='price',
+                color='cluster',
+                hover_data=['neighbourhood_cleansed'],
+                title='Clusters of Average Price vs Average Rating by Neighbourhood',
+                labels={'price': 'Average Price ($)', 'review_scores_rating': 'Average Rating'}
+            )
+            scaledScatterPlot.update_traces(marker=dict(size=16))
+            scaledScatterPlot.update_layout(height=600, showlegend=False, yaxis_range=[0, 300])
+            st.plotly_chart(scaledScatterPlot, key="scaled-scatter-plot")

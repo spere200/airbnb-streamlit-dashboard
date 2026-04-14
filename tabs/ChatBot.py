@@ -213,7 +213,7 @@ def render(df: pd.DataFrame):
                 st.markdown(f"**RMSE** = ${svrRMSE:.2f}", unsafe_allow_html=True)
 
                 st.markdown("###### Best performance of all the non-tree based models. Its predictions graph looks " \
-                "similar to the linear regression graph, but it does a slightly better job at handling expensive properties.", 
+                "similar to the linear regression graph, but it does a better job at handling expensive properties.", 
                 unsafe_allow_html=True)
 
         # creating the train test split for decision tree, random forest, and xgboost
@@ -350,7 +350,7 @@ def render(df: pd.DataFrame):
                     'XGBoost': '#d6604d'
                 },
                 barmode='group',
-                title='Most Important Features for Each Model'
+                title='Most Important Features by Model'
             )
             st.plotly_chart(combinedPlot, use_container_width=True)
 

@@ -284,7 +284,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.76,True,2.0,True,Fort Lauderdale,26.1677,-80.09985,Entire home/apt,4,1.0,True,1.0,4.0,79.0,2,165,411,255,20145.0,4.91,4.93,4.98,4.96,4.93,4.95,4.86,False
 1.0,1.0,False,8.0,True,Hollywood,25.98936,-80.11884,Entire home/apt,4,1.0,True,1.0,4.0,148.0,3,162,11,24,3552.0,4.73,4.36,4.82,4.45,4.27,4.91,4.73,False
 0.33,0.0,False,5.0,True,Southwest Ranches,26.04972,-80.33926,Entire home/apt,9,1.0,True,4.0,5.0,110.0,5,332,212,0,0.0,4.82,4.83,4.75,4.96,4.93,4.9,4.83,False
-1.0,1.0,True,2.0,True,Fort Lauderdale,26.15041,-80.10086,Entire home/apt,12,4.5,True,6.0,12.0,1077.0,6,270,46,84,90468.0,4.91,4.87,4.83,4.98,4.93,4.93,4.83,False
 1.0,0.91,False,4.0,False,Coconut Creek,26.32044,-80.19476,Private room,6,1.0,True,2.0,4.0,143.0,1,29,34,0,0.0,4.76,4.82,4.79,4.94,4.85,4.79,4.74,False
 1.0,0.97,True,3.0,True,Hollywood,26.01518,-80.11692,Entire home/apt,4,1.0,True,2.0,3.0,99.0,3,101,196,96,9504.0,4.77,4.84,4.7,4.93,4.91,4.96,4.73,True
 0.99,0.99,False,220.0,True,Hallandale Beach,25.98599,-80.12251,Entire home/apt,8,2.0,True,2.0,4.0,186.0,1,264,77,6,1116.0,4.66,4.73,4.62,4.6,4.75,4.7,4.58,True
@@ -292,7 +291,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.89,True,7.0,True,Deerfield Beach,26.31782,-80.14627,Entire home/apt,5,2.0,True,2.0,4.0,96.0,7,51,56,98,9408.0,4.63,4.68,4.64,4.71,4.75,4.8,4.55,False
 1.0,0.89,True,7.0,True,Deerfield Beach,26.31821,-80.14514,Entire home/apt,6,2.0,True,2.0,3.0,109.0,14,122,56,252,27468.0,4.93,4.84,4.86,4.98,4.98,4.96,4.95,False
 1.0,0.89,True,7.0,True,Deerfield Beach,26.31928,-80.14627,Entire home/apt,5,2.0,True,2.0,3.0,115.0,14,36,36,140,16100.0,4.89,4.78,4.83,4.94,4.97,4.92,4.86,False
-1.0,1.0,False,5.0,True,Fort Lauderdale,26.12101,-80.12343,Entire home/apt,6,2.0,True,4.0,5.0,995.0,3,327,60,0,0.0,4.87,4.78,4.85,4.98,4.93,4.98,4.68,False
 1.0,0.94,True,521.0,True,Fort Lauderdale,26.12325,-80.10581,Entire home/apt,8,2.0,True,2.0,4.0,374.0,1,181,171,255,95370.0,4.91,4.95,4.97,4.72,4.9,4.94,4.92,False
 1.0,0.94,True,521.0,True,Fort Lauderdale,26.12136,-80.1059,Entire home/apt,4,1.0,True,1.0,2.0,265.0,1,191,113,54,14310.0,4.95,4.84,4.97,4.92,4.86,4.92,4.89,False
 0.9,0.93,False,72.0,True,Weston,26.12199,-80.38403,Entire home/apt,4,1.0,True,2.0,4.0,108.0,2,260,1,0,0.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
@@ -430,7 +428,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.92,True,5.0,True,Hollywood,26.00435,-80.16247,Entire home/apt,2,1.0,True,1.0,1.0,68.0,2,290,176,90,6120.0,4.86,4.88,4.81,4.96,4.94,4.84,4.82,False
 0.99,0.98,False,74.0,True,Hollywood,25.98893,-80.118889,Entire home/apt,4,1.0,True,1.0,3.0,113.0,2,216,30,18,2034.0,4.3,4.53,4.53,4.3,4.53,4.87,4.37,True
 1.0,0.99,True,6.0,True,Oakland Park,26.17856,-80.14772,Entire home/apt,2,1.0,True,1.0,1.0,74.0,2,341,440,255,18870.0,4.85,4.8,4.82,4.96,4.92,4.74,4.8,True
-0.33,0.0,False,5.0,True,Southwest Ranches,26.04825,-80.33931,Private room,4,2.5,True,2.0,2.0,1200.0,7,173,9,0,0.0,5.0,4.78,5.0,5.0,5.0,5.0,4.89,False
 1.0,1.0,True,7.0,True,Lauderdale By The Sea,26.18841,-80.09657,Entire home/apt,3,1.0,True,1.0,3.0,123.0,30,217,152,255,31365.0,4.88,4.93,4.86,4.97,4.93,4.98,4.87,False
 1.0,0.97,True,43.0,True,Fort Lauderdale,26.14741,-80.14502,Entire home/apt,4,1.0,True,2.0,2.0,201.0,3,350,155,90,18090.0,4.93,4.91,4.89,4.97,4.97,4.64,4.83,True
 1.0,1.0,False,15.0,True,Oakland Park,26.18059,-80.11995,Entire home/apt,3,1.0,True,0.0,2.0,59.0,1,294,222,102,6018.0,4.78,4.87,4.79,4.96,4.91,4.76,4.78,True
@@ -582,7 +579,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.97,True,15.0,False,Fort Lauderdale,26.164499282836918,-80.09934235,Entire home/apt,6,3.0,True,3.0,4.0,295.0,4,240,63,88,25960.0,4.94,4.89,4.84,4.97,4.95,4.97,4.89,False
 1.0,1.0,False,179.0,True,Weston,26.11312,-80.37873,Entire home/apt,8,3.0,True,4.0,5.0,257.0,5,352,61,120,30840.0,4.9,4.92,4.93,4.95,4.9,4.92,4.89,True
 1.0,1.0,True,1.0,True,Fort Lauderdale,26.1425,-80.1306,Entire home/apt,2,1.0,True,1.0,1.0,91.0,1,270,739,255,23205.0,4.84,4.91,4.87,4.94,4.92,4.87,4.85,False
-1.0,1.0,True,1.0,True,Fort Lauderdale,26.147337158739475,-80.10147988,Entire home/apt,14,5.5,True,6.0,9.0,1169.0,4,213,174,112,130928.0,4.84,4.83,4.83,4.97,4.95,4.98,4.76,False
 1.0,0.98,True,39.0,True,Lauderdale By The Sea,26.21692,-80.09497,Entire home/apt,10,2.5,True,4.0,8.0,244.0,5,312,74,50,12200.0,4.84,4.91,4.86,4.92,4.92,4.91,4.69,True
 0.57,0.0,False,13.0,True,Pompano Beach,26.23046,-80.09203,Private room,1,1.0,False,1.0,1.0,80.0,1,341,58,0,0.0,4.5,4.58,4.4,4.74,4.79,4.93,4.68,False
 1.0,0.99,False,65.0,True,Hollywood,25.98681,-80.11865,Entire home/apt,6,3.0,True,3.0,3.0,664.0,3,334,39,78,51792.0,4.85,4.92,4.85,4.74,4.9,4.82,4.82,True
@@ -1208,7 +1204,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.9,False,4.0,False,Hallandale Beach,25.98558,-80.1181,Entire home/apt,6,2.0,True,2.0,2.0,205.0,30,230,10,180,36900.0,4.6,4.6,4.6,4.8,4.9,4.9,4.6,False
 1.0,0.98,True,3.0,True,Deerfield Beach,26.30578,-80.08295,Entire home/apt,8,2.0,True,3.0,4.0,212.0,4,227,99,48,10176.0,4.93,4.99,4.99,4.95,4.98,4.92,4.91,False
 0.9,0.98,False,1.0,False,Lauderdale Lakes,26.16319,-80.21227,Private room,2,1.0,True,1.0,1.0,45.0,1,269,13,78,3510.0,4.54,4.69,4.54,4.62,4.77,4.38,4.54,True
-1.0,0.98,True,37.0,True,Fort Lauderdale,26.11641,-80.126,Entire home/apt,16,2.0,True,6.0,8.0,1833.0,2,315,33,48,87984.0,4.97,4.97,4.94,4.97,5.0,5.0,4.94,True
 1.0,1.0,True,1.0,True,Fort Lauderdale,26.1459,-80.14105,Entire home/apt,4,1.0,True,2.0,2.0,81.0,2,273,60,192,15552.0,4.8,4.83,4.72,4.93,4.93,4.88,4.67,True
 1.0,0.99,True,5.0,False,Fort Lauderdale,26.10687,-80.10929,Entire home/apt,8,2.5,True,4.0,10.0,158.0,2,346,143,138,21804.0,4.73,4.72,4.73,4.87,4.91,4.94,4.76,True
 1.0,0.97,True,5.0,True,Fort Lauderdale,26.16436,-80.10028,Entire home/apt,6,3.0,True,3.0,6.0,310.0,6,200,111,228,70680.0,4.97,4.99,4.99,4.96,5.0,4.97,4.89,False
@@ -1230,7 +1225,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.98,0.98,True,57.0,True,Pompano Beach,26.2237,-80.0922,Entire home/apt,6,2.0,True,2.0,2.0,142.0,3,159,112,120,17040.0,4.78,4.82,4.64,4.88,4.79,4.88,4.71,False
 1.0,0.78,True,6.0,True,Fort Lauderdale,26.09064,-80.16225,Entire home/apt,3,1.0,True,1.0,1.0,86.0,30,188,43,180,15480.0,4.98,4.95,4.88,4.98,5.0,4.91,4.98,False
 1.0,1.0,True,1.0,True,Sunrise,26.15904,-80.29732,Entire home/apt,2,1.0,True,1.0,1.0,62.0,2,73,146,186,11532.0,4.95,4.98,5.0,4.98,4.95,4.94,4.93,False
-1.0,0.89,False,25.0,True,Hollywood,25.99685,-80.14669,Entire home/apt,16,6.0,True,10.0,11.0,1556.0,2,335,8,6,9336.0,4.25,4.25,4.63,4.88,4.63,4.38,4.13,False
 1.0,0.99,False,1481.0,True,Fort Lauderdale,26.2059,-80.19148,Entire home/apt,9,2.0,True,4.0,4.0,230.0,3,281,1,0,0.0,3.0,5.0,3.0,5.0,5.0,5.0,2.0,True
 1.0,1.0,True,15.0,True,Fort Lauderdale,26.10391,-80.13694,Entire home/apt,4,1.0,True,1.0,6.0,66.0,1,187,202,156,10296.0,4.87,4.87,4.83,4.92,4.93,4.82,4.83,True
 1.0,0.89,True,7.0,True,Deerfield Beach,26.31831,-80.14608,Entire home/apt,7,2.0,True,3.0,6.0,115.0,14,128,34,255,29325.0,4.76,4.65,4.71,4.91,4.82,4.79,4.71,False
@@ -1420,7 +1414,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,13.0,True,Fort Lauderdale,26.14754,-80.14587,Entire home/apt,4,1.0,True,2.0,3.0,171.0,1,115,120,144,24624.0,4.84,4.83,4.83,4.97,4.93,4.76,4.69,False
 1.0,1.0,True,1.0,True,Fort Lauderdale,26.10767,-80.18741,Entire home/apt,8,1.0,True,3.0,3.0,118.0,2,242,369,255,30090.0,4.84,4.79,4.82,4.96,4.93,4.76,4.8,True
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98685,-80.12329,Entire home/apt,4,1.0,True,0.0,2.0,154.0,3,216,27,12,1848.0,4.41,4.41,4.44,4.67,4.7,4.7,4.48,False
-1.0,0.92,True,11.0,True,Fort Lauderdale,26.11976623535156,-80.11710358,Entire home/apt,14,7.0,True,6.0,8.0,1620.0,3,219,28,42,68040.0,4.93,4.82,4.93,4.93,4.86,4.96,4.68,True
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98706,-80.12366,Entire home/apt,2,1.0,True,0.0,2.0,154.0,3,216,26,12,1848.0,4.69,4.62,4.69,4.81,4.73,4.69,4.35,False
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98516,-80.12156,Entire home/apt,2,1.0,True,0.0,2.0,200.0,3,365,5,0,0.0,4.2,4.2,4.6,4.2,4.6,4.8,4.4,False
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98627,-80.1224,Entire home/apt,3,1.0,True,0.0,2.0,253.0,3,361,29,6,1518.0,4.52,4.48,4.55,4.45,4.72,4.69,4.48,False
@@ -1619,7 +1612,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.94,True,25.0,False,Pompano Beach,26.22978,-80.09303,Private room,2,1.0,False,1.0,1.0,100.0,30,180,31,0,0.0,4.74,4.58,4.84,4.84,4.84,5.0,4.81,True
 1.0,0.99,False,65.0,True,Hollywood,25.98681,-80.11865,Entire home/apt,6,2.0,True,2.0,4.0,199.0,3,331,35,96,19104.0,4.83,4.97,4.71,4.94,4.89,4.97,4.94,True
 0.83,0.69,False,2.0,True,Hallandale Beach,25.98625,-80.1199,Entire home/apt,5,2.0,True,2.0,4.0,285.0,2,336,78,18,5130.0,4.78,4.85,4.69,4.68,4.72,4.81,4.69,False
-1.0,0.81,True,8.0,True,Fort Lauderdale,26.12302,-80.11412,Entire home/apt,12,6.5,True,5.0,4.0,980.0,7,312,21,56,54880.0,4.95,5.0,4.95,5.0,4.76,4.86,4.95,False
 0.93,1.0,False,11.0,True,Hollywood,26.01579,-80.11666,Entire home/apt,2,1.0,True,1.0,2.0,110.0,1,204,24,30,3300.0,4.54,4.58,4.67,4.79,4.54,5.0,4.38,True
 0.75,1.0,False,2.0,True,Hollywood,26.02381,-80.11675,Entire home/apt,2,1.0,True,1.0,1.0,133.0,3,56,79,66,8778.0,4.95,4.97,4.97,4.99,5.0,4.97,4.94,False
 0.71,0.34,False,96.0,True,Pompano Beach,26.22666,-80.15833,Entire home/apt,6,2.0,True,2.0,3.0,204.0,4,89,55,24,4896.0,4.71,4.73,4.73,4.71,4.76,4.85,4.84,False
@@ -1821,7 +1813,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,1.0,True,Pompano Beach,26.24155,-80.09107,Entire home/apt,4,1.0,True,1.0,1.0,153.0,4,197,133,216,33048.0,4.99,4.98,4.97,4.98,4.98,4.98,4.95,False
 1.0,0.78,True,6.0,True,Fort Lauderdale,26.09068,-80.16206,Entire home/apt,5,1.0,True,2.0,2.0,126.0,5,57,36,50,6300.0,5.0,4.97,4.97,5.0,4.97,4.72,4.86,False
 1.0,0.0,False,2.0,True,Lauderdale Lakes,26.17859,-80.19413,Private room,1,1.0,False,1.0,1.0,36.0,5,89,3,0,0.0,4.0,4.33,4.0,4.0,4.33,4.0,4.0,False
-0.94,1.0,False,35.0,True,Hollywood,25.98728,-80.11924,Entire home/apt,16,4.5,True,4.0,13.0,970.0,2,341,126,120,116400.0,4.84,4.86,4.77,4.71,4.8,4.82,4.72,True
 1.0,1.0,False,428.0,True,Hallandale Beach,25.985674,-80.136581,Entire home/apt,4,1.0,True,0.0,2.0,102.0,4,330,40,40,4080.0,4.18,4.33,4.03,4.33,4.25,4.8,4.1,True
 1.0,0.98,True,3.0,True,Fort Lauderdale,26.12382,-80.12144,Entire home/apt,4,1.0,True,1.0,2.0,125.0,2,356,198,255,31875.0,4.89,4.92,4.79,4.94,4.95,4.95,4.78,False
 1.0,1.0,False,43.0,True,Wilton Manors,26.15699959,-80.13580322,Entire home/apt,2,1.0,True,1.0,1.0,54.0,1,0,224,174,9396.0,4.79,4.91,4.81,4.94,4.93,4.91,4.81,True
@@ -1873,7 +1864,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,24.0,True,Hollywood,25.98724,-80.11819,Entire home/apt,4,1.0,True,1.0,2.0,153.0,3,286,91,84,12852.0,4.68,4.71,4.67,4.64,4.66,4.87,4.53,True
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.158278,-80.1003905,Entire home/apt,4,2.0,True,2.0,3.0,284.0,1,325,55,60,17040.0,4.98,4.96,4.89,4.96,4.96,5.0,4.76,True
 1.0,1.0,False,53.0,True,Fort Lauderdale,26.12945,-80.12451,Entire home/apt,2,1.0,True,1.0,1.0,78.0,1,329,166,126,9828.0,4.8,4.78,4.7,4.95,4.89,4.91,4.7,True
-1.0,1.0,True,5.0,True,Fort Lauderdale,26.15786,-80.10677,Entire home/apt,16,5.0,True,5.0,8.0,1016.0,7,311,48,56,56896.0,5.0,4.96,4.98,5.0,4.96,4.96,4.85,True
 1.0,0.95,True,15.0,True,Hollywood,25.98832,-80.11908,Entire home/apt,4,1.0,True,1.0,3.0,103.0,4,251,60,144,14832.0,4.83,4.9,4.83,4.78,4.9,4.92,4.81,True
 1.0,0.96,False,11.0,False,Hollywood,26.01923,-80.11529,Entire home/apt,2,1.0,True,0.0,1.0,80.0,2,48,36,18,1440.0,4.72,4.83,4.81,4.92,4.92,5.0,4.83,True
 1.0,0.91,True,1.0,True,Coral Springs,26.27872,-80.22137,Entire home/apt,8,2.0,True,3.0,3.0,90.0,30,237,36,60,5400.0,4.89,4.94,4.92,4.97,5.0,4.94,4.83,True
@@ -2024,7 +2014,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.73,False,254.0,True,Hollywood,25.98755,-80.11975,Entire home/apt,8,2.5,True,3.0,6.0,186.0,2,196,41,72,13392.0,4.71,4.85,4.59,4.8,4.88,4.76,4.63,True
 0.9,0.99,False,4.0,True,Lauderdale By The Sea,26.18621,-80.09816,Entire home/apt,4,2.0,True,2.0,2.0,135.0,4,233,75,160,21600.0,4.96,4.97,4.99,4.86,4.99,4.99,4.92,True
 1.0,1.0,True,5.0,True,Dania Beach,26.04981,-80.17209,Entire home/apt,8,2.0,True,3.0,5.0,181.0,3,86,170,168,30408.0,4.85,4.84,4.73,4.95,4.94,4.74,4.72,False
-1.0,0.73,False,254.0,True,Hollywood,25.98667,-80.12098,Entire home/apt,3,1.0,True,1.0,2.0,1350.0,2,365,6,0,0.0,4.17,4.33,4.5,4.33,4.33,4.17,4.0,False
 1.0,0.97,True,2.0,True,Lauderdale By The Sea,26.19384,-80.09991,Entire home/apt,10,2.5,True,3.0,6.0,382.0,7,313,93,255,97410.0,4.92,4.9,4.86,4.98,4.92,4.92,4.81,False
 0.98,0.98,True,57.0,True,Fort Lauderdale,26.16967,-80.10863,Entire home/apt,2,1.0,True,1.0,2.0,85.0,3,183,71,72,6120.0,4.76,4.86,4.85,4.97,4.68,4.85,4.72,False
 1.0,0.99,True,132.0,True,Fort Lauderdale,26.127438,-80.10649,Entire home/apt,4,2.0,True,2.0,3.0,164.0,3,308,43,66,10824.0,4.88,4.93,4.93,4.98,4.91,4.98,4.84,False
@@ -2078,7 +2067,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.96,True,8.0,True,Lauderdale By The Sea,26.18901,-80.09535,Entire home/apt,4,1.0,True,1.0,2.0,158.0,3,172,130,156,24648.0,4.94,4.95,4.95,4.94,4.98,4.98,4.89,False
 0.95,0.46,True,47.0,True,Hollywood,25.98736,-80.11841,Entire home/apt,8,3.0,True,3.0,3.0,366.0,3,179,23,54,19764.0,4.87,4.96,4.48,4.7,4.87,4.91,4.7,False
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.09417,-80.19826,Entire home/apt,6,2.0,True,3.0,3.0,166.0,4,259,33,120,19920.0,4.85,4.88,4.82,5.0,4.91,4.82,4.85,False
-0.94,1.0,False,35.0,True,Hollywood,25.98706,-80.11897,Entire home/apt,16,4.5,True,4.0,10.0,1062.0,2,365,78,54,57348.0,4.91,4.9,4.83,4.76,4.88,4.94,4.83,True
 1.0,1.0,False,2.0,True,Fort Lauderdale,26.101438522338867,-80.11012268,Entire home/apt,8,2.0,True,3.0,4.0,501.0,1,348,111,60,30060.0,4.9,4.85,4.87,4.9,4.86,4.87,4.72,True
 1.0,0.99,True,9.0,True,Wilton Manors,26.16455,-80.1542,Entire home/apt,2,1.0,True,1.0,2.0,107.0,3,74,148,108,11556.0,4.89,4.84,4.93,4.87,4.93,4.83,4.8,True
 1.0,1.0,True,5.0,True,Pompano Beach,26.22796,-80.08992,Entire home/apt,5,1.0,True,1.0,6.0,88.0,3,307,89,12,1056.0,4.88,4.94,4.94,4.9,4.9,4.96,4.84,False
@@ -2229,7 +2217,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,428.0,True,Hollywood,26.0163532,-80.1167559,Entire home/apt,4,1.0,True,1.0,2.0,70.0,4,334,12,8,560.0,4.58,4.75,4.42,4.92,4.92,4.92,4.67,True
 1.0,1.0,True,1.0,True,Hollywood,26.01926,-80.15892,Entire home/apt,6,1.0,True,2.0,4.0,126.0,2,228,153,252,31752.0,4.97,4.99,4.97,5.0,5.0,4.82,4.89,False
 1.0,1.0,True,3.0,True,Davie,26.052538,-80.29332,Entire home/apt,7,2.0,True,2.0,4.0,101.0,1,316,226,255,25755.0,4.88,4.94,4.84,4.96,4.98,4.96,4.85,False
-1.0,0.73,False,254.0,True,Hallandale Beach,25.986,-80.12113,Entire home/apt,8,2.0,True,3.0,5.0,1350.0,2,365,3,0,0.0,4.0,4.33,3.33,4.33,4.33,4.67,3.67,False
 1.0,1.0,True,7.0,True,Hallandale Beach,25.97793,-80.15024,Entire home/apt,2,1.0,True,1.0,1.0,86.0,3,264,57,54,4644.0,4.93,4.89,4.91,4.98,4.98,4.86,4.86,False
 1.0,1.0,False,1.0,True,Dania Beach,26.04786,-80.20259,Private room,2,1.0,True,1.0,1.0,65.0,1,217,42,12,780.0,4.79,4.81,4.93,4.88,4.74,4.69,4.76,False
 1.0,0.18,False,3.0,True,Fort Lauderdale,26.14795,-80.15124,Entire home/apt,5,1.0,True,2.0,3.0,206.0,5,216,35,60,12360.0,5.0,4.94,4.94,5.0,5.0,4.83,4.89,False
@@ -2275,7 +2262,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.99,False,2.0,True,Pompano Beach,26.25355,-80.08628,Entire home/apt,4,1.0,True,1.0,2.0,63.0,2,261,127,210,13230.0,4.92,4.97,4.87,5.0,5.0,4.92,4.93,False
 1.0,1.0,False,2.0,True,Hollywood,25.98905,-80.118179,Entire home/apt,6,2.0,True,2.0,3.0,231.0,3,290,24,18,4158.0,4.71,4.92,4.71,4.54,4.88,4.79,4.58,True
 1.0,0.94,False,2.0,True,Hollywood,26.01112365722656,-80.12863922,Entire home/apt,6,2.0,True,3.0,3.0,198.0,3,57,83,96,19008.0,4.95,4.94,4.87,4.99,4.99,4.94,4.92,False
-1.0,0.96,False,1.0,True,Fort Lauderdale,26.122675,-80.111671,Entire home/apt,16,8.0,True,8.0,8.0,1400.0,3,267,27,90,126000.0,4.93,4.93,5.0,4.85,4.85,5.0,4.89,False
 0.98,0.98,True,57.0,True,Fort Lauderdale,26.12119,-80.11961,Entire home/apt,4,1.0,True,1.0,2.0,199.0,1,192,19,0,0.0,4.95,4.95,4.89,5.0,5.0,4.95,4.89,True
 0.98,0.98,True,57.0,True,Fort Lauderdale,26.11939,-80.1202,Entire home/apt,4,1.0,True,1.0,2.0,209.0,1,176,10,0,0.0,4.7,4.6,4.9,5.0,4.8,5.0,4.9,True
 0.98,0.98,True,57.0,True,Fort Lauderdale,26.12021,-80.11991,Entire home/apt,4,1.0,True,1.0,1.0,315.0,1,187,23,6,1890.0,4.91,5.0,4.96,4.91,4.96,5.0,4.91,False
@@ -2565,7 +2551,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,3.0,True,Hollywood,26.02508,-80.19102,Entire home/apt,6,2.0,True,3.0,4.0,277.0,2,235,84,162,44874.0,4.98,4.98,4.94,4.99,5.0,4.92,4.86,False
 1.0,1.0,False,4.0,True,Fort Lauderdale,26.14784,-80.16569,Entire home/apt,8,2.0,True,4.0,4.0,117.0,3,326,104,132,15444.0,4.68,4.78,4.66,4.92,4.89,4.29,4.65,False
 1.0,1.0,True,4.0,True,Pembroke Pines,26.02414,-80.36603,Private room,1,1.5,True,1.0,1.0,56.0,1,365,36,60,3360.0,4.81,4.86,4.81,4.97,4.81,4.89,4.83,False
-1.0,1.0,True,5.0,True,Fort Lauderdale,26.14841,-80.10866,Entire home/apt,14,5.0,True,5.0,8.0,1500.0,3,340,11,24,36000.0,5.0,5.0,4.88,5.0,5.0,5.0,5.0,False
 1.0,0.99,True,2.0,True,Dania Beach,26.04224,-80.13716,Entire home/apt,8,3.0,True,3.0,5.0,143.0,5,302,155,255,36465.0,4.65,4.63,4.52,4.88,4.84,4.82,4.66,True
 0.95,0.98,True,28.0,True,Fort Lauderdale,26.1173,-80.15005,Entire home/apt,4,1.0,True,2.0,2.0,98.0,3,279,70,78,7644.0,4.94,4.96,4.91,5.0,4.97,4.89,4.89,False
 1.0,1.0,True,6.0,True,Hollywood,26.01279,-80.12388,Entire home/apt,8,3.0,True,5.0,8.0,373.0,2,331,84,78,29094.0,4.88,4.89,4.79,4.9,4.94,4.92,4.8,False
@@ -2573,7 +2558,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.0,0.0,False,24.0,True,Hallandale Beach,25.98638,-80.12724,Entire home/apt,3,1.0,True,1.0,2.0,118.0,4,365,1,0,0.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 0.0,1.0,False,7.0,True,Unincorporated,26.08976,-80.20559,Private room,1,1.0,False,1.0,1.0,64.0,7,365,4,0,0.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,False
 1.0,1.0,True,7.0,True,Dania Beach,26.0578,-80.13203,Entire home/apt,10,2.0,True,4.0,7.0,449.0,3,238,107,126,56574.0,4.91,4.94,4.91,4.93,4.97,4.87,4.79,True
-1.0,1.0,False,1.0,True,Fort Lauderdale,26.166290283203125,-80.09901428,Entire home/apt,10,3.0,True,5.0,5.0,998.0,3,312,20,30,29940.0,5.0,5.0,4.95,5.0,5.0,4.95,4.75,False
 1.0,0.94,True,3.0,True,Fort Lauderdale,26.12144,-80.12945,Entire home/apt,6,3.5,True,3.0,4.0,118.0,3,357,78,78,9204.0,4.78,4.85,4.81,4.87,4.88,4.96,4.78,False
 1.0,1.0,True,1.0,False,Oakland Park,26.19581,-80.13876,Private room,3,1.0,True,0.0,2.0,55.0,1,329,308,255,14025.0,4.86,4.88,4.93,4.95,4.94,4.85,4.85,True
 1.0,1.0,False,34.0,True,Fort Lauderdale,26.12742,-80.10538,Private room,2,1.0,True,0.0,1.0,73.0,1,223,140,234,17082.0,4.7,4.82,4.72,4.94,4.85,4.91,4.74,True
@@ -2664,7 +2648,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.91,0.9,True,14.0,True,Deerfield Beach,26.30693,-80.07764,Entire home/apt,4,1.0,True,1.0,3.0,87.0,3,206,25,36,3132.0,5.0,4.96,4.96,5.0,5.0,4.92,4.96,False
 1.0,1.0,False,34.0,True,Fort Lauderdale,26.12696,-80.10444,Entire home/apt,4,2.0,True,2.0,2.0,172.0,1,242,38,42,7224.0,4.68,4.79,4.58,4.92,4.82,4.89,4.58,True
 1.0,0.99,True,14.0,True,Fort Lauderdale,26.184505462646484,-80.15958405,Entire home/apt,6,2.0,True,3.0,3.0,197.0,3,365,72,150,29550.0,4.86,4.89,4.96,4.97,4.99,4.79,4.72,False
-1.0,0.84,False,2.0,True,Southwest Ranches,26.041553,-80.340164,Entire home/apt,16,6.5,True,6.0,6.0,971.0,2,178,35,60,58260.0,4.66,4.66,4.71,4.8,4.6,5.0,4.6,False
 1.0,1.0,False,122.0,True,Hollywood,25.9867303,-80.1186786,Entire home/apt,4,1.0,True,1.0,2.0,111.0,2,348,110,54,5994.0,4.59,4.7,4.63,4.44,4.67,4.77,4.58,True
 0.95,0.98,True,28.0,True,Fort Lauderdale,26.11854,-80.15023,Entire home/apt,6,2.0,True,3.0,3.0,114.0,3,353,92,198,22572.0,4.9,4.91,4.9,4.99,4.97,4.91,4.83,False
 1.0,0.87,True,9.0,True,Fort Lauderdale,26.119011,-80.151733,Entire home/apt,2,1.0,True,0.0,2.0,71.0,3,239,130,216,15336.0,4.79,4.83,4.88,4.9,4.92,4.89,4.75,False
@@ -2733,7 +2716,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,7.0,True,Fort Lauderdale,26.177879,-80.097183,Entire home/apt,12,2.0,True,2.0,6.0,285.0,1,218,113,204,58140.0,4.83,4.85,4.84,4.94,4.94,4.86,4.72,True
 1.0,0.98,True,51.0,True,Deerfield Beach,26.30931,-80.09225,Entire home/apt,10,3.0,True,4.0,5.0,247.0,2,358,57,102,25194.0,4.91,4.88,4.86,4.96,4.98,4.74,4.79,False
 1.0,0.98,False,10.0,True,Hallandale Beach,25.98565,-80.11927,Entire home/apt,6,2.0,True,2.0,4.0,229.0,3,326,49,72,16488.0,4.88,4.98,4.69,4.73,4.98,4.96,4.73,True
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1439321,-80.1165556,Entire home/apt,16,9.0,True,8.0,15.0,1728.0,1,300,23,30,51840.0,5.0,4.96,4.91,5.0,4.96,4.96,4.91,False
 1.0,0.84,True,5.0,True,Fort Lauderdale,26.11121,-80.15385,Entire home/apt,8,3.0,True,4.0,4.0,445.0,4,233,119,152,67640.0,4.98,4.98,4.99,5.0,4.98,4.88,4.93,False
 1.0,1.0,False,94.0,True,Lauderdale By The Sea,26.195679,-80.095718,Entire home/apt,2,1.0,True,0.0,1.0,47.0,1,334,115,240,11280.0,4.52,4.47,4.61,4.62,4.73,4.83,4.5,True
 1.0,0.99,True,11.0,True,Pompano Beach,26.227588653564453,-80.0915451,Entire home/apt,4,2.0,True,2.0,2.0,142.0,3,285,43,66,9372.0,4.84,4.86,4.93,4.98,4.98,4.88,4.84,False
@@ -2774,7 +2756,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.86,0.64,False,169.0,True,Hollywood,25.98644,-80.11956,Entire home/apt,6,2.0,True,2.0,3.0,151.0,3,365,1,0,0.0,5.0,4.0,5.0,5.0,4.0,5.0,3.0,False
 1.0,0.95,True,5.0,True,Oakland Park,26.18387,-80.13811,Entire home/apt,2,1.0,True,1.0,2.0,91.0,2,364,59,90,8190.0,4.92,4.97,4.95,4.93,4.98,4.9,4.85,False
 1.0,1.0,True,34.0,True,Fort Lauderdale,26.19405,-80.11522,Entire home/apt,12,4.5,True,4.0,6.0,336.0,3,226,87,168,56448.0,4.92,4.97,4.9,4.98,5.0,4.95,4.86,False
-1.0,0.99,False,28.0,True,Hollywood,26.00722,-80.12813,Entire home/apt,16,7.5,True,10.0,18.0,1701.0,3,325,54,90,153090.0,4.76,4.81,4.81,4.93,4.83,4.8,4.61,False
 1.0,1.0,True,7.0,False,Dania Beach,26.05988,-80.20204,Entire home/apt,12,2.0,True,4.0,7.0,159.0,2,264,93,168,26712.0,4.8,4.75,4.78,4.9,4.92,4.71,4.69,True
 0.99,1.0,False,29.0,True,Wilton Manors,26.15828,-80.14522,Entire home/apt,4,1.0,True,2.0,2.0,84.0,1,349,171,255,21420.0,4.6,4.57,4.43,4.79,4.77,4.75,4.52,True
 1.0,1.0,True,1.0,True,Hollywood,26.029905,-80.219345,Entire home/apt,6,2.0,True,3.0,4.0,221.0,3,221,150,234,51714.0,4.93,4.94,4.87,4.97,4.97,4.78,4.83,False
@@ -2809,7 +2790,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.97,True,32.0,True,Lauderhill,26.15574,-80.2126,Entire home/apt,12,2.0,True,4.0,6.0,176.0,2,347,72,96,16896.0,4.63,4.61,4.61,4.81,4.9,4.31,4.42,True
 1.0,1.0,True,4.0,True,Hollywood,25.987616,-80.119011,Entire home/apt,5,1.5,True,1.0,3.0,139.0,3,116,107,156,21684.0,4.84,4.86,4.87,4.81,4.86,4.79,4.72,False
 1.0,0.96,True,14.0,True,Hollywood,26.01426,-80.15504,Entire home/apt,4,1.0,True,2.0,2.0,101.0,4,261,61,0,0.0,4.84,4.82,4.82,4.95,4.89,4.79,4.79,False
-1.0,0.96,True,1.0,True,Fort Lauderdale,26.12338,-80.11187,Entire home/apt,16,6.5,True,7.0,9.0,1122.0,2,319,106,198,222156.0,4.93,4.93,4.92,4.91,4.95,4.99,4.78,False
 1.0,0.98,True,53.0,True,Hollywood,26.0126,-80.12013,Entire home/apt,8,4.0,True,4.0,6.0,340.0,4,33,63,72,24480.0,4.94,4.94,4.98,5.0,5.0,4.86,4.81,False
 1.0,1.0,False,7.0,True,Wilton Manors,26.15419,-80.14789,Entire home/apt,4,1.0,True,2.0,2.0,179.0,2,280,20,30,5370.0,5.0,4.9,4.95,5.0,4.95,4.9,4.9,True
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98555,-80.12419,Entire home/apt,3,1.0,True,1.0,1.0,399.0,1,365,1,0,0.0,1.0,1.0,1.0,3.0,1.0,5.0,2.0,False
@@ -2873,7 +2853,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,3.0,False,Pompano Beach,26.22682380676269,-80.09081268,Private room,2,1.0,True,0.0,1.0,140.0,4,265,19,48,6720.0,5.0,5.0,4.95,4.95,5.0,5.0,4.84,True
 1.0,1.0,True,38.0,True,Fort Lauderdale,26.13255,-80.13695,Entire home/apt,4,1.0,True,1.0,2.0,75.0,1,350,106,144,10800.0,4.78,4.92,4.75,4.97,4.93,4.75,4.7,True
 1.0,1.0,False,3.0,False,Coral Springs,26.29293,-80.26548,Entire home/apt,8,3.0,True,4.0,4.0,166.0,3,185,22,102,16932.0,5.0,4.86,4.86,5.0,5.0,4.95,4.82,True
-0.94,1.0,False,35.0,True,Hallandale Beach,25.98575,-80.11911,Entire home/apt,16,4.5,True,4.0,5.0,1062.0,2,324,82,108,114696.0,4.88,4.95,4.73,4.65,4.74,4.87,4.77,True
 1.0,0.87,True,9.0,True,Fort Lauderdale,26.118933,-80.151634,Entire home/apt,4,2.0,True,2.0,2.0,106.0,3,259,106,204,21624.0,4.83,4.89,4.84,4.88,4.82,4.88,4.81,False
 1.0,1.0,False,23.0,True,Deerfield Beach,26.31209,-80.0806,Entire home/apt,12,3.0,True,4.0,6.0,300.0,3,262,53,120,36000.0,4.66,4.77,4.68,4.89,4.72,4.87,4.64,True
 1.0,0.77,False,5.0,True,Unincorporated,26.12756,-80.18266,Private room,2,1.0,False,1.0,1.0,46.0,2,270,50,72,3312.0,4.62,4.78,4.6,4.8,4.74,4.36,4.52,False
@@ -2903,7 +2882,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,4.0,True,Fort Lauderdale,26.14831,-80.14335,Entire home/apt,4,1.0,True,1.0,2.0,87.0,5,225,112,255,22185.0,4.86,4.84,4.92,4.94,4.93,4.71,4.79,True
 1.0,0.96,True,17.0,False,Lazy Lake,26.15636,-80.14425,Entire home/apt,6,2.0,True,3.0,3.0,161.0,3,229,45,72,11592.0,4.89,4.93,4.87,4.93,4.98,4.91,4.87,False
 1.0,1.0,False,29.0,True,Hollywood,26.00942,-80.19801,Entire home/apt,16,2.5,True,4.0,9.0,300.0,5,193,111,180,54000.0,4.83,4.82,4.72,4.95,4.91,4.82,4.7,False
-1.0,0.99,False,28.0,True,Hollywood,26.008442,-80.125267,Entire home/apt,16,6.5,True,8.0,13.0,1296.0,3,202,44,60,77760.0,4.93,4.84,4.89,4.95,4.91,4.98,4.73,False
 1.0,0.71,True,1.0,False,Fort Lauderdale,26.15093,-80.12167,Entire home/apt,6,2.0,True,3.0,3.0,378.0,3,65,75,90,34020.0,4.95,5.0,4.93,4.99,4.95,4.88,4.89,False
 1.0,1.0,False,2.0,True,Oakland Park,26.192557,-80.144151,Entire home/apt,4,1.0,True,2.0,4.0,158.0,5,265,46,10,1580.0,4.93,4.87,4.93,4.91,4.98,4.78,4.83,False
 0.86,0.64,False,169.0,True,Hallandale Beach,25.98563,-80.11796,Entire home/apt,6,2.0,True,2.0,3.0,133.0,3,340,5,18,2394.0,4.6,4.8,4.2,5.0,5.0,5.0,4.6,False
@@ -3080,7 +3058,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.0,False,2.0,True,Hollywood,25.989847,-80.118347,Entire home/apt,3,1.5,True,1.0,2.0,164.0,7,151,10,0,0.0,4.9,4.8,5.0,5.0,5.0,4.9,4.9,False
 1.0,1.0,False,94.0,True,Deerfield Beach,26.318676779114224,-80.07628366,Entire home/apt,4,1.0,True,1.0,3.0,79.0,30,293,2,120,9480.0,5.0,5.0,5.0,4.5,5.0,5.0,5.0,True
 0.98,0.98,True,57.0,True,Fort Lauderdale,26.16936,-80.10746,Entire home/apt,2,1.0,True,1.0,2.0,95.0,3,217,81,168,15960.0,4.84,4.86,4.86,4.95,4.89,4.8,4.74,False
-0.95,1.0,False,1.0,False,Hollywood,26.01189,-80.12751,Entire home/apt,12,4.5,True,6.0,12.0,997.0,2,215,58,114,113658.0,4.66,4.71,4.55,4.83,4.83,4.86,4.59,True
 1.0,0.87,True,11.0,True,Pompano Beach,26.21587,-80.12273,Entire home/apt,10,3.0,True,4.0,6.0,212.0,4,365,23,88,18656.0,4.78,4.87,4.78,4.91,4.96,4.91,4.7,False
 1.0,0.91,True,37.0,False,Hollywood,26.02651,-80.11474,Entire home/apt,4,1.0,True,1.0,2.0,120.0,1,362,2,0,0.0,5.0,5.0,5.0,5.0,5.0,5.0,4.5,True
 1.0,1.0,True,64.0,True,Fort Lauderdale,26.09393,-80.19995,Entire home/apt,8,2.0,True,4.0,4.0,125.0,2,168,67,240,30000.0,4.63,4.69,4.63,4.79,4.73,4.7,4.54,True
@@ -3214,7 +3191,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,94.0,True,Pompano Beach,26.22651,-80.0916,Entire home/apt,6,1.0,True,1.0,3.0,78.0,1,286,74,180,14040.0,4.54,4.55,4.5,4.65,4.76,4.82,4.51,True
 0.91,0.95,True,8.0,True,Sunrise,26.15087,-80.31817,Private room,2,1.0,True,1.0,1.0,188.0,1,317,14,6,1128.0,4.57,4.5,4.36,4.64,4.29,4.71,4.36,True
 1.0,1.0,False,125.0,True,Lighthouse Point,26.2818,-80.09428,Entire home/apt,4,1.0,True,1.0,2.0,50.0,1,360,70,120,6000.0,4.59,4.54,4.63,4.7,4.73,4.73,4.54,True
-1.0,0.98,True,37.0,True,Hollywood,26.00324,-80.13107,Entire home/apt,12,4.5,True,5.0,8.0,1495.0,3,342,36,6,8970.0,4.92,4.89,4.94,4.89,4.94,4.89,4.83,True
 1.0,1.0,True,9.0,True,Hollywood,25.98741,-80.119034,Entire home/apt,5,2.0,True,2.0,4.0,175.0,5,334,54,60,10500.0,4.8,4.78,4.76,4.87,4.91,4.83,4.74,True
 0.9,1.0,True,1.0,True,Hollywood,26.04517,-80.17631,Entire home/apt,8,2.5,True,4.0,7.0,447.0,2,346,55,66,29502.0,4.98,4.96,4.96,4.98,4.96,4.95,4.85,False
 1.0,0.97,True,97.0,True,Fort Lauderdale,26.16726,-80.11121,Entire home/apt,4,2.0,True,2.0,3.0,78.0,2,172,94,180,14040.0,4.89,4.9,4.78,4.97,4.98,4.83,4.86,False
@@ -3234,7 +3210,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.71,0.97,False,24.0,True,Hollywood,25.987418022265874,-80.11797881,Entire home/apt,4,1.0,True,1.0,2.0,164.0,2,249,29,174,28536.0,4.93,4.97,4.93,4.83,4.93,4.97,4.86,True
 0.9,1.0,True,1.0,True,Oakland Park,26.19285,-80.14691,Private room,2,1.0,True,1.0,1.0,59.0,2,63,137,255,15045.0,4.92,4.93,4.95,4.98,4.96,4.88,4.88,False
 1.0,1.0,True,12.0,True,Fort Lauderdale,26.1287,-80.10729,Entire home/apt,5,2.5,True,2.0,2.0,140.0,2,80,123,252,35280.0,4.95,4.92,4.93,4.9,4.93,4.95,4.9,False
-1.0,1.0,True,28.0,True,Fort Lauderdale,26.1183,-80.1252,Entire home/apt,8,3.0,True,4.0,6.0,1200.0,4,238,46,168,201600.0,4.96,4.98,4.93,5.0,5.0,4.91,4.72,True
 1.0,0.96,True,1.0,False,Pompano Beach,26.23323,-80.10906,Entire home/apt,2,1.0,True,1.0,1.0,83.0,3,339,109,180,14940.0,4.84,4.79,4.88,4.89,4.93,4.85,4.85,False
 1.0,0.97,True,8.0,True,Fort Lauderdale,26.12706,-80.1069,Entire home/apt,2,1.0,True,0.0,1.0,141.0,2,84,67,255,35955.0,4.96,4.97,4.96,5.0,5.0,5.0,4.96,False
 1.0,1.0,False,179.0,True,Lauderdale By The Sea,26.20825,-80.09815,Entire home/apt,6,3.0,True,3.0,4.0,187.0,1,321,57,30,5610.0,4.88,4.89,4.93,4.93,4.89,4.91,4.79,True
@@ -3300,7 +3275,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,26.0,True,Hallandale Beach,25.98569,-80.11996,Entire home/apt,10,2.0,True,2.0,6.0,174.0,3,331,6,12,2088.0,4.0,4.0,4.33,4.83,4.33,4.0,4.0,True
 1.0,0.97,True,3.0,True,Pompano Beach,26.25451,-80.09612,Entire home/apt,4,1.0,True,2.0,4.0,208.0,2,364,102,198,41184.0,5.0,4.99,4.98,5.0,4.99,4.95,4.96,False
 1.0,0.97,True,3.0,True,Pompano Beach,26.25473,-80.0959,Entire home/apt,4,1.0,True,2.0,3.0,124.0,2,350,78,192,23808.0,5.0,4.97,4.97,5.0,5.0,4.94,4.95,False
-1.0,0.79,False,18.0,False,Hallandale Beach,25.97886,-80.12941,Entire home/apt,14,6.5,True,6.0,9.0,1429.0,3,234,25,6,8574.0,4.88,4.92,4.8,4.84,4.96,4.88,4.72,True
 1.0,0.97,True,9.0,True,Deerfield Beach,26.31946,-80.07817,Entire home/apt,6,2.0,True,2.0,3.0,165.0,2,334,157,255,42075.0,4.99,4.99,4.96,5.0,5.0,4.99,4.96,False
 1.0,1.0,True,29.0,True,Hollywood,26.016706466674805,-80.1157074,Entire home/apt,2,1.0,True,0.0,1.0,156.0,1,285,26,36,5616.0,5.0,5.0,4.96,4.96,5.0,4.96,4.92,True
 0.96,0.98,False,3.0,True,Hallandale Beach,25.975058,-80.157013,Private room,2,1.0,True,1.0,1.0,49.0,1,153,92,246,12054.0,4.88,4.89,4.92,4.98,4.91,4.78,4.88,False
@@ -3548,8 +3522,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,5.0,True,Plantation,26.1439751,-80.2476617,Entire home/apt,6,2.0,True,4.0,3.0,246.0,3,36,92,168,41328.0,4.73,4.71,4.73,4.84,4.85,4.7,4.62,False
 1.0,1.0,False,61.0,True,Hallandale Beach,25.98713,-80.1224,Entire home/apt,10,3.0,True,4.0,6.0,254.0,3,262,50,30,7620.0,4.52,4.44,4.38,4.56,4.62,4.8,4.32,True
 1.0,0.88,True,3.0,True,Fort Lauderdale,26.10157,-80.15502,Entire home/apt,4,1.0,True,2.0,2.0,107.0,2,18,116,198,21186.0,4.97,4.97,4.94,4.98,4.97,4.91,4.95,False
-1.0,0.87,True,53.0,True,Pompano Beach,26.2174,-80.10078,Entire home/apt,6,3.0,True,3.0,3.0,999.0,2,365,38,12,11988.0,4.92,4.95,4.89,4.97,4.97,4.97,4.76,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.0966693,-80.1164501,Entire home/apt,12,6.0,True,6.0,9.0,1130.0,1,339,23,42,47460.0,4.96,5.0,5.0,5.0,5.0,4.96,4.83,False
 0.99,1.0,True,69.0,True,Pompano Beach,26.25071,-80.08852,Entire home/apt,8,3.5,True,4.0,5.0,242.0,4,340,99,200,48400.0,4.8,4.76,4.75,4.84,4.84,4.94,4.75,False
 1.0,1.0,False,1.0,True,Hollywood,26.0236118,-80.1970523,Entire home/apt,10,3.5,True,5.0,9.0,182.0,3,237,77,132,24024.0,4.69,4.77,4.53,4.95,4.81,4.84,4.71,True
 1.0,0.98,False,7.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,6,2.0,True,2.0,4.0,209.0,2,296,75,204,42636.0,4.72,4.79,4.63,4.67,4.64,4.91,4.63,True
@@ -3606,7 +3578,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.5,0.88,False,6.0,True,Fort Lauderdale,26.100791739516065,-80.18982153,Entire home/apt,4,1.0,True,1.0,2.0,138.0,2,270,146,138,19044.0,4.9,4.89,4.92,4.95,4.96,4.88,4.8,True
 1.0,1.0,True,1.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,6,2.0,True,2.0,3.0,199.0,4,121,75,216,42984.0,4.93,4.96,4.91,4.91,4.92,4.95,4.91,True
 1.0,1.0,False,1.0,True,Fort Lauderdale,26.1143,-80.18526,Entire home/apt,8,2.0,True,3.0,3.0,119.0,2,332,175,255,30345.0,4.74,4.75,4.68,4.93,4.87,4.47,4.66,True
-1.0,0.99,True,40.0,True,Fort Lauderdale,26.14866853,-80.10255505,Entire home/apt,8,4.5,True,3.0,4.0,1311.0,2,320,60,90,117990.0,5.0,4.95,5.0,5.0,5.0,4.98,4.87,True
 1.0,0.92,True,1.0,True,Deerfield Beach,26.31573,-80.10236,Private room,4,1.0,True,2.0,2.0,104.0,1,365,27,12,1248.0,4.96,4.89,5.0,5.0,4.96,4.59,4.85,False
 1.0,1.0,False,53.0,True,Fort Lauderdale,26.11814,-80.15241,Entire home/apt,4,1.0,True,2.0,2.0,79.0,1,363,116,144,11376.0,4.62,4.68,4.63,4.84,4.9,4.72,4.58,True
 1.0,1.0,False,53.0,True,Fort Lauderdale,26.11823,-80.1523,Entire home/apt,4,1.0,True,2.0,2.0,88.0,1,322,75,114,10032.0,4.51,4.73,4.51,4.84,4.84,4.73,4.49,True
@@ -3665,16 +3636,13 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.99,True,33.0,True,Fort Lauderdale,26.13894,-80.12334,Entire home/apt,4,2.0,True,2.0,2.0,178.0,3,322,161,255,45390.0,4.96,4.89,4.94,4.94,4.99,4.91,4.87,False
 1.0,0.99,True,33.0,True,Fort Lauderdale,26.13894,-80.12334,Entire home/apt,2,1.0,True,1.0,1.0,128.0,3,338,141,255,32640.0,4.99,5.0,4.96,4.99,4.99,4.91,4.93,False
 1.0,1.0,False,13.0,True,Hollywood,25.98699951,-80.12059784,Entire home/apt,8,2.0,True,3.0,5.0,204.0,3,92,47,108,22032.0,4.72,4.79,4.47,4.85,4.96,4.87,4.62,True
-1.0,1.0,True,28.0,True,Fort Lauderdale,26.11575,-80.114,Entire home/apt,10,6.0,True,5.0,6.0,1447.0,3,361,38,66,95502.0,4.97,4.95,4.92,5.0,5.0,5.0,4.84,True
 1.0,0.87,False,2.0,True,Hollywood,26.0103,-80.11823,Entire home/apt,2,1.0,True,0.0,1.0,98.0,3,4,42,36,3528.0,4.33,4.48,4.31,4.57,4.38,4.71,4.45,False
 1.0,1.0,False,51.0,True,Hollywood,25.989286720325435,-80.11722696,Entire home/apt,4,2.0,True,2.0,4.0,126.0,5,33,13,30,3780.0,4.23,4.46,4.23,4.77,4.54,4.46,4.23,True
-1.0,0.93,True,9.0,True,Fort Lauderdale,26.12777,-80.11889,Entire home/apt,10,5.5,True,5.0,5.0,1235.0,2,256,37,132,163020.0,4.92,4.92,4.92,4.95,4.76,5.0,4.84,False
 1.0,1.0,False,2.0,True,Fort Lauderdale,26.09453,-80.19018,Entire home/apt,8,3.0,True,4.0,8.0,203.0,1,352,82,108,21924.0,4.82,4.77,4.7,4.96,4.9,4.72,4.76,True
 0.98,0.98,False,25.0,False,Fort Lauderdale,26.10928,-80.10912,Entire home/apt,2,1.0,True,1.0,1.0,91.0,2,256,63,150,13650.0,4.83,4.9,4.7,4.73,4.97,4.83,4.67,True
 1.0,1.0,False,428.0,True,Hallandale Beach,25.9888556,-80.1382134,Entire home/apt,8,2.0,True,3.0,5.0,155.0,4,41,33,48,7440.0,4.48,4.45,4.48,4.94,4.64,4.73,4.27,True
 1.0,0.85,True,3.0,True,Fort Lauderdale,26.1513188,-80.1532158,Private room,2,1.0,True,1.0,1.0,92.0,2,64,30,12,1104.0,5.0,5.0,4.9,5.0,5.0,4.77,4.97,False
 1.0,0.99,True,1.0,True,Pompano Beach,26.228608,-80.0951542,Entire home/apt,12,3.5,True,4.0,8.0,599.0,4,226,70,224,134176.0,4.96,4.96,4.91,4.99,4.93,4.96,4.83,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1217874,-80.1190205,Entire home/apt,14,6.0,True,7.0,8.0,1070.0,1,338,23,30,32100.0,5.0,5.0,4.96,5.0,5.0,4.91,5.0,False
 0.86,0.64,False,169.0,True,Hollywood,25.98663,-80.12098,Entire home/apt,6,2.0,True,2.0,3.0,117.0,3,365,4,6,702.0,4.25,4.25,4.75,4.75,4.5,4.75,4.25,False
 1.0,0.9,False,128.0,True,Hollywood,26.01979,-80.14372,Entire home/apt,4,1.0,True,2.0,2.0,87.0,1,203,13,30,2610.0,4.69,4.69,4.46,4.85,4.77,4.77,4.62,False
 1.0,1.0,True,1.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,4,1.0,True,1.0,2.0,172.0,2,363,71,138,23736.0,4.87,4.89,4.8,4.86,4.92,4.79,4.83,True
@@ -3708,7 +3676,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.97,1.0,False,9.0,True,Fort Lauderdale,26.13129997,-80.14009857,Entire home/apt,3,1.0,True,1.0,1.0,118.0,1,177,105,246,29028.0,4.81,4.89,4.7,4.9,4.87,4.85,4.73,False
 1.0,0.98,True,13.0,True,Fort Lauderdale,26.10241,-80.15198,Entire home/apt,8,3.0,True,4.0,9.0,468.0,1,320,60,102,47736.0,4.97,4.93,4.93,5.0,4.98,4.83,4.85,False
 1.0,0.98,True,13.0,True,Fort Lauderdale,26.15069,-80.16001,Entire home/apt,8,2.0,True,4.0,5.0,378.0,1,360,108,174,65772.0,4.92,4.91,4.94,4.98,4.97,4.48,4.83,False
-1.0,0.98,True,13.0,True,Fort Lauderdale,26.10297,-80.15273,Entire home/apt,16,5.0,True,8.0,16.0,1035.0,1,309,14,24,24840.0,4.93,4.93,4.93,5.0,5.0,4.93,4.86,False
 1.0,1.0,True,24.0,True,Dania Beach,26.05989,-80.20552,Entire home/apt,5,1.0,True,2.0,3.0,238.0,1,347,63,150,35700.0,4.98,4.89,4.89,4.97,4.97,4.84,4.86,True
 1.0,0.99,False,28.0,True,Hollywood,26.01484,-80.1549,Entire home/apt,2,1.0,True,0.0,1.0,99.0,1,54,13,36,3564.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,0.99,True,1.0,True,Lauderdale Lakes,26.17472,-80.20011,Entire home/apt,4,1.0,True,1.0,2.0,88.0,1,353,214,255,22440.0,4.93,4.92,4.96,4.96,4.96,4.76,4.88,True
@@ -3987,7 +3954,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,1.0,True,Hollywood,25.98711549049853,-80.12044284,Entire home/apt,6,2.0,True,2.0,3.0,178.0,3,290,51,210,37380.0,4.88,4.9,4.94,4.82,4.92,4.86,4.78,False
 1.0,1.0,True,3.0,True,Pompano Beach,26.21292,-80.1224,Entire home/apt,8,2.0,True,3.0,5.0,302.0,3,232,82,192,57984.0,4.96,4.93,4.96,4.99,4.99,4.94,4.91,False
 1.0,0.98,True,15.0,True,Hollywood,26.02342,-80.11514,Entire home/apt,8,2.0,True,2.0,4.0,256.0,3,71,21,24,6144.0,4.95,5.0,4.9,5.0,5.0,5.0,4.95,False
-1.0,0.67,False,1.0,False,Pompano Beach,26.22007,-80.09378,Entire home/apt,10,3.0,True,4.0,7.0,1250.0,5,237,10,30,37500.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,0.99,True,9.0,True,Fort Lauderdale,26.14023,-80.13203,Entire home/apt,3,1.0,True,1.0,1.0,98.0,1,249,217,255,24990.0,4.98,4.96,4.94,4.97,4.98,4.91,4.92,False
 1.0,0.98,True,102.0,True,Lighthouse Point,26.2846161,-80.0907249,Entire home/apt,8,3.0,True,3.0,3.0,213.0,1,304,27,60,12780.0,5.0,4.93,4.96,5.0,5.0,5.0,4.93,False
 1.0,0.92,False,51.0,True,Hallandale Beach,25.99522,-80.15088,Entire home/apt,16,2.0,True,4.0,11.0,388.0,1,342,7,6,2328.0,4.43,4.71,5.0,4.71,4.14,4.29,4.29,True
@@ -4020,7 +3986,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,27.0,True,Fort Lauderdale,26.1317775,-80.1241245,Entire home/apt,6,1.0,True,2.0,3.0,73.0,3,208,74,168,12264.0,4.69,4.7,4.73,4.82,4.8,4.78,4.61,True
 1.0,0.92,False,9.0,True,Fort Lauderdale,26.14811,-80.16422,Private room,1,1.0,False,1.0,1.0,43.0,2,267,22,30,1290.0,4.64,4.77,4.59,4.86,4.86,4.45,4.64,False
 1.0,1.0,True,68.0,False,Fort Lauderdale,26.15379906,-80.12229919,Entire home/apt,8,2.0,True,4.0,8.0,108.0,1,281,113,240,25920.0,4.78,4.81,4.63,4.9,4.91,4.91,4.66,False
-1.0,0.77,True,3.0,True,Hallandale Beach,25.9801,-80.12399,Entire home/apt,10,6.0,True,5.0,6.0,1483.0,4,150,9,32,47456.0,5.0,4.89,5.0,5.0,5.0,4.89,4.67,False
 0.75,0.95,False,18.0,True,Oakland Park,26.1803612,-80.1421223,Entire home/apt,2,1.0,True,1.0,1.0,60.0,30,270,11,60,3600.0,4.18,4.45,4.45,4.36,4.64,4.55,4.0,True
 1.0,0.97,True,43.0,True,Oakland Park,26.1711568,-80.1208964,Entire home/apt,6,2.0,True,3.0,4.0,216.0,2,365,23,96,20736.0,4.78,4.74,4.83,4.87,5.0,4.78,4.78,True
 1.0,1.0,True,1.0,True,Wilton Manors,26.1595313,-80.1397836,Private room,2,1.0,True,1.0,1.0,111.0,1,323,112,84,9324.0,4.94,4.97,4.95,4.97,4.95,4.96,4.88,True
@@ -4137,7 +4102,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.67,True,1.0,True,Hollywood,26.00264,-80.15201,Entire home/apt,5,2.0,True,3.0,3.0,121.0,2,39,78,168,20328.0,4.94,4.94,4.88,4.97,4.97,4.84,4.86,False
 1.0,1.0,True,10.0,False,Dania Beach,26.062450766790537,-80.15825206,Entire home/apt,6,2.0,True,2.0,5.0,151.0,5,140,140,255,38505.0,4.81,4.84,4.84,4.92,4.86,4.71,4.74,False
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.09658,-80.1159,Entire home/apt,10,5.0,True,5.0,7.0,671.0,1,123,6,6,4026.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1215876,-80.1144615,Entire home/apt,12,5.5,True,6.0,6.0,1027.0,1,335,41,66,67782.0,5.0,5.0,4.98,4.95,5.0,5.0,4.93,False
 1.0,1.0,True,10.0,False,County Regional Facility,26.06337,-80.15748,Entire home/apt,6,2.0,True,2.0,3.0,121.0,5,142,131,255,30855.0,4.75,4.72,4.78,4.93,4.82,4.71,4.6,False
 1.0,1.0,False,428.0,True,Hallandale Beach,25.98601,-80.12281,Entire home/apt,3,1.0,True,1.0,2.0,88.0,4,311,37,136,11968.0,4.35,4.49,4.51,4.54,4.76,4.57,4.32,True
 1.0,0.98,False,38.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,6,2.0,True,2.0,4.0,176.0,2,290,64,114,20064.0,4.66,4.81,4.64,4.67,4.8,4.83,4.55,True
@@ -4161,7 +4125,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,2.0,True,Deerfield Beach,26.3074524,-80.089263,Entire home/apt,10,2.0,True,4.0,7.0,264.0,3,201,38,90,23760.0,4.92,4.92,4.89,5.0,4.95,4.82,4.79,False
 0.96,0.51,True,331.0,True,Pompano Beach,26.22478,-80.15701,Entire home/apt,6,2.0,True,2.0,2.0,99.0,2,59,3,6,594.0,4.33,4.67,4.67,3.67,5.0,4.0,4.0,False
 1.0,1.0,True,7.0,True,Pompano Beach,26.23649,-80.09825,Entire home/apt,8,2.0,True,2.0,4.0,215.0,2,265,64,204,43860.0,4.98,4.98,4.98,4.98,4.98,4.95,4.8,False
-1.0,0.98,True,37.0,True,Fort Lauderdale,26.10849,-80.1602,Entire home/apt,12,3.0,True,4.0,7.0,1012.0,2,365,22,0,0.0,5.0,5.0,5.0,4.86,4.95,4.91,4.82,True
 1.0,0.95,True,5.0,True,Oakland Park,26.18236,-80.12751,Private room,2,0.0,False,1.0,1.0,55.0,3,105,13,18,990.0,5.0,5.0,4.92,5.0,5.0,4.92,4.92,False
 1.0,1.0,False,101.0,True,Hollywood,25.98679924,-80.11869812,Entire home/apt,6,2.0,True,2.0,4.0,120.0,2,355,47,72,8640.0,4.64,4.83,4.53,4.89,4.91,4.96,4.6,True
 1.0,0.86,False,2.0,True,Hollywood,25.99844,-80.14769,Entire home/apt,4,1.0,True,1.0,2.0,98.0,5,269,5,30,2940.0,4.4,4.4,4.0,4.8,5.0,4.0,3.6,False
@@ -4394,7 +4357,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,4.0,True,Miramar,25.99163,-80.22942,Entire home/apt,13,3.0,True,5.0,7.0,382.0,2,72,10,12,4584.0,4.4,4.3,4.2,4.7,4.4,4.2,4.2,True
 1.0,0.76,False,1.0,False,Hollywood,26.0115,-80.13421,Entire home/apt,10,2.0,True,4.0,7.0,289.0,2,342,31,66,19074.0,4.77,4.84,4.71,5.0,4.9,5.0,4.77,False
 0.0,0.0,False,1.0,True,Lauderdale Lakes,26.17437,-80.19919,Entire home/apt,2,1.0,True,1.0,1.0,127.0,1,364,18,0,0.0,4.94,4.89,4.89,4.0,4.78,4.56,4.83,False
-1.0,1.0,True,1.0,True,Fort Lauderdale,26.123759668676417,-80.11043388,Entire home/apt,14,7.5,True,7.0,7.0,1399.0,3,72,24,60,83940.0,4.92,4.92,4.88,4.96,4.92,4.92,4.79,False
 1.0,1.0,False,1.0,True,Wilton Manors,26.1625044,-80.1262402,Entire home/apt,8,3.0,True,3.0,5.0,156.0,3,177,35,48,7488.0,4.74,4.8,4.8,4.91,4.86,4.91,4.74,False
 1.0,1.0,False,1.0,True,West Park,25.97468,-80.1989,Entire home/apt,4,1.0,True,2.0,3.0,108.0,3,348,24,84,9072.0,4.67,4.71,4.58,4.83,4.88,4.67,4.58,False
 1.0,0.86,True,2.0,True,Deerfield Beach,26.31569947319296,-80.07729338,Entire home/apt,4,1.0,True,1.0,2.0,98.0,1,163,40,66,6468.0,4.88,4.93,4.95,5.0,5.0,4.9,4.95,False
@@ -4462,7 +4424,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.85,0.81,True,64.0,True,Fort Lauderdale,26.1258,-80.13986,Entire home/apt,4,2.0,True,2.0,2.0,160.0,1,340,37,54,8640.0,4.84,4.76,4.84,4.81,4.84,4.86,4.68,False
 1.0,0.78,True,10.0,True,Hollywood,26.003534499256805,-80.14086354,Entire home/apt,1,1.0,True,0.0,1.0,65.0,31,102,10,186,12090.0,4.9,4.8,4.8,4.9,4.9,4.8,4.6,False
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.09471,-80.14594,Entire home/apt,2,1.0,True,1.0,2.0,104.0,1,272,9,24,2496.0,5.0,5.0,5.0,4.89,5.0,4.89,5.0,False
-1.0,0.99,True,40.0,True,Hollywood,26.00335,-80.12077,Entire home/apt,10,5.5,True,5.0,6.0,1075.0,1,358,10,18,19350.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.09605,-80.14586,Entire home/apt,2,1.0,True,1.0,2.0,100.0,1,322,9,36,3600.0,5.0,5.0,5.0,5.0,5.0,4.78,5.0,True
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.09668,-80.14679,Entire home/apt,4,1.0,True,2.0,2.0,122.0,1,295,17,48,5856.0,4.76,4.71,4.82,4.88,4.76,4.76,4.65,False
 1.0,0.96,False,1.0,True,Pompano Beach,26.24288,-80.09661,Entire home/apt,6,2.0,True,3.0,3.0,249.0,1,215,14,84,20916.0,4.5,4.5,4.64,4.93,4.93,4.71,4.57,True
@@ -4535,7 +4496,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.67,0.5,False,2.0,True,Wilton Manors,26.162791000901542,-80.15433926,Private room,2,1.0,True,1.0,4.0,48.0,30,52,48,0,0.0,4.6,4.54,4.79,4.73,4.83,4.31,4.56,False
 1.0,1.0,False,13.0,True,Dania Beach,26.05482,-80.14843,Private room,2,1.0,False,1.0,1.0,50.0,1,363,94,210,10500.0,4.73,4.82,4.86,4.95,4.9,4.57,4.63,True
 1.0,1.0,True,34.0,True,Pompano Beach,26.24744,-80.09956,Entire home/apt,10,3.5,True,4.0,7.0,247.0,3,311,47,90,22230.0,4.94,4.94,4.96,4.98,5.0,4.87,4.89,False
-1.0,0.94,False,3.0,True,Southwest Ranches,26.06097,-80.38459,Entire home/apt,12,3.5,True,4.0,7.0,1018.0,1,365,18,18,18324.0,4.11,4.11,4.33,4.5,4.39,4.17,3.78,False
 1.0,1.0,False,8.0,True,Hollywood,26.05028,-80.11253,Entire home/apt,4,0.0,True,0.0,2.0,53.0,1,342,41,84,4452.0,4.27,4.46,4.56,4.56,4.59,4.83,4.41,True
 1.0,0.94,False,4.0,True,Fort Lauderdale,26.13095,-80.15502,Entire home/apt,6,2.5,True,3.0,4.0,151.0,2,244,9,24,3624.0,4.44,4.44,4.33,4.89,5.0,4.11,4.22,True
 1.0,0.88,True,12.0,True,Hollywood,26.00522,-80.15556,Entire home/apt,4,1.0,True,1.0,2.0,228.0,2,118,17,36,8208.0,4.94,4.82,4.59,4.94,5.0,4.76,4.71,True
@@ -4560,7 +4520,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,1.0,True,Hallandale Beach,25.98524,-80.12239,Entire home/apt,6,3.0,True,3.0,4.0,218.0,2,259,47,144,31392.0,4.6,4.87,4.57,4.38,4.81,4.87,4.51,True
 1.0,0.92,True,8.0,True,Wilton Manors,26.15807,-80.15153,Private room,3,1.0,True,1.0,1.0,120.0,1,293,7,30,3600.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,1.0,False,89.0,True,Hollywood,25.98707,-80.12029,Entire home/apt,6,2.0,True,2.0,4.0,139.0,4,309,34,80,11120.0,4.68,4.74,4.74,4.79,4.65,4.79,4.76,True
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.144076244417143,-80.11656156,Entire home/apt,16,9.0,True,8.0,15.0,1728.0,2,300,12,42,72576.0,4.92,4.83,5.0,5.0,4.83,4.83,4.67,False
 1.0,1.0,False,7.0,True,Wilton Manors,26.15375,-80.14759,Entire home/apt,4,1.0,True,2.0,2.0,223.0,2,327,28,30,6690.0,4.89,4.96,4.96,4.93,4.93,4.93,4.93,True
 1.0,1.0,True,2.0,True,Margate,26.25261,-80.21238,Entire home/apt,4,1.5,True,2.0,3.0,147.0,2,242,52,132,19404.0,4.98,4.96,4.98,4.94,5.0,4.88,4.88,True
 1.0,1.0,True,2.0,True,Fort Lauderdale,26.15721,-80.11109,Entire home/apt,8,4.0,True,4.0,5.0,339.0,3,352,53,114,38646.0,4.85,4.83,4.89,4.89,4.77,4.87,4.81,True
@@ -4578,9 +4537,7 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.81,True,4.0,True,Coconut Creek,26.30736,-80.17152,Private room,1,1.0,False,1.0,1.0,52.0,2,356,16,42,2184.0,5.0,4.94,5.0,4.94,4.94,5.0,4.69,False
 1.0,0.78,False,4.0,True,Deerfield Beach,26.3008578,-80.1319716,Entire home/apt,4,2.0,True,2.0,2.0,107.0,18,70,4,72,7704.0,5.0,5.0,5.0,4.75,4.5,5.0,5.0,False
 1.0,1.0,True,1.0,True,Fort Lauderdale,26.1134665,-80.1574893,Entire home/apt,12,4.0,True,5.0,7.0,334.0,1,285,152,255,85170.0,4.99,4.98,4.99,4.98,4.99,4.83,4.91,True
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.097471873585096,-80.11641179,Entire home/apt,12,6.0,True,6.0,9.0,1130.0,1,339,10,18,20340.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.12409751652889,-80.1176019,Entire home/apt,10,4.5,True,5.0,6.0,862.0,3,319,14,12,10344.0,4.93,4.86,5.0,4.79,5.0,5.0,4.71,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.12251,-80.11898,Entire home/apt,14,6.0,True,7.0,8.0,1070.0,3,338,7,24,25680.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.09676,-80.1159,Entire home/apt,10,5.0,True,5.0,7.0,671.0,3,123,22,72,48312.0,4.95,4.91,4.91,4.91,4.95,4.82,4.82,False
 1.0,1.0,True,56.0,True,Hollywood,26.00455,-80.14568,Entire home/apt,2,1.0,True,1.0,1.0,59.0,2,360,57,144,8496.0,4.84,4.77,4.82,4.96,4.77,4.74,4.68,True
 1.0,1.0,True,56.0,True,Hallandale Beach,25.99359,-80.14208,Entire home/apt,2,1.0,True,1.0,1.0,55.0,2,359,33,108,5940.0,5.0,4.97,4.85,5.0,4.97,4.85,4.79,True
@@ -4620,7 +4577,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,19.0,True,Fort Lauderdale,26.11969,-80.16412,Entire home/apt,4,1.0,True,2.0,3.0,121.0,1,98,34,102,12342.0,4.68,4.65,4.62,4.88,4.79,4.74,4.56,False
 0.9,0.97,False,7.0,True,Hollywood,26.015,-80.14783,Private room,2,1.0,False,1.0,1.0,48.0,1,267,41,126,6048.0,4.73,4.66,4.51,4.83,4.88,4.66,4.68,False
 1.0,1.0,True,28.0,True,Fort Lauderdale,26.1175597,-80.123212,Entire home/apt,6,2.0,True,3.0,4.0,426.0,4,356,30,56,23856.0,4.93,4.93,4.97,5.0,5.0,5.0,4.9,True
-1.0,0.96,True,3.0,True,Fort Lauderdale,26.15055,-80.11647,Entire home/apt,12,4.5,True,6.0,9.0,1225.0,3,87,47,120,147000.0,5.0,4.96,4.94,4.89,4.91,4.91,4.79,False
 1.0,0.73,False,254.0,True,Hallandale Beach,25.98732,-80.12253,Entire home/apt,3,1.0,True,1.0,1.0,399.0,1,365,3,6,2394.0,3.33,3.67,3.67,3.67,4.0,4.0,3.33,False
 1.0,0.97,False,40.0,False,Fort Lauderdale,26.11813,-80.15713,Entire home/apt,2,1.0,True,1.0,1.0,85.0,4,227,27,96,8160.0,4.7,4.78,4.59,4.7,4.44,4.7,4.7,True
 1.0,1.0,True,2.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,4,1.0,True,1.0,3.0,178.0,2,200,46,168,29904.0,4.93,4.91,4.91,4.98,4.96,4.96,4.89,True
@@ -4717,11 +4673,9 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.97,True,9.0,True,Pompano Beach,26.2141519,-80.1046666,Entire home/apt,8,2.0,True,3.0,4.0,149.0,1,297,69,108,16092.0,4.93,4.96,4.96,4.96,5.0,4.94,4.86,False
 1.0,0.83,False,3.0,True,Lauderdale By The Sea,26.20736,-80.09449,Entire home/apt,9,2.0,True,3.0,5.0,244.0,7,180,1,14,3416.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,True,31.0,True,Pompano Beach,26.2533,-80.08785,Entire home/apt,12,2.0,True,3.0,7.0,118.0,3,329,85,156,18408.0,4.93,4.85,4.89,4.94,4.95,4.88,4.82,True
-0.9,1.0,True,2.0,False,Fort Lauderdale,26.11046,-80.15292,Entire home/apt,12,5.0,True,6.0,6.0,971.0,2,334,54,96,93216.0,4.98,4.91,4.96,4.98,4.98,4.93,4.89,True
 1.0,1.0,False,1.0,True,Hallandale Beach,25.98635,-80.11768,Entire home/apt,6,2.0,True,2.0,3.0,180.0,3,348,20,42,7560.0,4.35,4.6,4.05,4.55,4.4,4.95,4.3,True
 1.0,1.0,True,1.0,True,Pompano Beach,26.2490203,-80.088281,Entire home/apt,4,1.0,True,1.0,2.0,150.0,3,294,51,72,10800.0,4.92,4.98,4.98,4.98,4.96,4.94,4.92,False
 1.0,1.0,True,3.0,True,Hollywood,25.987381878570687,-80.11802175,Entire home/apt,4,1.0,True,1.0,2.0,138.0,1,251,24,102,14076.0,4.79,4.75,4.63,4.88,4.83,4.96,4.88,True
-1.0,0.98,True,102.0,True,Pompano Beach,26.25645,-80.08411,Entire home/apt,11,5.5,True,5.0,7.0,1017.0,1,275,8,30,30510.0,5.0,5.0,5.0,5.0,5.0,5.0,4.63,False
 1.0,1.0,False,22.0,True,Hallandale Beach,25.9776224,-80.1208666,Entire home/apt,6,3.0,True,3.0,3.0,224.0,21,3,6,126,28224.0,4.5,4.83,4.67,4.33,5.0,4.67,4.5,False
 1.0,0.95,True,6.0,True,Hallandale Beach,25.98604,-80.12092,Entire home/apt,6,2.0,True,2.0,4.0,216.0,2,316,43,102,22032.0,4.88,4.93,4.81,4.81,4.91,4.88,4.77,False
 0.97,0.84,False,2.0,False,Hollywood,26.02293,-80.15311,Private room,2,1.0,True,1.0,1.0,45.0,2,344,159,255,11475.0,4.72,4.81,4.81,4.9,4.91,4.64,4.71,False
@@ -4729,7 +4683,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.09902,-80.15359,Entire home/apt,2,1.0,True,1.0,1.0,90.0,1,275,194,255,22950.0,4.9,4.92,4.91,4.99,4.94,4.94,4.85,False
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.10058,-80.1535,Entire home/apt,2,1.0,True,1.0,1.0,57.0,1,299,269,255,14535.0,4.91,4.92,4.94,4.93,4.95,4.89,4.83,False
 1.0,0.99,False,10.0,True,Hollywood,26.01346,-80.23645,Entire home/apt,2,1.0,True,0.0,4.0,58.0,31,223,1,62,3596.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
-1.0,0.88,True,40.0,True,Fort Lauderdale,26.1504,-80.11246,Entire home/apt,14,5.0,True,6.0,7.0,1286.0,2,293,22,60,77160.0,4.91,4.95,5.0,4.91,4.91,4.95,4.91,True
 1.0,1.0,False,1.0,True,Miramar,25.9929924,-80.2168087,Entire home/apt,4,1.0,True,1.0,3.0,66.0,1,260,75,150,9900.0,4.93,4.92,4.92,4.97,5.0,4.89,4.87,False
 0.99,0.98,False,74.0,True,Hollywood,25.98669,-80.11867,Entire home/apt,4,2.0,True,2.0,2.0,149.0,2,157,34,78,11622.0,4.76,4.85,4.62,4.94,4.88,4.85,4.59,True
 1.0,1.0,False,2.0,True,Deerfield Beach,26.31719,-80.07792,Entire home/apt,4,2.5,True,2.0,2.0,232.0,3,335,1,0,0.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
@@ -4745,7 +4698,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,112.0,True,Hollywood,25.9873,-80.11954,Entire home/apt,6,2.0,True,2.0,3.0,187.0,1,292,55,234,43758.0,4.85,4.85,4.78,4.8,4.91,4.87,4.73,True
 1.0,1.0,True,112.0,True,Hollywood,25.98759,-80.12026,Entire home/apt,5,2.0,True,2.0,4.0,141.0,1,298,33,30,4230.0,4.79,4.94,4.94,4.88,4.88,4.91,4.79,True
 1.0,0.95,True,1.0,True,Wilton Manors,26.15988,-80.14977,Entire home/apt,2,1.0,True,1.0,2.0,118.0,3,108,24,66,7788.0,5.0,4.96,5.0,5.0,5.0,4.96,5.0,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.12758,-80.119,Entire home/apt,14,5.5,True,7.0,7.0,1120.0,1,339,11,18,20160.0,5.0,5.0,5.0,5.0,5.0,5.0,4.91,False
 1.0,0.8,False,1.0,True,Miramar,25.98618,-80.22686,Entire home/apt,2,1.0,True,1.0,1.0,66.0,1,165,47,66,4356.0,4.83,4.83,4.85,4.91,4.85,4.77,4.72,False
 0.9,1.0,True,18.0,True,Hollywood,25.98785,-80.11953,Entire home/apt,6,2.0,True,2.0,4.0,315.0,3,103,12,6,1890.0,4.75,4.67,4.75,4.83,4.92,4.83,4.67,True
 1.0,1.0,True,27.0,True,Fort Lauderdale,26.14711,-80.12406,Entire home/apt,10,3.0,True,4.0,8.0,252.0,1,326,82,168,42336.0,4.93,4.9,4.94,4.98,4.98,4.88,4.83,True
@@ -4766,7 +4718,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.58,True,6.0,True,Pompano Beach,26.22375,-80.15976,Entire home/apt,4,1.0,True,1.0,1.0,199.0,2,358,4,6,1194.0,5.0,5.0,5.0,5.0,4.75,4.75,5.0,False
 0.83,1.0,True,7.0,True,Lauderdale By The Sea,26.1934585,-80.0988319,Private room,6,1.0,True,1.0,1.0,191.0,7,175,11,56,10696.0,4.91,5.0,4.91,4.91,5.0,5.0,5.0,True
 0.83,1.0,True,7.0,True,Lauderdale By The Sea,26.1934585,-80.0988319,Private room,5,1.0,True,1.0,1.0,214.0,7,213,5,14,2996.0,5.0,4.6,5.0,5.0,5.0,5.0,4.8,True
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1267483,-80.1190859,Entire home/apt,14,5.5,True,7.0,7.0,1120.0,1,339,13,18,20160.0,5.0,5.0,4.85,5.0,5.0,5.0,4.85,False
 1.0,1.0,False,4.0,True,Hollywood,26.02977,-80.11656,Private room,3,1.0,False,1.0,2.0,123.0,1,365,8,6,738.0,5.0,4.88,4.88,5.0,5.0,5.0,4.88,False
 1.0,0.92,False,3.0,True,Sunrise,26.17149,-80.25891,Private room,1,1.0,False,1.0,1.0,72.0,2,330,4,24,1728.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,0.98,True,17.0,True,Hollywood,25.9868062,-80.1186497,Entire home/apt,4,1.0,True,1.0,2.0,116.0,2,77,17,54,6264.0,4.71,4.71,4.53,4.76,4.71,4.76,4.47,True
@@ -5373,7 +5324,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,2.0,True,Fort Lauderdale,26.14149,-80.14055,Entire home/apt,4,1.0,True,2.0,2.0,106.0,2,315,84,216,22896.0,4.8,4.77,4.76,4.94,4.95,4.73,4.69,False
 1.0,1.0,False,1.0,True,Pompano Beach,26.25602,-80.09886,Entire home/apt,8,3.5,True,3.0,5.0,317.0,3,269,11,48,15216.0,4.64,4.64,4.36,4.91,4.64,4.73,4.73,False
 1.0,0.97,False,10.0,False,Hallandale Beach,25.978755235488347,-80.15447718,Entire home/apt,4,1.0,True,0.0,3.0,68.0,3,76,52,156,10608.0,4.69,4.71,4.81,4.69,4.77,4.58,4.58,True
-1.0,0.98,True,14.0,False,Fort Lauderdale,26.10633,-80.12439,Entire home/apt,10,4.0,True,5.0,5.0,1045.0,2,230,48,168,175560.0,4.96,4.88,4.85,4.96,5.0,4.98,4.88,False
 1.0,1.0,True,2.0,True,Fort Lauderdale,26.1277466,-80.1066196,Entire home/apt,4,2.0,True,2.0,2.0,158.0,2,344,53,216,34128.0,4.92,4.94,4.87,4.98,4.96,4.92,4.91,False
 1.0,1.0,False,428.0,True,Hallandale Beach,25.9860143,-80.1228132,Entire home/apt,3,1.0,True,1.0,1.0,120.0,4,330,24,64,7680.0,4.63,4.58,4.63,4.71,4.92,4.92,4.63,True
 0.98,0.95,True,25.0,True,Fort Lauderdale,26.12695,-80.13205,Entire home/apt,6,3.5,True,3.0,3.0,208.0,1,246,53,138,28704.0,5.0,5.0,5.0,5.0,5.0,4.96,4.94,True
@@ -5538,7 +5488,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.95,True,5.0,True,Wilton Manors,26.16012,-80.14497,Entire home/apt,6,2.0,True,3.0,3.0,294.0,4,135,46,200,58800.0,4.98,5.0,4.98,5.0,5.0,4.91,4.98,False
 1.0,0.95,False,1.0,True,Hollywood,25.9870383,-80.1206413,Entire home/apt,6,2.0,True,2.0,4.0,150.0,3,327,23,90,13500.0,4.65,4.61,4.52,4.87,4.78,4.48,4.57,False
 1.0,0.95,True,5.0,False,Hollywood,26.0026801,-80.1358582,Entire home/apt,6,2.0,True,3.0,2.0,167.0,1,255,26,78,13026.0,5.0,5.0,5.0,4.96,5.0,4.92,4.96,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1436707,-80.116648,Entire home/apt,16,7.5,True,8.0,9.0,1053.0,1,329,22,102,107406.0,4.73,4.91,4.95,4.91,4.82,4.91,4.77,False
 1.0,0.98,True,51.0,True,Fort Lauderdale,26.148,-80.11075,Entire home/apt,6,2.0,True,3.0,3.0,236.0,2,354,35,96,22656.0,4.86,4.97,4.8,4.97,5.0,4.91,4.74,False
 1.0,0.97,True,2.0,True,Fort Lauderdale,26.09494,-80.19438,Entire home/apt,10,3.0,True,4.0,6.0,258.0,1,155,86,255,65790.0,4.85,4.81,4.77,4.93,4.92,4.84,4.74,False
 1.0,0.99,False,16.0,True,Hallandale Beach,25.99061,-80.14204,Entire home/apt,3,1.0,True,1.0,1.0,60.0,1,268,20,36,2160.0,3.9,3.9,4.15,4.55,4.05,4.2,3.65,True
@@ -5663,7 +5612,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,16.0,True,Sea Ranch Lakes,26.197430603435784,-80.09673951,Entire home/apt,6,3.5,True,3.0,3.0,399.0,1,281,15,54,21546.0,5.0,5.0,4.87,5.0,5.0,5.0,4.73,True
 1.0,1.0,False,12.0,True,Hollywood,26.0284734,-80.115685,Entire home/apt,4,1.0,True,0.0,2.0,61.0,1,303,54,198,12078.0,4.52,4.57,4.56,4.59,4.72,4.8,4.65,False
 1.0,1.0,False,12.0,True,Hollywood,26.0284734,-80.115685,Entire home/apt,3,1.0,True,0.0,2.0,58.0,1,289,80,255,14790.0,4.71,4.75,4.75,4.67,4.84,4.84,4.66,False
-1.0,0.64,False,3.0,True,Fort Lauderdale,26.13036,-80.12823,Entire home/apt,10,5.0,True,4.0,4.0,1710.0,2,260,23,60,102600.0,4.83,4.83,4.83,4.83,4.83,4.96,4.83,False
 0.97,0.99,False,22.0,True,Fort Lauderdale,26.10233,-80.1376,Private room,2,1.0,True,1.0,1.0,79.0,1,279,22,72,5688.0,4.45,4.59,4.77,4.5,4.64,4.55,4.36,True
 0.97,0.99,False,22.0,True,Fort Lauderdale,26.10233,-80.1376,Private room,2,1.0,True,1.0,1.0,79.0,1,285,120,255,20145.0,4.74,4.82,4.86,4.75,4.92,4.76,4.71,True
 0.97,0.99,False,22.0,True,Fort Lauderdale,26.10233,-80.1376,Private room,2,1.0,True,1.0,1.0,79.0,1,309,30,78,6162.0,4.7,4.93,4.83,4.67,4.8,4.7,4.7,True
@@ -5717,7 +5665,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.99,True,13.0,False,Hollywood,26.0053754,-80.1892855,Entire home/apt,8,2.0,True,3.0,5.0,154.0,2,169,84,255,39270.0,4.73,4.73,4.63,4.94,4.89,4.8,4.63,False
 1.0,1.0,True,14.0,True,Pompano Beach,26.23675,-80.09891,Entire home/apt,6,2.0,True,3.0,4.0,195.0,4,119,24,24,4680.0,4.83,4.92,4.92,4.88,4.96,4.88,4.83,True
 1.0,0.89,True,20.0,True,Pompano Beach,26.22619,-80.09131,Private room,4,1.0,True,1.0,2.0,98.0,3,270,3,0,0.0,3.67,4.0,3.33,4.67,4.0,4.67,3.67,False
-1.0,0.98,True,102.0,True,Pompano Beach,26.25694,-80.08392,Entire home/apt,14,5.0,True,6.0,14.0,1263.0,1,313,11,36,45468.0,5.0,5.0,5.0,5.0,5.0,5.0,4.91,False
 1.0,0.93,False,55.0,True,Hallandale Beach,25.98685,-80.12359,Entire home/apt,4,1.0,True,1.0,2.0,89.0,1,364,1,0,0.0,3.0,4.0,1.0,5.0,3.0,4.0,1.0,True
 1.0,0.98,True,16.0,True,Fort Lauderdale,26.14676,-80.13818,Entire home/apt,4,2.0,True,2.0,2.0,85.0,2,348,42,114,9690.0,5.0,4.98,4.95,4.95,5.0,4.86,4.83,True
 1.0,0.93,True,9.0,True,Wilton Manors,26.1621391,-80.1444938,Entire home/apt,6,2.0,True,3.0,3.0,249.0,4,234,60,255,63495.0,5.0,5.0,5.0,5.0,5.0,4.97,5.0,False
@@ -5838,7 +5785,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.79,1.0,False,5.0,False,Fort Lauderdale,26.1342,-80.12921,Entire home/apt,4,1.0,True,1.0,2.0,62.0,1,246,36,162,10044.0,4.89,4.86,4.92,4.86,4.5,5.0,4.94,True
 1.0,0.89,False,19.0,True,Hollywood,26.01321,-80.18479,Entire home/apt,8,2.0,True,3.0,4.0,295.0,3,248,5,6,1770.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,True,22.0,True,Pompano Beach,26.26596,-80.10748,Entire home/apt,8,2.0,True,3.0,4.0,142.0,1,356,56,162,23004.0,4.91,4.91,4.88,5.0,5.0,4.75,4.84,True
-1.0,0.98,True,37.0,True,Fort Lauderdale,26.14485,-80.1115,Entire home/apt,14,9.0,True,7.0,8.0,2004.0,2,327,5,30,60120.0,4.6,4.8,4.4,4.8,4.8,4.8,4.6,True
 1.0,1.0,True,14.0,True,Hollywood,26.022,-80.13475,Entire home/apt,10,2.0,True,4.0,5.0,198.0,4,154,38,176,34848.0,4.92,4.89,4.89,4.74,5.0,4.84,4.74,True
 1.0,1.0,True,4.0,True,Hollywood,26.02551,-80.14068,Entire home/apt,6,1.0,True,2.0,3.0,144.0,1,263,19,60,8640.0,5.0,4.95,5.0,4.95,4.95,4.58,4.89,True
 1.0,1.0,True,2.0,True,Deerfield Beach,26.3138268,-80.0801635,Entire home/apt,10,3.5,True,4.0,5.0,425.0,2,153,61,216,91800.0,4.93,4.98,4.97,4.98,4.95,4.97,4.87,False
@@ -5892,7 +5838,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,36.0,False,Fort Lauderdale,26.14004,-80.12277,Entire home/apt,2,1.0,True,0.0,1.0,57.0,1,330,12,42,2394.0,4.83,4.83,4.92,4.92,4.92,4.83,4.92,True
 1.0,0.82,True,5.0,True,Fort Lauderdale,26.10263,-80.15775,Entire home/apt,6,2.0,True,2.0,2.0,166.0,2,161,23,54,8964.0,4.96,5.0,4.91,5.0,5.0,4.83,4.96,False
 0.98,1.0,False,133.0,True,Hollywood,26.007769,-80.13474,Entire home/apt,6,3.0,True,3.0,4.0,205.0,1,272,16,78,15990.0,4.69,4.63,4.63,4.88,4.63,4.75,4.56,True
-1.0,0.99,False,1481.0,True,Coral Springs,26.28242,-80.26099,Entire home/apt,12,5.0,True,6.0,10.0,1030.0,4,345,3,0,0.0,5.0,4.67,5.0,5.0,5.0,5.0,4.33,True
 1.0,0.96,True,3.0,True,Pompano Beach,26.22583,-80.09353,Entire home/apt,4,1.0,True,1.0,2.0,123.0,2,276,28,72,8856.0,5.0,4.96,4.96,4.96,4.96,4.89,4.86,False
 0.0,0.0,False,3.0,True,Oakland Park,26.17445,-80.16968,Private room,2,1.0,True,1.0,0.0,76.0,1,90,3,0,0.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,False,428.0,True,Hallandale Beach,25.98601,-80.12281,Entire home/apt,4,1.0,True,0.0,2.0,72.0,4,365,22,144,10368.0,4.45,4.36,4.41,4.82,4.64,4.68,4.23,True
@@ -5954,7 +5899,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,428.0,True,Hollywood,25.98707,-80.12029,Entire home/apt,4,1.5,True,1.0,2.0,107.0,4,338,1,8,856.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,1.0,False,53.0,True,Fort Lauderdale,26.11817660858596,-80.15261494,Entire home/apt,4,2.0,True,2.0,2.0,111.0,1,346,60,246,27306.0,4.88,4.88,4.7,4.9,4.93,4.82,4.73,True
 1.0,0.99,True,2.0,True,Fort Lauderdale,26.14854,-80.15177,Entire home/apt,6,2.0,True,3.0,0.0,168.0,3,333,37,150,25200.0,5.0,4.97,4.92,5.0,5.0,4.73,4.81,False
-1.0,0.88,True,40.0,True,Fort Lauderdale,26.11953,-80.1323,Entire home/apt,14,5.0,True,5.0,1.0,1094.0,2,313,3,18,19692.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,1.0,False,428.0,True,Hollywood,25.9870728,-80.120294,Entire home/apt,4,1.5,True,1.0,2.0,113.0,4,323,27,176,19888.0,4.89,4.85,4.7,4.93,4.93,4.89,4.74,True
 1.0,1.0,False,428.0,True,Hollywood,25.9870728,-80.120294,Entire home/apt,6,2.0,True,2.0,4.0,138.0,4,327,18,104,14352.0,4.94,4.94,4.83,4.94,5.0,4.89,4.83,True
 0.73,0.86,False,5.0,False,Deerfield Beach,26.314,-80.09287,Entire home/apt,4,2.0,True,2.0,2.0,153.0,2,316,9,6,918.0,4.89,5.0,5.0,4.89,5.0,4.89,4.78,False
@@ -5972,7 +5916,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,8.0,True,Hollywood,25.99959,-80.16407,Entire home/apt,2,1.0,True,1.0,1.0,54.0,1,355,41,132,7128.0,4.83,4.85,4.93,4.98,4.95,4.66,4.78,True
 0.0,0.67,True,3.0,True,Deerfield Beach,26.28399,-80.12944,Private room,2,1.5,True,1.0,1.0,55.0,1,178,19,30,1650.0,4.74,4.74,4.84,4.84,5.0,4.63,4.79,False
 1.0,1.0,False,36.0,False,Fort Lauderdale,26.139867,-80.1228594,Entire home/apt,8,2.0,True,3.0,5.0,170.0,1,348,60,222,37740.0,4.67,4.7,4.77,4.8,4.7,4.72,4.67,True
-1.0,1.0,True,34.0,True,Fort Lauderdale,26.1476038,-80.1025722,Entire home/apt,8,2.0,True,3.0,5.0,1700.0,3,14,29,42,71400.0,4.72,4.72,4.83,4.83,4.83,4.86,4.66,False
 0.96,1.0,True,7.0,False,Fort Lauderdale,26.13934,-80.12332,Entire home/apt,7,2.0,True,2.0,4.0,100.0,30,330,32,255,25500.0,4.72,4.78,4.88,4.91,4.38,4.88,4.59,True
 1.0,1.0,True,12.0,True,Fort Lauderdale,26.12923,-80.10771,Entire home/apt,5,1.5,True,2.0,0.0,136.0,3,55,46,138,18768.0,4.89,4.96,4.96,4.85,4.83,4.98,4.91,True
 1.0,1.0,False,36.0,False,Fort Lauderdale,26.13987,-80.12286,Entire home/apt,2,1.0,True,0.0,1.0,64.0,1,354,9,24,1536.0,4.44,4.67,4.67,4.56,4.56,4.78,4.44,True
@@ -6086,7 +6029,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.98,True,3.0,True,Hollywood,26.04937,-80.11388,Entire home/apt,2,1.0,True,0.0,1.0,140.0,1,363,9,42,5880.0,4.78,4.78,4.78,5.0,4.67,4.89,4.67,True
 1.0,0.95,True,1.0,True,Hollywood,25.98725,-80.11964,Entire home/apt,3,1.0,True,1.0,2.0,182.0,3,349,26,150,27300.0,4.88,4.88,4.69,4.96,4.92,4.92,4.85,False
 1.0,1.0,True,38.0,True,Pompano Beach,26.21904,-80.18042,Entire home/apt,8,2.0,True,3.0,4.0,142.0,1,245,34,126,17892.0,4.91,4.97,4.82,5.0,5.0,4.94,4.91,True
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1045817,-80.1076554,Entire home/apt,12,4.0,True,6.0,6.0,1027.0,1,347,20,54,55458.0,4.9,4.85,4.85,4.95,5.0,4.8,4.75,False
 1.0,0.99,False,7.0,True,Pembroke Park,25.98055524592714,-80.19641003,Entire home/apt,7,1.0,True,2.0,6.0,95.0,1,335,61,252,23940.0,4.57,4.67,4.7,4.85,4.84,4.34,4.44,True
 1.0,1.0,True,2.0,True,Hollywood,26.0104735,-80.1707137,Entire home/apt,10,3.0,True,4.0,5.0,294.0,1,328,73,255,74970.0,4.99,4.99,5.0,5.0,5.0,4.81,4.93,False
 1.0,1.0,True,2.0,True,Sunrise,26.1507,-80.23455,Private room,2,1.0,True,1.0,1.0,71.0,1,356,123,255,18105.0,4.87,4.89,4.85,4.93,4.92,4.82,4.82,False
@@ -6353,7 +6295,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,89.0,True,Hallandale Beach,25.98601,-80.12281,Entire home/apt,3,1.0,True,1.0,1.0,133.0,4,365,11,48,6384.0,4.73,4.45,4.45,4.91,4.82,4.55,4.64,True
 1.0,0.91,False,1.0,False,Pembroke Pines,25.99976,-80.22667,Entire home/apt,9,2.0,True,4.0,4.0,115.0,5,174,28,230,26450.0,4.75,4.71,4.68,4.79,4.86,4.71,4.68,False
 0.99,0.77,True,40.0,True,Dania Beach,26.0539699,-80.1395774,Entire home/apt,10,6.0,True,6.0,8.0,271.0,5,293,14,100,27100.0,5.0,5.0,4.93,5.0,5.0,4.93,5.0,True
-1.0,0.79,False,18.0,False,Fort Lauderdale,26.14333,-80.10882,Entire home/apt,14,7.0,True,7.0,7.0,1195.0,3,342,2,12,14340.0,4.5,4.5,4.0,4.5,4.5,4.5,4.5,True
 1.0,0.95,False,1.0,True,Sunrise,26.16354,-80.27289,Private room,2,1.0,True,1.0,1.0,61.0,2,356,25,132,8052.0,4.8,4.72,4.92,4.92,4.84,4.92,4.88,False
 1.0,1.0,True,8.0,True,Pompano Beach,26.24996,-80.08684,Entire home/apt,8,3.5,True,4.0,4.0,380.0,4,302,13,72,27360.0,5.0,4.92,4.92,5.0,5.0,4.92,5.0,False
 1.0,0.88,True,38.0,True,Fort Lauderdale,26.16302,-80.1196,Entire home/apt,6,3.0,True,3.0,3.0,392.0,3,340,28,126,49392.0,4.93,4.96,4.96,5.0,4.93,4.86,4.89,False
@@ -6765,7 +6706,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.0,0.33,False,3.0,True,Coconut Creek,26.26898072036306,-80.18817668,Private room,2,1.0,True,1.0,1.0,52.0,1,365,1,6,312.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,False
 1.0,1.0,True,2.0,True,Fort Lauderdale,26.1090813,-80.1460485,Entire home/apt,12,3.0,True,4.0,5.0,227.0,2,327,35,186,42222.0,5.0,4.97,5.0,4.97,5.0,4.97,4.91,True
 1.0,1.0,False,157.0,True,Hallandale Beach,25.98601,-80.12281,Entire home/apt,4,1.0,True,0.0,2.0,64.0,4,364,3,24,1536.0,4.67,4.0,5.0,4.67,4.67,5.0,4.67,True
-1.0,0.98,False,1.0,True,Fort Lauderdale,26.1514479,-80.101301,Entire home/apt,16,6.0,True,6.0,10.0,1350.0,2,177,24,144,194400.0,4.83,4.92,4.75,5.0,5.0,5.0,4.83,False
 1.0,0.71,True,1.0,True,North Lauderdale,26.20514,-80.23342,Entire home/apt,4,2.0,True,2.0,2.0,158.0,3,163,10,54,8532.0,5.0,5.0,4.9,5.0,5.0,5.0,5.0,False
 1.0,0.99,True,2.0,True,Fort Lauderdale,26.15809,-80.15601,Entire home/apt,10,2.0,True,4.0,6.0,280.0,3,337,19,114,31920.0,4.89,4.68,4.79,5.0,5.0,4.79,4.89,False
 1.0,1.0,True,2.0,True,Sunrise,26.16138,-80.30295,Private room,3,1.0,True,1.0,2.0,100.0,1,220,61,255,25500.0,4.92,4.93,4.95,4.93,4.98,4.89,4.89,False
@@ -6861,7 +6801,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,2.0,True,Plantation,26.11641851148045,-80.28001309,Entire home/apt,3,1.0,True,1.0,3.0,95.0,1,235,32,192,18240.0,4.88,4.84,4.75,4.91,4.94,4.97,4.84,False
 1.0,1.0,False,1.0,True,Pompano Beach,26.24977,-80.12306,Entire home/apt,6,1.0,True,3.0,4.0,125.0,3,199,28,132,16500.0,4.96,4.96,4.96,4.96,4.96,4.68,4.93,True
 0.8,0.1,True,108.0,True,Pompano Beach,26.21841211251849,-80.09176589,Entire home/apt,4,1.0,True,1.0,2.0,133.0,3,239,1,6,798.0,5.0,5.0,5.0,5.0,5.0,5.0,4.0,False
-1.0,1.0,True,23.0,True,Fort Lauderdale,26.1819849,-80.1026813,Entire home/apt,10,5.0,True,5.0,7.0,1001.0,3,164,12,60,60060.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,1.0,True,3.0,True,Fort Lauderdale,26.14667,-80.10338,Entire home/apt,10,2.0,True,3.0,5.0,314.0,1,179,17,90,28260.0,4.76,4.76,4.76,5.0,4.82,5.0,4.59,True
 1.0,0.98,True,14.0,True,Fort Lauderdale,26.13658,-80.10818,Entire home/apt,4,1.0,True,1.0,3.0,95.0,2,313,25,126,11970.0,4.88,4.88,4.88,4.76,5.0,4.96,4.8,False
 0.96,0.99,False,15.0,True,Fort Lauderdale,26.13032,-80.14198,Entire home/apt,5,2.5,True,2.0,3.0,114.0,3,341,4,24,2736.0,5.0,4.75,5.0,5.0,5.0,4.75,5.0,True
@@ -7152,7 +7091,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,101.0,True,Hollywood,25.98681,-80.11865,Entire home/apt,6,2.0,True,2.0,4.0,117.0,2,330,27,162,18954.0,4.78,4.89,4.93,4.67,4.89,4.93,4.81,True
 1.0,0.94,False,65.0,True,Fort Lauderdale,26.161947130186128,-80.10153321,Entire home/apt,16,4.5,True,4.0,6.0,307.0,1,348,26,156,47892.0,4.81,4.88,4.96,4.92,4.88,4.85,4.69,True
 1.0,0.97,True,85.0,True,Margate,26.25748977,-80.21869516,Entire home/apt,12,2.0,True,4.0,8.0,219.0,1,355,45,255,55845.0,4.84,4.87,4.91,4.93,4.98,4.89,4.8,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.1183273,-80.1170855,Entire home/apt,16,7.0,True,7.0,8.0,1266.0,7,312,4,56,70896.0,5.0,5.0,5.0,5.0,5.0,5.0,4.75,False
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.1166405,-80.1214107,Entire home/apt,10,4.0,True,5.0,6.0,764.0,7,162,9,126,96264.0,4.89,4.89,5.0,5.0,5.0,5.0,4.89,True
 1.0,1.0,True,6.0,False,Hollywood,26.00830548365757,-80.14434929,Entire home/apt,6,2.0,True,2.0,3.0,250.0,1,365,8,48,12000.0,5.0,5.0,5.0,5.0,5.0,4.88,5.0,True
 1.0,0.96,True,14.0,True,Hillsboro Beach,26.304748216520057,-80.07881891,Entire home/apt,3,1.0,True,1.0,1.0,100.0,2,262,9,54,5400.0,4.89,4.78,4.78,4.67,5.0,4.78,4.67,False
@@ -7298,7 +7236,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.94,False,1.0,True,Hollywood,26.010866263822177,-80.11648964,Entire home/apt,2,1.0,True,1.0,1.0,110.0,4,284,9,72,7920.0,5.0,5.0,5.0,4.89,5.0,5.0,4.89,False
 1.0,1.0,False,10.0,True,Pompano Beach,26.25965235256229,-80.11226783,Entire home/apt,11,2.0,True,3.0,6.0,185.0,3,350,28,168,31080.0,4.89,4.82,4.86,4.86,4.96,4.68,4.75,True
 1.0,0.99,False,4.0,False,Pembroke Pines,26.00947200197866,-80.40281891,Private room,2,1.0,False,1.0,1.0,60.0,2,365,30,180,10800.0,4.63,4.6,4.7,4.67,4.9,4.9,4.53,True
-1.0,0.95,False,10.0,True,Fort Lauderdale,26.149420787703598,-80.10238389,Entire home/apt,10,6.0,True,5.0,5.0,1202.0,2,191,2,12,14424.0,5.0,5.0,4.5,5.0,5.0,5.0,5.0,True
 1.0,1.0,False,2.0,True,Coral Springs,26.24749942188006,-80.25971393,Private room,2,1.0,True,1.0,1.0,62.0,1,364,33,198,12276.0,4.48,4.67,4.64,4.58,4.79,4.79,4.61,False
 1.0,1.0,True,112.0,True,Fort Lauderdale,26.20638403993935,-80.11494168,Entire home/apt,10,2.0,True,3.0,6.0,177.0,2,308,12,72,12744.0,4.5,4.75,4.5,4.92,4.83,4.92,4.33,True
 1.0,0.94,True,1.0,True,Hollywood,26.0163532,-80.1167559,Entire home/apt,6,1.0,True,2.0,4.0,136.0,2,168,34,204,27744.0,5.0,5.0,5.0,5.0,5.0,5.0,4.97,False
@@ -7553,7 +7490,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.97,False,1.0,True,Hollywood,26.04068,-80.2308,Entire home/apt,2,1.0,True,1.0,2.0,53.0,2,54,9,54,2862.0,5.0,5.0,5.0,5.0,5.0,5.0,4.89,True
 1.0,0.99,False,58.0,True,Hallandale Beach,25.9860143,-80.1228132,Entire home/apt,2,1.0,True,1.0,1.0,116.0,1,365,11,66,7656.0,4.64,4.45,4.73,4.18,4.27,4.73,4.09,True
 1.0,1.0,False,3.0,True,Pembroke Pines,26.022627533591468,-80.246953,Private room,2,1.0,True,1.0,1.0,54.0,2,343,14,84,4536.0,4.93,4.93,5.0,5.0,5.0,4.86,4.93,False
-1.0,0.97,True,98.0,True,Fort Lauderdale,26.11833,-80.11709,Entire home/apt,16,7.0,True,7.0,8.0,1266.0,1,312,2,12,15192.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,True,4.0,True,Fort Lauderdale,26.089565677708865,-80.15879603,Entire home/apt,12,2.0,True,3.0,5.0,157.0,1,278,36,216,33912.0,4.97,4.77,4.91,5.0,5.0,4.83,4.83,False
 1.0,1.0,True,1.0,True,Fort Lauderdale,26.10453,-80.14819,Entire home/apt,6,1.0,True,2.0,3.0,178.0,2,168,19,114,20292.0,4.95,4.84,4.89,5.0,5.0,4.95,4.95,True
 1.0,1.0,False,1.0,True,Fort Lauderdale,26.096758327190745,-80.19043104,Entire home/apt,7,2.0,True,3.0,4.0,152.0,2,345,9,54,8208.0,5.0,5.0,5.0,5.0,5.0,4.89,5.0,False
@@ -7637,12 +7573,10 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,True,3.0,True,Hollywood,26.00659405121779,-80.14405919,Entire home/apt,4,1.0,True,1.0,2.0,97.0,1,87,34,204,19788.0,5.0,5.0,4.94,4.97,5.0,4.94,4.97,True
 1.0,0.97,True,98.0,True,Fort Lauderdale,26.14917,-80.10303,Entire home/apt,14,3.5,True,7.0,7.0,758.0,1,338,13,78,59124.0,4.92,5.0,4.92,5.0,5.0,5.0,4.77,True
 1.0,1.0,False,18.0,True,Hollywood,26.011691338164816,-80.19232641,Entire home/apt,10,2.0,True,4.0,5.0,251.0,1,358,16,96,24096.0,4.38,4.56,4.31,4.5,4.56,4.94,4.0,True
-1.0,1.0,True,9.0,False,Tamarac,26.188566986109738,-80.23391045,Entire home/apt,16,7.5,True,11.0,14.0,1742.0,3,315,8,48,83616.0,5.0,5.0,5.0,5.0,4.88,4.88,5.0,True
 0.98,0.68,False,11.0,False,Hallandale Beach,25.98713394063279,-80.12586783,Shared room,2,1.0,False,1.0,2.0,23.0,1,270,9,54,1242.0,4.56,4.44,4.89,4.33,4.56,4.78,4.11,False
 1.0,1.0,True,14.0,True,Hallandale Beach,25.989702218913944,-80.15640955,Entire home/apt,8,2.0,True,3.0,6.0,231.0,4,149,22,176,40656.0,4.91,4.86,4.95,4.77,4.95,4.5,4.82,True
 1.0,0.94,True,1.0,True,Fort Lauderdale,26.1165079,-80.1243379,Entire home/apt,6,2.5,True,3.0,4.0,445.0,2,329,13,78,34710.0,5.0,5.0,5.0,5.0,5.0,5.0,4.85,False
 0.99,1.0,False,164.0,True,Pompano Beach,26.250804038825503,-80.08622958,Private room,8,2.0,True,3.0,4.0,202.0,1,297,2,12,2424.0,4.0,3.5,3.5,4.5,4.0,4.0,4.0,True
-1.0,1.0,False,23.0,True,Tamarac,26.188088324643125,-80.23400216,Entire home/apt,16,7.5,True,11.0,16.0,1758.0,3,317,4,24,42192.0,4.0,4.5,4.25,4.75,4.25,5.0,4.0,True
 1.0,0.83,False,19.0,True,Lauderdale Lakes,26.16507858951775,-80.20906448,Shared room,3,1.0,False,1.0,3.0,18.0,1,363,6,36,648.0,4.0,4.33,4.17,4.5,4.33,4.0,4.0,False
 1.0,1.0,False,3.0,True,Hollywood,26.008568,-80.1177648,Entire home/apt,2,1.0,True,0.0,1.0,52.0,1,39,8,48,2496.0,4.88,4.75,4.88,5.0,5.0,5.0,5.0,True
 1.0,0.77,True,2.0,True,Pembroke Pines,26.00265320020099,-80.35653016,Private room,2,1.0,True,1.0,1.0,80.0,1,269,6,36,2880.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
@@ -7751,10 +7685,8 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.94,True,1.0,False,Miramar,25.98882617,-80.23680002,Entire home/apt,3,1.0,True,1.0,2.0,108.0,2,232,38,228,24624.0,5.0,5.0,5.0,5.0,5.0,4.95,4.92,False
 1.0,0.87,False,15.0,True,Hallandale Beach,25.98475,-80.12193,Private room,4,1.0,True,0.0,2.0,72.0,1,350,3,18,1296.0,4.33,4.33,4.33,4.0,4.33,4.33,3.67,False
 1.0,0.87,True,53.0,True,Fort Lauderdale,26.16583,-80.12166,Entire home/apt,6,2.0,True,3.0,3.0,343.0,3,300,22,132,45276.0,4.91,5.0,4.86,5.0,4.95,4.91,4.86,False
-1.0,0.88,True,40.0,True,Hallandale Beach,25.97988,-80.13151,Entire home/apt,14,5.0,True,7.0,8.0,1273.0,2,317,6,36,45828.0,4.67,4.67,4.83,5.0,5.0,4.83,4.67,True
 1.0,1.0,True,8.0,True,Wilton Manors,26.156,-80.13576,Entire home/apt,4,1.0,True,2.0,2.0,168.0,3,290,7,42,7056.0,4.86,5.0,5.0,5.0,5.0,5.0,4.86,True
 0.91,0.87,False,5.0,True,Lauderdale Lakes,26.17436,-80.19872,Private room,3,1.0,True,1.0,2.0,72.0,1,365,11,66,4752.0,4.64,4.55,4.82,4.64,4.91,4.45,4.64,True
-1.0,0.88,True,40.0,True,Hollywood,26.01075,-80.11904,Entire home/apt,10,2.5,True,5.0,5.0,1337.0,2,322,2,12,16044.0,5.0,5.0,5.0,5.0,5.0,5.0,4.0,True
 0.99,1.0,True,69.0,True,Pompano Beach,26.22625,-80.10806,Entire home/apt,8,3.5,True,4.0,6.0,220.0,4,268,26,208,45760.0,4.96,4.92,4.96,5.0,4.96,5.0,4.92,False
 1.0,0.96,False,4.0,True,Pompano Beach,26.24498,-80.08897,Private room,2,0.5,True,1.0,1.0,89.0,1,364,21,126,11214.0,4.57,4.38,4.43,4.71,4.76,4.76,4.43,False
 1.0,0.94,False,65.0,True,Coconut Creek,26.24058,-80.1792,Entire home/apt,10,3.0,True,4.0,4.0,251.0,1,330,4,24,6024.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,False
@@ -8030,7 +7962,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.99,False,83.0,True,Hallandale Beach,25.9858006,-80.1235987,Entire home/apt,6,2.0,True,2.0,3.0,128.0,3,365,1,6,768.0,5.0,5.0,5.0,5.0,5.0,5.0,4.0,True
 1.0,1.0,True,3.0,False,Hallandale Beach,25.989938829807645,-80.14793687,Entire home/apt,8,2.0,True,2.0,3.0,120.0,1,332,43,255,30600.0,5.0,5.0,4.95,4.93,5.0,4.93,4.93,False
 1.0,1.0,True,19.0,True,Fort Lauderdale,26.12589892,-80.1203219,Entire home/apt,4,1.0,True,1.0,2.0,123.0,2,330,2,12,1476.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
-1.0,1.0,False,1.0,True,Fort Lauderdale,26.11568551531628,-80.11584732,Entire home/apt,10,4.0,True,4.0,5.0,1049.0,3,209,6,36,37764.0,5.0,5.0,5.0,5.0,5.0,5.0,4.83,False
 1.0,1.0,True,19.0,True,Fort Lauderdale,26.123861136899823,-80.12033758,Entire home/apt,3,1.0,True,1.0,1.0,124.0,2,318,5,30,3720.0,5.0,5.0,4.8,5.0,5.0,5.0,5.0,True
 1.0,1.0,True,1.0,True,Hallandale Beach,25.99168485131218,-80.14954894,Entire home/apt,6,2.0,True,2.0,2.0,95.0,2,111,38,228,21660.0,4.97,4.97,4.95,4.97,5.0,4.73,4.89,True
 1.0,0.99,True,6.0,True,Pompano Beach,26.2331554,-80.1066805,Entire home/apt,9,2.0,True,3.0,5.0,357.0,2,298,7,42,14994.0,5.0,5.0,5.0,5.0,5.0,4.57,4.71,True
@@ -8093,7 +8024,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,0.94,False,65.0,True,Dania Beach,26.067698636863337,-80.18659215,Entire home/apt,12,2.5,True,4.0,6.0,378.0,1,182,1,6,2268.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,0.94,False,65.0,True,Miramar,25.977725834118207,-80.25423928,Entire home/apt,8,2.0,True,3.0,4.0,242.0,1,360,16,96,23232.0,4.81,4.75,4.69,4.81,4.81,4.75,4.63,True
 1.0,0.74,False,13.0,True,Hollywood,26.0332307241036,-80.15326605,Private room,1,1.0,False,2.0,2.0,31.0,3,203,1,6,186.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
-1.0,0.89,False,8.0,False,Fort Lauderdale,26.1243522,-80.1158588,Entire home/apt,10,5.5,True,5.0,7.0,1100.0,3,164,9,54,59400.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,True,15.0,True,Fort Lauderdale,26.092859851126484,-80.15275092,Entire home/apt,6,2.0,True,3.0,3.0,155.0,2,323,5,30,4650.0,5.0,5.0,4.8,4.8,5.0,4.8,5.0,True
 1.0,0.88,False,5.0,True,Hollywood,25.99800066269255,-80.15636828,Shared room,1,2.0,False,4.0,10.0,30.0,2,364,2,12,360.0,4.0,4.0,3.5,4.5,4.5,4.0,4.0,False
 1.0,0.91,True,2.0,True,Wilton Manors,26.162902103605283,-80.14409093,Private room,2,1.0,True,1.0,1.0,115.0,1,63,1,6,690.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
@@ -8181,7 +8111,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 0.5,1.0,False,1.0,True,Dania Beach,26.053322175213896,-80.17152227,Entire home/apt,2,1.0,True,1.0,1.0,84.0,1,344,3,18,1512.0,5.0,4.67,5.0,5.0,5.0,5.0,5.0,True
 0.9,0.75,False,5.0,True,Lauderhill,26.14755583073828,-80.22475554,Private room,2,1.5,True,1.0,1.0,36.0,2,247,15,90,3240.0,4.6,4.6,4.4,4.8,4.87,4.73,4.6,False
 1.0,1.0,True,5.0,True,Wilton Manors,26.1574721,-80.1392116,Private room,3,1.0,True,1.0,1.0,145.0,1,360,1,6,870.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
-1.0,1.0,True,10.0,True,Fort Lauderdale,26.15991301366658,-80.09949478,Entire home/apt,6,3.0,True,3.0,3.0,1392.0,1,317,18,108,150336.0,5.0,5.0,4.94,5.0,5.0,5.0,4.89,True
 1.0,1.0,True,38.0,True,Hollywood,26.01376334912525,-80.18051415,Entire home/apt,3,1.0,True,1.0,1.0,63.0,1,354,10,60,3780.0,4.8,5.0,4.8,5.0,5.0,5.0,4.9,True
 1.0,1.0,True,4.0,True,Fort Lauderdale,26.12980842222152,-80.10449017,Entire home/apt,6,3.5,True,3.0,3.0,385.0,2,222,10,60,23100.0,5.0,4.9,5.0,5.0,5.0,5.0,4.9,True
 0.99,1.0,True,69.0,True,Pompano Beach,26.2069841,-80.1288154,Entire home/apt,8,3.5,True,4.0,5.0,231.0,4,266,11,88,20328.0,4.91,5.0,4.82,4.91,5.0,4.91,4.82,False
@@ -8949,7 +8878,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,140.0,True,Hallandale Beach,25.98601429999999,-80.1228132,Entire home/apt,3,1.0,True,1.0,2.0,99.0,4,301,1,8,792.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 0.79,0.91,False,2.0,True,Sunrise,26.15678,-80.24218,Entire home/apt,4,1.0,True,2.0,2.0,124.0,2,123,2,12,1488.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,False,1.0,False,Sunrise,26.15219,-80.33401,Private room,2,1.0,False,1.0,1.0,78.0,1,360,1,6,468.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
-1.0,0.99,True,40.0,True,Plantation,26.12291,-80.23311,Entire home/apt,16,6.5,True,7.0,8.0,1208.0,1,359,1,6,7248.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 0.96,0.75,False,3.0,True,Hollywood,26.01076,-80.19488,Private room,1,1.0,True,1.0,1.0,50.0,1,299,3,18,900.0,5.0,4.67,4.33,5.0,4.67,5.0,5.0,False
 1.0,0.99,False,120.0,True,Hallandale Beach,25.9857983,-80.1228008,Entire home/apt,4,1.0,True,1.0,2.0,69.0,1,308,3,18,1242.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,0.99,True,3.0,True,Lauderhill,26.14545,-80.2229,Entire home/apt,4,1.0,True,2.0,2.0,108.0,2,360,1,6,648.0,5.0,5.0,5.0,5.0,5.0,4.0,5.0,False
@@ -9005,7 +8933,6 @@ host_response_rate,host_acceptance_rate,host_is_superhost,host_total_listings_co
 1.0,1.0,False,8.0,False,Oakland Park,26.1662583,-80.1686292,Entire home/apt,12,2.0,True,4.0,5.0,149.0,1,338,3,18,2682.0,5.0,5.0,4.67,5.0,5.0,5.0,5.0,True
 1.0,0.9,False,1.0,True,Miramar,25.9850569,-80.3078336,Entire home/apt,4,2.0,True,2.0,2.0,119.0,2,282,1,6,714.0,5.0,5.0,5.0,3.0,5.0,5.0,5.0,False
 1.0,1.0,False,1.0,False,Hollywood,26.0304765,-80.1544451,Entire home/apt,4,1.0,True,2.0,3.0,131.0,1,228,5,30,3930.0,4.6,4.8,4.8,4.4,5.0,4.4,4.8,False
-0.92,1.0,False,18.0,True,Hollywood,26.01665,-80.14809,Entire home/apt,2,1.0,True,0.0,1.0,1045.0,1,365,4,24,25080.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,0.83,False,8.0,True,Oakland Park,26.168535770401824,-80.13792909,Entire home/apt,3,1.0,True,1.0,2.0,93.0,2,301,1,6,558.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,False
 1.0,1.0,False,125.0,True,Fort Lauderdale,26.15169,-80.11298,Entire home/apt,6,3.5,True,3.0,3.0,206.0,1,343,1,6,1236.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
 1.0,1.0,False,1.0,False,Hollywood,26.01328,-80.12849,Entire home/apt,16,5.0,True,6.0,0.0,596.0,3,239,1,6,3576.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,True
