@@ -22,40 +22,39 @@ def render(df: pd.DataFrame):
                     "calendar_last_scraped", "host_since", "host_response_time",
                     "first_review", "last_review"]
         
-        st.write("##### Removing Non-Numerical, Non-Categorical Features")
-        with st.container(border=True, height=400):    
-            st.write(colsToDrop)
+        st.write("###### Removing Non-Numerical, Non-Categorical Features")
+        with st.container(border=True, height=180):    
+            st.markdown(", ".join(colsToDrop))
 
-        # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = df.drop(columns=colsToDrop, axis=1)
 
 
     with col2:
-        st.write("##### Removing Features With a High Percentage of Missing Values")
-        with st.container(border=True, height=400):
+        st.write("###### Removing Features With a High Percentage of Missing Values")
+        with st.container(border=True, height=180):
             featuresToBeRemoved = []
             summaryDf = getSummaryDf(cleanedDf)
             for row in summaryDf.itertuples():
                 if row[-1] > len(df) * 0.9: # drop columns which have more than 90% of their values missing
                     featuresToBeRemoved.append(row[1])
-            
-            st.caption("The following columns are highly unpopulated (>90\\%). They can be removed:")
-            st.write(featuresToBeRemoved)
 
-        # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
+            st.caption(f"The following features have a high percent of missing values (>90%):")
+            st.markdown(", ".join(featuresToBeRemoved))
+
         cleanedDf = cleanedDf.drop(columns=featuresToBeRemoved, axis=1)
 
     
     with col3:
-        st.write("##### Features to dropNa Due to Low Percentage Missing Values")
-        with st.container(border=True, height=400):
+        st.write("###### Features to dropNa Due to Low Percentage Missing Values")
+        with st.container(border=True, height=180):
             featuresToDropNa = []
             # summaryDf = getSummaryDf(cleanedDf) technically commenting this out should never cause any problems
             for row in summaryDf.itertuples():
-                if row[-1] < len(df) * 0.05: # if a column has less than 5% of its rows as missing, remove those rows
+                if row[-1] < len(df) * 0.05 and row[-1] > 0: # if a column has less than 5% of its rows as missing, remove those rows
                     featuresToDropNa.append(row[1])
-            st.caption(f"The following columns have less than 5% of their values missing; removing rows with missing values:")
-            st.write(featuresToDropNa)
+                    
+            st.caption(f"The following features have less than 5% of their values missing; removing rows with missing values:")
+            st.markdown(", ".join(featuresToDropNa))
 
         # TODO: Find a way to cache these results to prevent needless recalculation on a re-render
         cleanedDf = cleanedDf.dropna(subset=featuresToDropNa)

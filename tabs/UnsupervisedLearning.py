@@ -12,7 +12,7 @@ def render(df: pd.DataFrame):
 
     # Cluster and plot
     with st.container(border=True):
-        nClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=10, value=7, key='ncluster-selector')
+        nClusters = st.number_input('Select the Number of Clusters', min_value=2, max_value=10, value=3, key='ncluster-selector')
         clusterColors = {str(i): px.colors.qualitative.Plotly[i] for i in range(nClusters)}
         kmeans = KMeans(n_clusters=nClusters, random_state=42)
         neighborhoodDf['cluster'] = kmeans.fit_predict(neighborhoodDf[['price']])

@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap");
-
 html,
 body,
 [class*="css"] {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-/* Optional: make header transparent/minimal instead of removing it */
 [data-testid="stHeader"] {
   background: transparent;
   height: 0.5rem;
@@ -15,7 +13,7 @@ body,
 /* Main background */
 .stApp {
   background: #ffffff;
-  color: #2d2d2d;
+  color: #1d1d1d;
 }
 
 /* Main content area */
@@ -23,28 +21,67 @@ body,
   padding-top: 2.5rem;
 }
 
+/* Sidebar */
+[data-testid="stSidebar"] {
+  background: #ede8e0;
+  border-right: 1px solid #d4cfc7;
+}
+
+[data-testid="stSidebar"] * {
+  color: #2d2d2d !important;
+}
+
+/* Radio buttons in sidebar */
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+  padding: 0.3rem 0;
+  font-size: 0.92rem;
+}
+
 /* Headings */
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 2.4rem;
   font-weight: 900;
-  color: #2d2d2d;
+  color: #1d1d1d;
 }
 
 h2 {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
-  border-bottom: 1px solid #1e3a5f;
+  color: #1d1d1d;
+  border-bottom: 1px solid #d4cfc7;
   padding-bottom: 0.4rem;
-  color: #2d2d2d;
 }
 
 h3 {
   font-size: 1.05rem;
-  color: #2d2d2d;
+  color: #1d1d1d;
 }
 
-p,
-li {
-  color: #2d2d2d;
+p, li {
+  color: #1d1d1d;
+}
+
+/* Text inputs */
+.stTextArea textarea,
+.stTextInput input {
+  background: #ede8e0 !important;
+  border: 1px solid #d4cfc7 !important;
+  color: #1d1d1d !important;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+hr {
+  border-color: #d4cfc7;
+}
+
+/* tabs */
+button[data-baseweb="tab"] {
+  background: #f0f0f0;
+  border-radius: 8px 8px 0 0;
+  padding: 0.5rem 1.2rem;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+  background: #d4d4d4;
 }

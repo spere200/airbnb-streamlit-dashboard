@@ -13,6 +13,7 @@ def render(df: pd.DataFrame):
                                     key="dist-selectbox")
         nbins = min(df[distSelection].nunique(), 50)
         distPlot = px.histogram(df, x=distSelection, nbins=nbins)
+        distPlot.update_traces(texttemplate='%{y:.0f}', textposition='outside')
         st.plotly_chart(distPlot)
 
     st.subheader("Box Plots")
