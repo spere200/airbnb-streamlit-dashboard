@@ -62,8 +62,7 @@ def render(df: pd.DataFrame):
             st.plotly_chart(catPricePlot, use_container_width=True)
 
             st.markdown('---')
-            st.markdown("* **room_type** and **private_bathroom** appear to be great indicators of price, " \
-            "which makes sense, since both are features indicative of available space and privacy.")
+            st.markdown("* **room_type** and **private_bathroom** appear to be great indicators of price.")
 
         with contCol.container(border=True):
             continuousCols = ['accommodates', 'bedrooms', 'beds', 'bathrooms']
@@ -111,7 +110,7 @@ def render(df: pd.DataFrame):
             st.markdown('---')
             st.markdown("""
                         While many neighborhoods cluster in a similar price range, there is a meaningful difference from 
-                        \\$65 to \\$293 across the county. neighborhoods at the extremes (such as Pembroke Park and Plantation) 
-                        show very distinct averages that could prove useful for a ML model. However, the predictive power 
-                        of neighborhood may be limited for the majority of mid-range areas.
+                        \\$65 to \\$293 across the county. Neighborhoods at the extremes (such as Plantation) show very 
+                        distinct averages that could prove useful for a ML model. However, the predictive power of neighborhood 
+                        may be limited for the majority of mid-range areas.
                         """)
