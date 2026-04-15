@@ -18,6 +18,11 @@ def render():
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
+        opening = (
+            "Hello! I'm the Project Assistant for the Broward County Airbnb Listings Dashboard. "
+            "I'm here to answer questions about the dashboard's data, analysis, findings, and methodology."
+        )
+        st.session_state.messages.append({"role": "assistant", "content": opening})
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -47,15 +52,21 @@ def render():
                             messages=st.session_state.messages
                         )
 
-                        # print(f"Stop reason: {response.stop_reason}")
-                        # print(f"Content: {response.content}")
-
                         if response.content:
                             reply = response.content[0].text
                         else:
                             reply = "I wasn't able to generate a response. Please try rephrasing your question."
                     except Exception as e:
-                        print(f"Error: {e}")
+                        error_str = str(e)
+                        if '401' in error_str or 'authentication' in error_str.lower():
+                            reply = "Error: Invalid API key."
+                        elif '429' in error_str:
+                            reply = "Error: Rate limit reached. Please try again in a moment."
+                        elif '529' in error_str or 'overloaded' in error_str.lower():
+                            reply = "Error: The service is temporarily overloaded. Please try again."
+                        else:
+                            reply = "Sorry, something went wrong. Please try again."
+
                     reply = reply.replace('~~', '').replace('$', '&#36;')
                     st.markdown(reply)
 
