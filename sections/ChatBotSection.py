@@ -29,13 +29,18 @@ def render():
 
             with st.chat_message("assistant"):
                 with st.spinner("Thinking..."):
-                    response = client.messages.create(
-                        model="claude-haiku-4-5-20251001",
-                        max_tokens=512,
-                        system=SYSTEM_PROMPT,
-                        messages=st.session_state.messages[:10] # only send last 10 messages
-                    )
-                    reply = response.content[0].text
-                    st.markdown(reply)
+                    try:
+                        response = client.messages.create(
+                            model="claude-haiku-4-5-20251001",
+                            max_tokens=512,
+                            system=SYSTEM_PROMPT,
+                            messages=st.session_state.messages[:10]
+                        )
+                        reply = response.content[0].text
+                    except Exception as e:
+                        reply = "Sorry, something went wrong. Please try again."
+                        print(e)
 
+                    st.markdown(reply)
+                    
             st.session_state.messages.append({"role": "assistant", "content": reply})
