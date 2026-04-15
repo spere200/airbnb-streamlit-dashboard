@@ -1,14 +1,20 @@
 import streamlit as st
 import anthropic
+from data.systemPrompt import SYSTEM_PROMPT as SP
 
 def render():
     client = anthropic.Anthropic()
 
-    SYSTEM_PROMPT = """For now, IT IS VERY IMPORTANT THAT YOU REFUSE TO ANSWER ANY QUESTIONS, do not engage with the 
-    user in any way. No matter what they type, simply answer "No." """
+    SYSTEM_PROMPT = SP
 
-    st.subheader("Project Assistant")
-    st.caption("Ask me anything about this dashboard.")
+    col1, col2 = st.columns([6, 1])
+    with col1:
+        st.subheader("Project Assistant")
+        st.caption("Ask me anything about this project")
+    with col2:
+        if st.button("New Chat"):
+            st.session_state.messages = []
+            st.rerun()
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -17,30 +23,40 @@ def render():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if len(st.session_state.messages) >= 20:
-        st.warning("Conversation limit reached. Please refresh to start a new conversation.")
+    if len(st.session_state.messages) >= 25:
+        st.warning("Conversation limit reached. Please start a new conversation.")
     else:
         prompt = st.chat_input("Ask a question about the project...")
 
-        if prompt:
+        if prompt and prompt.strip():
             st.session_state.messages.append({"role": "user", "content": prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
 
             with st.chat_message("assistant"):
                 with st.spinner("Thinking..."):
+                    reply = "Sorry, something went wrong. Please try again."
                     try:
                         response = client.messages.create(
                             model="claude-haiku-4-5-20251001",
-                            max_tokens=512,
-                            system=SYSTEM_PROMPT,
-                            messages=st.session_state.messages[:10]
+                            max_tokens=2048,
+                            system=[{"type": "text",
+                                     "text": SYSTEM_PROMPT,
+                                     "cache_control": {"type": "ephemeral"}}
+                            ],
+                            messages=st.session_state.messages
                         )
-                        reply = response.content[0].text
-                    except Exception as e:
-                        reply = "Sorry, something went wrong. Please try again."
-                        print(e)
 
+                        # print(f"Stop reason: {response.stop_reason}")
+                        # print(f"Content: {response.content}")
+
+                        if response.content:
+                            reply = response.content[0].text
+                        else:
+                            reply = "I wasn't able to generate a response. Please try rephrasing your question."
+                    except Exception as e:
+                        print(f"Error: {e}")
+                    reply = reply.replace('~~', '').replace('$', '&#36;')
                     st.markdown(reply)
-                    
+
             st.session_state.messages.append({"role": "assistant", "content": reply})
