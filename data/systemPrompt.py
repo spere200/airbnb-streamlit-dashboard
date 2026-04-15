@@ -61,9 +61,10 @@ Continuous feature relationships with price:
 - availability_365: No clear correlation. Price spread fairly uniform across all availability levels.
 - estimated_occupancy_l365d: Slight negative correlation. Higher occupancy listings cluster at lower prices, confirming the hypothesis.
 - estimated_revenue_l365d: Strong positive correlation. Clear triangular fan shape — higher revenue strongly associated with higher price.
-  The diagonal lower boundary visible in the plot represents the revenue floor: no listing can have an annual revenue lower than its 
-  nightly price multiplied by its minimum_nights requirement, creating a clean diagonal edge below which no points exist. Points scatter 
-  above this line based on actual booking frequency.
+  The diagonal lower boundary visible in the plot represents the revenue floor created by price itself: a listing's minimum possible 
+  revenue given at least one booking is roughly equal to its nightly price, so cheaper listings cluster near the bottom-left while 
+  expensive listings have a higher floor. Points scatter above this line based on actual booking frequency and occupancy. The fan widens 
+  at higher revenue values because expensive listings have a much higher revenue ceiling when well-occupied.
 - review_scores_rating: All neighborhood averages fall in a narrow range of 4.44 to 4.95. Ratings below 4.6 are considered low for this dataset, 4.6-4.75 mid, and above 4.75 good.
 
 Neighborhood average prices (low to high):
