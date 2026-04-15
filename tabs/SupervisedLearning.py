@@ -112,7 +112,7 @@ def render(df: pd.DataFrame):
             lrGraphCol, _, lrEvalCol= st.columns([10, 1, 6])
 
             with lrGraphCol:
-                linRegModel = getModel('linear_regression.pkl', LinearRegression(), 
+                linRegModel = getModel('linear_regression', LinearRegression(), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_linreg = linRegModel.predict(X_test)
@@ -153,7 +153,7 @@ def render(df: pd.DataFrame):
             knnGraphCol, _, knnEvalCol= st.columns([10, 1, 6])
 
             with knnGraphCol:
-                knnModel = getModel('knn_regression.pkl', KNeighborsRegressor(n_neighbors=6), 
+                knnModel = getModel('knn_regression', KNeighborsRegressor(n_neighbors=6), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_knn = knnModel.predict(X_test)
@@ -187,7 +187,7 @@ def render(df: pd.DataFrame):
             svrGraphCol, _, svrEvalCol = st.columns([10, 1, 6])
 
             with svrGraphCol:
-                svrModel = getModel('svr_regression.pkl', SVR(), 
+                svrModel = getModel('svr_regression', SVR(), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_svr = svrModel.predict(X_test)
@@ -226,7 +226,7 @@ def render(df: pd.DataFrame):
             dtGraphCol, _, dtEvalCol= st.columns([10, 1, 6])
 
             with dtGraphCol:
-                treeModel = getModel('dt_regression.pkl', DecisionTreeRegressor(random_state=42), 
+                treeModel = getModel('dt_regression', DecisionTreeRegressor(random_state=42), 
                                        X_train=X_train, y_train=y_train)
                 
                 y_pred_tree = treeModel.predict(X_test)
@@ -258,7 +258,7 @@ def render(df: pd.DataFrame):
             rfGraphCol, _, rfEvalCol= st.columns([10, 1, 6])
 
             with rfGraphCol:
-                forestModel = getModel('rf_regression.pkl', RandomForestRegressor(n_estimators=100, random_state=42), 
+                forestModel = getModel('rf_regression', RandomForestRegressor(n_estimators=100, random_state=42), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_forest = forestModel.predict(X_test)
@@ -292,7 +292,7 @@ def render(df: pd.DataFrame):
             xgbGraphCol, _, xgbEvalCol= st.columns([10, 1, 6])
 
             with xgbGraphCol:
-                xgbModel = getModel('xgb_regression.pkl', GradientBoostingRegressor(n_estimators=100, random_state=42), 
+                xgbModel = getModel('xgb_regression', GradientBoostingRegressor(n_estimators=100, random_state=42), 
                                        X_train=X_train, y_train=y_train)
 
                 y_pred_xgb = xgbModel.predict(X_test)
