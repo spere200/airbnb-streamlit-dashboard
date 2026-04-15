@@ -2,6 +2,9 @@ import os
 import streamlit as st
 import pandas as pd
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from utils import loadData
 
 # import sections
@@ -10,6 +13,7 @@ from sections import EDASection
 from sections import HypothesisSection
 from sections import SupervisedLearningSection
 from sections import UnsupervisedLearningSection
+from sections import ChatBotSection
 
 st.set_page_config(layout="wide")
 
@@ -26,12 +30,10 @@ df = loadData('./data/listings.csv') # initial dataframe
 # attempt to load cleaned dataframe
 if 'cleanDf' not in st.session_state and os.path.exists('data/cleanedDf.csv'):
     st.session_state.cleanDf = pd.read_csv('data/cleanedDf.csv')
-    print("loaded cleaned successfully")
 
 # attempt to load dataframe with no outliers
 if 'finalDf' not in st.session_state and os.path.exists('data/finalDf.csv'):
     st.session_state.finalDf = pd.read_csv('data/finalDf.csv')
-    print("loaded final successfully")
 
 with st.sidebar:
     st.markdown("""
@@ -51,6 +53,7 @@ with st.sidebar:
     "Hypothesis Test",
     "Supervised Learning",
     "Unsupervised Learning",
+    "Chatbot"
     ], index=0, label_visibility="collapsed") 
 
 if page == "Data Cleaning":
@@ -67,3 +70,6 @@ elif page == "Supervised Learning":
 
 elif page == "Unsupervised Learning":
     UnsupervisedLearningSection.render()
+
+elif page == "Chatbot":
+    ChatBotSection.render()

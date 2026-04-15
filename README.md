@@ -2,7 +2,7 @@ Included data sourced from [Inside Airbnb](https://insideairbnb.com/get-the-data
 
 To install and run (virtual environment recommended):
 
-pip install requirements.txt
+pip install -r requirements.txt
 
 streamlit run dashboard.py
 
